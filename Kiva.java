@@ -139,7 +139,6 @@ public class Kiva {
         int x = currentLocation.getX() + directionFacing.getDelta().getX();
         int y = currentLocation.getY() + directionFacing.getDelta().getY();
         currentLocation = new Point(x,y);
-        System.out.println("currentLocation: (" + currentLocation.getX() + ", " + currentLocation.getY() + ")");
     }
 
     /**
