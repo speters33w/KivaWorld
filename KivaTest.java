@@ -1,4 +1,6 @@
 import edu.duke.Point;
+
+import java.util.Locale;
 import java.util.regex.Pattern;
 
 /**
@@ -6,7 +8,7 @@ import java.util.regex.Pattern;
  */
 public class KivaTest {
     KeyboardResource keyboardResource = new KeyboardResource();
-    FloorMap defaultMap = new KivaCreateMap().defaultMap();
+    FloorMap defaultMap = new KivaCreateMap().defaultMap(); //todo debug null pointer exception where defaultMap is used
 
     public void testSingleArgumentConstructor() {
         // GIVEN
@@ -57,13 +59,14 @@ public class KivaTest {
     public void testForward(){
         // GIVEN
         // A Kiva built with the default map we defined earlier
-        Kiva kiva = new Kiva(defaultMap);
+        Kiva kiva = new Kiva();
+        FacingDirection expectDirection = FacingDirection.UP;
         int x = kiva.getCurrentLocation().getX();
         int y = kiva.getCurrentLocation().getY();
-        System.out.println("Kiva Initial Location Expected: (" + x + ", " + y + ") Actual: " + kiva.getCurrentLocation());
+        System.out.println("Kiva Initial Location Expected: (" + x + "," + y + ") Actual: " + kiva.getCurrentLocation());
         System.out.println("The Kiva is facing : " + kiva.getDirectionFacing());
         System.out.println("Type a facing direction, U D L R");
-        String testInput = keyboardResource.getLine();
+        String testInput = keyboardResource.getLine().toUpperCase(Locale.ROOT);
         if (Pattern.matches("[UDLR]+",testInput )) {
             switch (testInput) {
                 case "U":
@@ -86,19 +89,37 @@ public class KivaTest {
 
         //WHEN
         //We move one space forward
+        System.out.println("The Kiva is moving FORWARD");
         kiva.move(KivaCommand.FORWARD);
 
-        //todo finish the testMoveForward test to update for all four directions.
         //THEN
-        //The Kiva has moved one space up
-        verifyKivaState("testForward",kiva,new Point(2,3),FacingDirection.UP,false, false);
+        //The Kiva has moved one space in the facing direction
+        switch (testInput){//Modify x or y for expected location
+            case "U":
+                y--;
+                break;
+            case "D":
+                y++;
+                expectDirection = FacingDirection.DOWN;
+                break;
+            case "L":
+                x--;
+                expectDirection = FacingDirection.LEFT;
+                break;
+            case "R":
+                x++;
+                expectDirection = FacingDirection.RIGHT;
+                break;
+        }
+
+        verifyKivaState("testForward",kiva,new Point(x,y),expectDirection,false, false);
     }
     // For you: create all the other tests and call verifyKivaState() for each
 
     public void testTurnLeft(){
         // GIVEN
         // A Kiva built with the default map we defined earlier
-        Kiva kiva = new Kiva(defaultMap);
+        Kiva kiva = new Kiva();
 
         // WHEN
         // We turn left

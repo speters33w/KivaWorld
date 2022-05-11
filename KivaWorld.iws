@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added more to Kiva.move()">
-      <change beforePath="$PROJECT_DIR$/CreateMap.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Fixed nullpointer in KivaTest">
       <change beforePath="$PROJECT_DIR$/KivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/package.bluej" afterDir="false" />
     </list>
@@ -41,16 +40,16 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
   </component>
-  <component name="RunManager" selected="Application.RemoteControl">
-    <configuration name="CreateMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CreateMap" />
+  <component name="RunManager" selected="Application.RunKivaTest">
+    <configuration name="KivaCommandTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KivaCommandTester" />
       <module name="KivaWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="KivaCommandTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="KivaCommandTester" />
+    <configuration name="KivaCreateMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KivaCreateMap" />
       <module name="KivaWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -70,16 +69,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RunKivaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RunKivaTest" />
+      <module name="KivaWorld" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.RemoteControl" />
-      <item itemvalue="Application.CreateMap" />
+      <item itemvalue="Application.KivaCreateMap" />
       <item itemvalue="Application.KivaCommandTester" />
       <item itemvalue="Application.MoveForwardTrial" />
+      <item itemvalue="Application.RunKivaTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RunKivaTest" />
+        <item itemvalue="Application.KivaCreateMap" />
         <item itemvalue="Application.MoveForwardTrial" />
-        <item itemvalue="Application.CreateMap" />
         <item itemvalue="Application.KivaCommandTester" />
       </list>
     </recent_temporary>
@@ -121,7 +129,49 @@
       <option name="project" value="LOCAL" />
       <updated>1652240540933</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Work on unit tests in KivaTest">
+      <created>1652274680793</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652274680793</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Changed name of CreateMap for naming convention consistency">
+      <created>1652274771244</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1652274771244</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updated todos">
+      <created>1652275000578</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1652275000578</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Created javadoc comments">
+      <created>1652278312482</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1652278312482</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Edited javadoc comments">
+      <created>1652278833469</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1652278833469</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Edited javadoc comments">
+      <created>1652281260354</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1652281260354</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,6 +189,21 @@
     <MESSAGE value="Initial Commit, in Progress" />
     <MESSAGE value="Added edu.duke.*.java source" />
     <MESSAGE value="Added more to Kiva.move()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more to Kiva.move()" />
+    <MESSAGE value="Work on unit tests in KivaTest" />
+    <MESSAGE value="Changed name of CreateMap for naming convention consistency" />
+    <MESSAGE value="Updated todos" />
+    <MESSAGE value="Created javadoc comments" />
+    <MESSAGE value="Edited javadoc comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edited javadoc comments" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
