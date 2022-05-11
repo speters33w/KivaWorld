@@ -1,11 +1,13 @@
 import edu.duke.Point;
 
+import java.util.regex.Pattern;
+
 /**
  * The test class KivaTest.
  */
 public class KivaTest {
-
-    FloorMap defaultMap = new CreateMap().defaultMap();
+    KeyboardResource keyboardResource = new KeyboardResource();
+    FloorMap defaultMap = new KivaCreateMap().defaultMap();
 
     public void testSingleArgumentConstructor() {
         // GIVEN
@@ -53,18 +55,44 @@ public class KivaTest {
         return a.getX() == b.getX() && a.getY() == b.getY();
     } //sameLocation
 
-    public void testForwardFromUp(){
+    public void testForward(){
         // GIVEN
         // A Kiva built with the default map we defined earlier
         Kiva kiva = new Kiva(defaultMap);
+        int x = kiva.getCurrentLocation().getX();
+        int y = kiva.getCurrentLocation().getY();
+        System.out.println("Kiva Initial Location Expected: (" + x + ", " + y + ") Actual: " + kiva.getCurrentLocation());
+        System.out.println("The Kiva is facing : " + kiva.getDirectionFacing());
+        System.out.println("Type a facing direction, U D L R");
+        String testInput = keyboardResource.getLine();
+        if (Pattern.matches("[UDLR]+",testInput )) {
+            switch (testInput) {
+                case "U":
+                    break;
+                case "D":
+                    kiva.move(KivaCommand.TURN_LEFT);
+                    kiva.move(KivaCommand.TURN_LEFT); // never turn thrice widdershins, it's bad luck.
+                    break;
+                case "L":
+                    kiva.move(KivaCommand.TURN_LEFT);
+                    break;
+                case "R":
+                    kiva.move(KivaCommand.TURN_RIGHT);
+                    break;
+            }
+        } else {
+            System.out.print("Invalid facing direction. ");
+        }
+        System.out.println("The Kiva is facing : " + kiva.getDirectionFacing());
 
         //WHEN
         //We move one space forward
         kiva.move(KivaCommand.FORWARD);
 
+        //todo finish the testMoveForward test to update for all four directions.
         //THEN
         //The Kiva has moved one space up
-        verifyKivaState("testForwardFromUp",kiva,new Point(2,3),FacingDirection.UP,false, false);
+        verifyKivaState("testForward",kiva,new Point(2,3),FacingDirection.UP,false, false);
     }
     // For you: create all the other tests and call verifyKivaState() for each
 
