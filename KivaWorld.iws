@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Created interactive moveForward test">
-      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added TAKE and DROP to Kiva.move">
       <change beforePath="$PROJECT_DIR$/KivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RunKivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunKivaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652290566704</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added TAKE and DROP to Kiva.move">
+      <created>1652291344970</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1652291344970</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -209,7 +216,8 @@
     <MESSAGE value="Edited javadoc comments" />
     <MESSAGE value="Fixed nullpointer in KivaTest" />
     <MESSAGE value="Created interactive moveForward test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created interactive moveForward test" />
+    <MESSAGE value="Added TAKE and DROP to Kiva.move" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added TAKE and DROP to Kiva.move" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

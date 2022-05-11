@@ -135,7 +135,22 @@ public class KivaTest {
     }
 
     public void testTake(){
+        Kiva kiva = new Kiva();
+        Point expectLocation = kiva.getCurrentLocation();
+        FacingDirection expectDirection = kiva.getDirectionFacing();
+        kiva.move(KivaCommand.TAKE);
+        verifyKivaState("testTake", kiva, expectLocation, expectDirection, true, false);
+    }
 
+    public void testDrop(){
+        Kiva kiva = new Kiva();
+        kiva.move(KivaCommand.TAKE);
+        Point expectLocation = kiva.getCurrentLocation();
+        FacingDirection expectDirection = kiva.getDirectionFacing();
+        if (kiva.isCarryingPod()){
+            kiva.move(KivaCommand.DROP);
+        }
+        verifyKivaState("testDROP", kiva, expectLocation, expectDirection, false, true);
     }
 
     private void verifyKivaState(
