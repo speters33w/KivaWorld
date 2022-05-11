@@ -8,7 +8,7 @@ import java.util.StringJoiner;
  * @author Stephan Peters
  * @version (0.1)
  */
-public class CreateMap
+public class KivaCreateMap
 {
     // instance variables - replace the example below with your own
     private boolean isKivaPlaced = false;
@@ -70,7 +70,7 @@ public class CreateMap
     }
 
     public static void main(String[] args) {
-        CreateMap testCreateMap = new CreateMap();
+        KivaCreateMap testCreateMap = new KivaCreateMap();
         Random testRandom = new Random();
         int min = 5;
         int max = 10;
