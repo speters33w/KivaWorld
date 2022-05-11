@@ -1,5 +1,4 @@
 import edu.duke.Point;
-
 import java.util.regex.Pattern;
 
 /**
@@ -83,7 +82,7 @@ public class KivaTest {
         } else {
             System.out.print("Invalid facing direction. ");
         }
-        System.out.println("The Kiva is facing : " + kiva.getDirectionFacing());
+        System.out.println("The Kiva is facing " + kiva.getDirectionFacing());
 
         //WHEN
         //We move one space forward

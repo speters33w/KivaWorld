@@ -13,14 +13,7 @@ public class Kiva {
     private boolean successfullyDropped = false; //initializes successfullyDropped
     //private motorLifetime;
 
-    Point getCurrentLocation() { //todo finish getCurrentLocation, currently initializes to random
-//        if (currentLocation.equals(new Point(-1, -1))) { //this line causes compiler problems if point is not (-1,-1)
-//            Random random = new Random();
-//            int x = random.nextInt(10);
-//            int y = random.nextInt(10);
-//            currentLocation = new Point(x, y);
-//            System.out.println("Random Current Location = " + currentLocation);
-//        }
+    Point getCurrentLocation() {
         return currentLocation;
     }
 
@@ -41,7 +34,7 @@ public class Kiva {
         new Kiva(map,currentLocation);
     }
 
-    public void move(KivaCommand command){
+    public void move(KivaCommand command){//todo finish move command
         switch(command) {
             case FORWARD:
                 moveForward();
@@ -53,7 +46,6 @@ public class Kiva {
                 turnSunwise();
                 break;
         }
-        //System.out.println("todo"); //todo finish move command
     }
 
     private void moveForward(){ //todo moveForward is not moving current location on an object
