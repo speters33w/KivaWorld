@@ -13,8 +13,8 @@ public class Kiva {
     private boolean successfullyDropped = false; //initializes successfullyDropped
     //private motorLifetime;
 
-    Point getCurrentLocation() { //todo finish getCurrentLocation, initializes to random
-        if (currentLocation.equals(new Point(-1, -1))) {
+    Point getCurrentLocation() { //todo finish getCurrentLocation, currently initializes to random
+        if (currentLocation.equals(new Point(-1, -1))) { //this line causes compiler problems if point is not (-1,-1)
             Random random = new Random();
             int x = random.nextInt(10);
             int y = random.nextInt(10);
@@ -46,6 +46,9 @@ public class Kiva {
             case FORWARD:
                 moveForward();
                 break;
+            case TURN_LEFT:
+                turnWiddershins();
+                break;
         }
         //System.out.println("todo"); //todo finish move command
     }
@@ -54,6 +57,23 @@ public class Kiva {
         int x = currentLocation.getX() + directionFacing.getDelta().getX();
         int y = currentLocation.getY() + directionFacing.getDelta().getY();
         currentLocation = new Point(x,y);
+    }
+
+    private void turnWiddershins(){
+        switch(directionFacing){
+            case UP:
+                directionFacing = FacingDirection.LEFT;
+                break;
+            case LEFT:
+                directionFacing = FacingDirection.DOWN;
+                break;
+            case DOWN:
+                directionFacing = FacingDirection.RIGHT;
+                break;
+            case RIGHT:
+                directionFacing = FacingDirection.UP;
+                break;
+        }
     }
 
     public boolean isCarryingPod(){

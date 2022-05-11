@@ -1,4 +1,4 @@
 /out/
 /*.class
 /*.ctxt
-/edu/duke/FileResource.class
+/edu/duke/*.class
