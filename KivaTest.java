@@ -52,10 +52,26 @@ public class KivaTest {
                             + "%s != (2,4)!", initialLocation));
         } //else
     } //testTwoArgumentConstructor
+
+    /**
+     * Checks to see if two edu.duke.Point locations are the same.
+     *
+     * @param a Point to be tested against
+     * @param b Point to be tested
+     * @return Returns true if Points are the same.
+     */
     private boolean sameLocation(Point a, Point b) {
         return a.getX() == b.getX() && a.getY() == b.getY();
     } //sameLocation
 
+    /**
+     * testForward creates a Kiva object using the default map.
+     * testForward allows the user to turn the Kiva (unless it is facing the correct direction),
+     * then moves the Kiva one square in that direction.
+     * testForward then verifies the facing direction and location are correct using verifyKivaState()
+     *
+     * @see KivaCommand
+     */
     public void testForward(){
         // GIVEN
         // A Kiva built with the default map we defined earlier
@@ -64,71 +80,58 @@ public class KivaTest {
         int x = kiva.getCurrentLocation().getX();
         int y = kiva.getCurrentLocation().getY();
         System.out.println("Kiva Initial Location Expected: (" + x + "," + y + ") Actual: " + kiva.getCurrentLocation());
-        System.out.println("The Kiva is facing : " + kiva.getDirectionFacing());
-        System.out.println("Type a facing direction, U D L R");
-        String testInput = keyboardResource.getLine().toUpperCase(Locale.ROOT);
-        if (Pattern.matches("[UDLR]+",testInput )) {
-            switch (testInput) {
-                case "U":
+        while(true) {
+            System.out.println("The Kiva is facing : " + kiva.getDirectionFacing());
+            System.out.println("Type a turning direction, L R, or F (Q Quits)");
+            String testInput = keyboardResource.getLine().toUpperCase(Locale.ROOT); //todo grab first index of the string in testForward so user can type Left, Forward, etc.
+            if (testInput.equals("Q")) {
+                break;
+            }
+            if (Pattern.matches("[LRF]+", testInput)) {
+                switch (testInput) {
+                    case "L":
+                        System.out.println("The Kiva is turning LEFT");
+                        kiva.move(KivaCommand.TURN_LEFT);
+                        break;
+                    case "R":
+                        System.out.println("The Kiva is turning RIGHT");
+                        kiva.move(KivaCommand.TURN_RIGHT);
+                        break;
+                    case "F":
+                        break;
+                }
+            } else {
+                System.out.print("Invalid facing direction input. ");
+            }
+            System.out.println("The Kiva is facing " + kiva.getDirectionFacing());
+
+            //WHEN
+            //We move one space forward
+            System.out.println("The Kiva is moving FORWARD");
+            kiva.move(KivaCommand.FORWARD);
+
+            //THEN
+            //The Kiva has moved one space in the facing direction
+            switch (kiva.getDirectionFacing()) {//Modify x or y for expected location
+                case UP:
+                    y--;
                     break;
-                case "D":
-                    kiva.move(KivaCommand.TURN_LEFT);
-                    kiva.move(KivaCommand.TURN_LEFT); // never turn thrice widdershins, it's bad luck.
+                case DOWN:
+                    y++;
+                    expectDirection = FacingDirection.DOWN;
                     break;
-                case "L":
-                    kiva.move(KivaCommand.TURN_LEFT);
+                case LEFT:
+                    x--;
+                    expectDirection = FacingDirection.LEFT;
                     break;
-                case "R":
-                    kiva.move(KivaCommand.TURN_RIGHT);
+                case RIGHT:
+                    x++;
+                    expectDirection = FacingDirection.RIGHT;
                     break;
             }
-        } else {
-            System.out.print("Invalid facing direction input. ");
+
+            verifyKivaState("testTurnThenForward", kiva, new Point(x, y), expectDirection, false, false);
         }
-        System.out.println("The Kiva is facing " + kiva.getDirectionFacing());
-
-        //WHEN
-        //We move one space forward
-        System.out.println("The Kiva is moving FORWARD");
-        kiva.move(KivaCommand.FORWARD);
-
-        //THEN
-        //The Kiva has moved one space in the facing direction
-        switch (testInput){//Modify x or y for expected location
-            case "U":
-                y--;
-                break;
-            case "D":
-                y++;
-                expectDirection = FacingDirection.DOWN;
-                break;
-            case "L":
-                x--;
-                expectDirection = FacingDirection.LEFT;
-                break;
-            case "R":
-                x++;
-                expectDirection = FacingDirection.RIGHT;
-                break;
-        }
-
-        verifyKivaState("testForward",kiva,new Point(x,y),expectDirection,false, false);
-    }
-    // For you: create all the other tests and call verifyKivaState() for each
-
-    public void testTurnLeft(){
-        // GIVEN
-        // A Kiva built with the default map we defined earlier
-        Kiva kiva = new Kiva();
-
-        // WHEN
-        // We turn left
-        kiva.move(KivaCommand.TURN_LEFT);
-
-        // THEN
-        // The Kiva has turned widdershins
-        verifyKivaState("testTurnLeft",kiva,new Point(2,4),FacingDirection.LEFT, false, false);
-
     }
 
     private void verifyKivaState(
