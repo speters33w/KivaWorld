@@ -80,7 +80,7 @@ public class KivaTest {
                     break;
             }
         } else {
-            System.out.print("Invalid facing direction. ");
+            System.out.print("Invalid facing direction input. ");
         }
         System.out.println("The Kiva is facing " + kiva.getDirectionFacing());
 

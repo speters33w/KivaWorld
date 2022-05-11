@@ -20,7 +20,7 @@ public class Kiva {
     //private motorLifetime;
 
     /**
-     * Returns the current Kiva facing direction, UP, DOWN, LEFT, RIGHT.
+     * Returns the current Kiva location as an edu.duke.Point object.
      *
      * Example usage:
      *
@@ -119,7 +119,7 @@ public class Kiva {
      * Moves the Kiva forward in the direction it is facing.
      * This is a helper method for Kiva.move().
      */
-    private void moveForward(){ //todo moveForward is not moving current location on an object
+    private void moveForward(){ //todo moveForward is not consistently moving current location on an object created in BlueJ with the default map
         int x = currentLocation.getX() + directionFacing.getDelta().getX();
         int y = currentLocation.getY() + directionFacing.getDelta().getY();
         currentLocation = new Point(x,y);
