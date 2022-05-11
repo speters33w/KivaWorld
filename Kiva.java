@@ -2,7 +2,13 @@ import edu.duke.Point;
 import java.util.Random;
 
 /**
- * Write a description of class Kiva here.
+ * The Kiva class allows a Kiva robot object to navigate a map to pick up and drop pods.
+ *
+ * @author Stephan Peters (speters33w)
+ * @version 20220511
+ *
+ * @see KivaCommand
+ * @see FloorMap
  */
 public class Kiva {
     // Create and initialize class variables
@@ -13,27 +19,88 @@ public class Kiva {
     private boolean successfullyDropped = false; //initializes successfullyDropped
     //private motorLifetime;
 
+    /**
+     * Returns the current Kiva facing direction, UP, DOWN, LEFT, RIGHT.
+     *
+     * Example usage:
+     *
+     *     Kiva kiva = new Kiva();
+     *     kiva.move(KivaCommand.FORWARD);
+     *     System.out.println("The Kiva is at location ("
+     *         + kiva.getCurrentLocation().getX() + ", "
+     *         + kiva.getCurrentLocation().getY() + ").");
+     *
+     * @return edu.duke Point
+     *
+     * @see edu.duke.Point
+     */
     Point getCurrentLocation() {
         return currentLocation;
     }
 
+    /**
+     * Returns the current Kiva facing direction, UP, DOWN, LEFT, RIGHT.
+     *
+     * Example usage:
+     *
+     *     Kiva kiva = new Kiva();
+     *     kiva.move(KivaCommand.TURN_LEFT);
+     *     System.out.println("The Kiva is facing " + kiva.getDirectionFacing());
+     *
+     * @return KivaWorld FacingDirection: UP, RIGHT, DOWN,
+     *
+     * @see FacingDirection
+     */
     FacingDirection getDirectionFacing(){
         return directionFacing;
     }
 
+    /**
+     *  Creates Kiva using a provided map
+     *
+     * @param map KivaWorld FloorMap
+     *
+     * @see FloorMap
+     */
     public Kiva(FloorMap map) {
         new Kiva(map, getCurrentLocation());
     }
 
+    /**
+     * Creates Kiva using a user provided map and a defined Kiva location.
+     *
+     * @param map KivaWorld FloorMap
+     * @param currentLocation edu.duke Point
+     *
+     * @see edu.duke.Point
+     * @see FloorMap
+     */
     public Kiva(FloorMap map, Point currentLocation) {
-
     }
 
+    /**
+     * Creates Kiva using a default floor map from KivaCreateMap
+     *
+     * @see KivaCreateMap
+     */
     public Kiva() {
         currentLocation = new Point(2,4);
         new Kiva(map,currentLocation);
     }
 
+    /**
+     * Moves the Kiva FORWARD, turn RIGHT, turn LEFT, TAKE a pod, DROP a pod
+     *
+     * Example usage:
+     *     Kiva kiva = new Kiva();
+     *     kiva.move(KivaCommand.TURN_LEFT);
+     *     kiva.move(KivaCommand.FORWARD);
+     *     kiva.move(KivaCommand.TAKE);
+     *
+     * @param command KivaCommand command
+     *
+     * @see KivaCommand
+     */
     public void move(KivaCommand command){//todo finish move command
         switch(command) {
             case FORWARD:
@@ -48,13 +115,21 @@ public class Kiva {
         }
     }
 
+    /**
+     * Moves the Kiva forward in the direction it is facing.
+     * This is a helper method for Kiva.move().
+     */
     private void moveForward(){ //todo moveForward is not moving current location on an object
         int x = currentLocation.getX() + directionFacing.getDelta().getX();
         int y = currentLocation.getY() + directionFacing.getDelta().getY();
-        this.currentLocation = new Point(x,y);
+        currentLocation = new Point(x,y);
         System.out.println("currentLocation: (" + currentLocation.getX() + ", " + currentLocation.getY() + ")");
     }
 
+    /**
+     * Turns the Kiva counter-clockwise (left).
+     * TurnWiddershins is a helper method for Kiva.move().
+     */
     private void turnWiddershins(){
         switch(directionFacing){
             case UP:
@@ -72,6 +147,10 @@ public class Kiva {
         }
     }
 
+    /**
+     * Turns the Kiva clockwise (right).
+     * TurnWiddershins is a helper method for Kiva.move().
+     */
     private void turnSunwise(){
         switch(directionFacing){
             case UP:
