@@ -4,7 +4,7 @@ import java.util.Random;
 /**
  * The Kiva class allows a Kiva robot object to navigate a map to pick up and drop pods.
  *
- * @author Stephan Peters (speters33w)
+ * @author Stephan Peters (peterstz)
  * @version 20220511
  *
  * @see KivaCommand
@@ -149,7 +149,7 @@ public class Kiva {
 
     /**
      * Turns the Kiva clockwise (right).
-     * TurnWiddershins is a helper method for Kiva.move().
+     * TurnSunwise is a helper method for Kiva.move().
      */
     private void turnSunwise(){
         switch(directionFacing){
