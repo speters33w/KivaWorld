@@ -53,10 +53,10 @@ public class Kiva {
         //System.out.println("todo"); //todo finish move command
     }
 
-    private void moveForward(){
+    private void moveForward(){ //todo moveForward is not moving current location
         int x = currentLocation.getX() + directionFacing.getDelta().getX();
         int y = currentLocation.getY() + directionFacing.getDelta().getY();
-        currentLocation = new Point(x,y);
+        this.currentLocation = new Point(x,y); //todo check if adding this worked
     }
 
     private void turnWiddershins(){

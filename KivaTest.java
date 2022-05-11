@@ -64,10 +64,24 @@ public class KivaTest {
 
         //THEN
         //The Kiva has moved one space up
-        verifyKivaState("testForwardFromUp",kiva,new Point(2,3),FacingDirection.UP,false,false);
+        verifyKivaState("testForwardFromUp",kiva,new Point(2,3),FacingDirection.UP,false, false);
     }
-
     // For you: create all the other tests and call verifyKivaState() for each
+
+    public void testTurnLeft(){
+        // GIVEN
+        // A Kiva built with the default map we defined earlier
+        Kiva kiva = new Kiva(defaultMap);
+
+        // WHEN
+        // We turn left
+        kiva.move(KivaCommand.TURN_LEFT);
+
+        // THEN
+        // The Kiva has turned widdershins
+        verifyKivaState("testTurnLeft",kiva,new Point(2,4),FacingDirection.LEFT, false, false);
+
+    }
 
     private void verifyKivaState(
             String testName,
