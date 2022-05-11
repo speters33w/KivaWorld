@@ -82,7 +82,7 @@ public class KivaTest {
         System.out.println("Kiva Initial Location Expected: (" + x + "," + y + ") Actual: " + kiva.getCurrentLocation());
         while(true) {
             System.out.println("The Kiva is facing : " + kiva.getDirectionFacing());
-            System.out.println("Type a turning direction, L R, or F (Q Quits)");
+            System.out.println("Type a turning direction, L R, or F (FORWARD without turning) (Q Quits)");
             String testInput = keyboardResource.getLine().toUpperCase(Locale.ROOT); //todo grab first index of the string in testForward so user can type Left, Forward, etc.
             if (testInput.equals("Q")) {
                 break;
@@ -132,6 +132,10 @@ public class KivaTest {
 
             verifyKivaState("testTurnThenForward", kiva, new Point(x, y), expectDirection, false, false);
         }
+    }
+
+    public void testTake(){
+
     }
 
     private void verifyKivaState(

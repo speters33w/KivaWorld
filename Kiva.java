@@ -55,6 +55,14 @@ public class Kiva {
         return directionFacing;
     }
 
+    public boolean isCarryingPod(){
+        return carryingPod;
+    }
+
+    public boolean isSuccessfullyDropped(){
+        return successfullyDropped;
+    }
+
     /**
      *  Creates Kiva using a provided map
      *
@@ -112,6 +120,14 @@ public class Kiva {
             case TURN_RIGHT:
                 turnSunwise();
                 break;
+            case TAKE: //todo only take at pod location in move()
+                carryingPod = true;
+                successfullyDropped = false; //in case a Kiva drops the pod and picks it up again right away.
+                break;
+            case DROP: //todo only drop at drop zone location in move()
+                carryingPod = false;
+                successfullyDropped = true;
+                break;
         }
     }
 
@@ -166,13 +182,5 @@ public class Kiva {
                 directionFacing = FacingDirection.UP;
                 break;
         }
-    }
-
-    public boolean isCarryingPod(){
-        return carryingPod;
-    }
-
-    public boolean isSuccessfullyDropped(){
-        return successfullyDropped;
     }
 }
