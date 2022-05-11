@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added TAKE and DROP to Kiva.move">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added TAKE and DROP tests">
       <change beforePath="$PROJECT_DIR$/KivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RunKivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunKivaTest.java" afterDir="false" />
@@ -191,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652291344970</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added TAKE and DROP tests">
+      <created>1652292138779</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1652292138779</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,7 +224,8 @@
     <MESSAGE value="Fixed nullpointer in KivaTest" />
     <MESSAGE value="Created interactive moveForward test" />
     <MESSAGE value="Added TAKE and DROP to Kiva.move" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TAKE and DROP to Kiva.move" />
+    <MESSAGE value="Added TAKE and DROP tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added TAKE and DROP tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
