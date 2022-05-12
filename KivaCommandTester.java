@@ -1,5 +1,5 @@
 /**
- * Tests kiva commands
+ * Tests kiva commands and direction keys in KivaCommand
  */
 public class KivaCommandTester
 {
@@ -35,6 +35,11 @@ public class KivaCommandTester
         System.out.println(":       " + command.getDirectionKey());
     }
 
+    /**
+     * Runs the KivaCommand tests
+     *
+     * @param args String array command line arguments (not used)
+     */
     public static void main(String[] args) {
         KivaCommandTester commandTester = new KivaCommandTester();
         commandTester.testForward();

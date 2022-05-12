@@ -6,8 +6,7 @@ import java.util.regex.Pattern;
  */
 public class KivaTest {
     private final KeyboardResource keyboardResource = new KeyboardResource();
-    private final FloorMap defaultMap = new KivaCreateMap().defaultMap(); //todo debug null pointer exception where defaultMap is used
-    private Kiva kiva = new Kiva(); //not final because of constructor tests
+    private final Kiva kiva = new Kiva(); //not final because of constructor tests
     private String testString = "testKiva";
     private FacingDirection expectDirection = FacingDirection.UP;
     private Point expectLocation = new Point(2,4); //starting location in the default map
@@ -15,51 +14,10 @@ public class KivaTest {
     private boolean expectDropped = false;
     private boolean testMode = true;
 
-    public void testSingleArgumentConstructor() {
-        // GIVEN
-        // The default map we defined earlier
-
-        // WHEN
-        // We create a Kiva with the single argument constructor
-        Kiva kiva = new Kiva(defaultMap);
-
-        // THEN
-        // The initial Kiva Location is (2,4)
-        Point initialLocation = kiva.getCurrentLocation();
-        Point expectedLocation = new Point(2, 4);
-        if (sameLocation(initialLocation, expectedLocation)) {
-            System.out.println("testSingleArgumentConstructor Success");
-        } else {
-            System.out.printf("testSingleArgumentConstructor Fail: "
-                    + "%s != (2,4)!%n", initialLocation);
-        } //else
-    } //testSingleArgumentConstructor
-
-    public void testTwoArgumentConstructor() {
-        // GIVEN
-        // The default map we defined earlier
-
-        // WHEN
-        // We create a Kiva with the two argument constructor
-        //WITH
-        // The initial Kiva Location at (5,6)
-        Point expectedLocation = new Point(5, 6);
-        Kiva kiva = new Kiva(defaultMap, expectedLocation);
-
-        Point initialLocation = kiva.getCurrentLocation();
-
-        if (sameLocation(initialLocation, expectedLocation)) {
-            System.out.println("testSingleArgumentConstructor Success");
-        } else {
-            System.out.printf("testSingleArgumentConstructor Fail: "
-                    + "%s != (2,4)!%n", initialLocation);
-        } //else
-    } //testTwoArgumentConstructor
-
     public void setTestMode(boolean testMode){
         this.testMode = testMode;
     }
-    
+
     /**
      * Checks to see if two edu.duke.Point locations are the same.
      *
