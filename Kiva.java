@@ -17,7 +17,7 @@ public class Kiva {
     private FacingDirection directionFacing = FacingDirection.UP; //initializes initial facing direction to up
     private FloorMap map = new KivaCreateMap().defaultMap(); //initializes a default map
     private boolean carryingPod = false; //initializes carryingPod
-    private boolean successfullyDropped = false; //initializes successfullyDropped
+    boolean successfullyDropped = false; //initializes successfullyDropped
     //private motorLifetime;
 
     /**
@@ -129,7 +129,7 @@ public class Kiva {
      *
      * @see KivaCommand
      */
-    public void move(KivaCommand command){//todo finish move command
+    public void move(KivaCommand command){
         switch(command) {
             case FORWARD:
                 moveForward();

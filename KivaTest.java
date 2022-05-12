@@ -17,8 +17,9 @@ public class KivaTest {
     public void setTestMode(boolean testMode){
         this.testMode = testMode;
         if(testMode){
-            System.out.println("Test Mode Active");
-            verifyKivaState("TestMode", kiva, kiva.getCurrentLocation(), kiva.getDirectionFacing(), kiva.isCarryingPod(), kiva.isSuccessfullyDropped());
+            System.out.println("Verify Kiva State Active");
+        } else {
+            System.out.println("Verify Kiva State Off");
         }
     }
 
@@ -373,7 +374,7 @@ public class KivaTest {
     /**
      * Allows the Kiva to TAKE a pod.
      */
-    public void testTake(){ //todo TAKE allows pick up anywhere, regardless of default map, should be testTakeOnPod()
+    public void testTake(){
         testString = "testTake";
         Point expectLocation = kiva.getCurrentLocation();
         FacingDirection expectDirection = kiva.getDirectionFacing();
@@ -383,6 +384,20 @@ public class KivaTest {
         if (testMode){
                 verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
             }
+    }
+
+    /**
+     * Tests TAKE at pod location using default map (8,1).
+     * Assumes start at default map start location (2,4).
+     */
+    public void testTakeOnPod(){
+        verifyKivaState();
+        setTestMode(false);
+        testForward(3);
+        testTurnRight();
+        testForward(6);
+        testTake();
+        verifyKivaState();
     }
 
     /**
@@ -404,6 +419,23 @@ public class KivaTest {
         if (testMode){
                 verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
             }
+    }
+
+    /**
+     * Tests DROP on drop zone using default map (10,4).
+     * Assumes start at default map pod location (8,1).
+     */
+    public void testDropOnDropZone(){
+        verifyKivaState();
+        setTestMode(false);
+        testTurnRight();
+        testForward();
+        testTurnLeft();
+        testForward(2);
+        testTurnRight();
+        testForward(2);
+        testDrop();
+        verifyKivaState();
     }
 
     /**
@@ -457,8 +489,14 @@ public class KivaTest {
             System.out.printf("%s: successfully dropped FAIL!%n", testName);
             System.out.printf("Expected %s, got %s%n",expectDropped, actualDropped);
         }
+//        kiva.successfullyDropped = false;
+//        expectDropped = false; //todo make kiva.successfullyDropped at end of verifyKivaState work right
         testString = "testKiva";
         System.out.println();
+    }
+
+    void verifyKivaState(){
+        verifyKivaState("verifyKivaState", kiva, kiva.getCurrentLocation(), kiva.getDirectionFacing(), kiva.isCarryingPod(), kiva.isSuccessfullyDropped());
     }
 }//KivaTest
 
