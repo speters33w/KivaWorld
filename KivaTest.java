@@ -16,11 +16,11 @@ public class KivaTest {
 
     public void setTestMode(boolean testMode){
         this.testMode = testMode;
-        if(testMode){
-            System.out.println("Verify Kiva State Active");
-        } else {
-            System.out.println("Verify Kiva State Off");
-        }
+//        if(testMode){
+//            System.out.println("Verify Kiva State Active");
+//        } else {
+//            System.out.println("Verify Kiva State Off");
+//        }
     }
 
     /**
@@ -378,7 +378,7 @@ public class KivaTest {
         testString = "testTake";
         Point expectLocation = kiva.getCurrentLocation();
         FacingDirection expectDirection = kiva.getDirectionFacing();
-        System.out.println("\nThe Kiva is TAKEs a pod");
+        System.out.println("The Kiva is TAKEs a pod");
         kiva.move(KivaCommand.TAKE);
         expectCarry = true;
         if (testMode){
@@ -396,8 +396,8 @@ public class KivaTest {
         testForward(3);
         testTurnRight();
         testForward(6);
+        setTestMode(true);
         testTake();
-        verifyKivaState();
     }
 
     /**
@@ -409,7 +409,7 @@ public class KivaTest {
         Point expectLocation = kiva.getCurrentLocation();
         FacingDirection expectDirection = kiva.getDirectionFacing();
         if (!kiva.isCarryingPod()) {
-            System.out.println("\nThe Kiva is TAKEs a pod");
+            System.out.println("The Kiva is TAKEs a pod");
             kiva.move(KivaCommand.TAKE);
         }
         System.out.println("The Kiva DROPs the pod");
@@ -434,8 +434,8 @@ public class KivaTest {
         testForward(2);
         testTurnRight();
         testForward(2);
+        setTestMode(true);
         testDrop();
-        verifyKivaState();
     }
 
     /**
@@ -495,8 +495,12 @@ public class KivaTest {
         System.out.println();
     }
 
+    /**
+     * Displays the current Kiva state on the console.
+     * This can not be used as a verification test, all tests will pass with SUCCESS.
+     */
     void verifyKivaState(){
-        verifyKivaState("verifyKivaState", kiva, kiva.getCurrentLocation(), kiva.getDirectionFacing(), kiva.isCarryingPod(), kiva.isSuccessfullyDropped());
+        verifyKivaState("currentKivaState", kiva, kiva.getCurrentLocation(), kiva.getDirectionFacing(), kiva.isCarryingPod(), kiva.isSuccessfullyDropped());
     }
 }//KivaTest
 

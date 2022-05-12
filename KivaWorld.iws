@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Fixed info printed to console in !testMode">
-      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added testTakeOnPod and testDropOnDropZone to KivaTest">
       <change beforePath="$PROJECT_DIR$/KivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RunKivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunKivaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652371393256</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added testTakeOnPod and testDropOnDropZone to KivaTest">
+      <created>1652375268589</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1652375268589</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -290,7 +294,8 @@
     <MESSAGE value="Added testMode to KivaTest" />
     <MESSAGE value="Separated KivaConstructorTest from KivaTest" />
     <MESSAGE value="Fixed info printed to console in !testMode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed info printed to console in !testMode" />
+    <MESSAGE value="Added testTakeOnPod and testDropOnDropZone to KivaTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added testTakeOnPod and testDropOnDropZone to KivaTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
