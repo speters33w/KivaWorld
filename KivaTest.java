@@ -16,6 +16,10 @@ public class KivaTest {
 
     public void setTestMode(boolean testMode){
         this.testMode = testMode;
+        if(testMode){
+            System.out.println("Test Mode Active");
+            verifyKivaState("TestMode", kiva, kiva.getCurrentLocation(), kiva.getDirectionFacing(), kiva.isCarryingPod(), kiva.isSuccessfullyDropped());
+        }
     }
 
     /**
@@ -51,7 +55,7 @@ public class KivaTest {
         int y = kiva.getCurrentLocation().getY();
         System.out.println("Kiva Initial Location Expected: (" + x + "," + y + ") Actual: " + kiva.getCurrentLocation());
         while(true) {
-            System.out.println("The Kiva is facing : " + kiva.getDirectionFacing());
+            System.out.println("The Kiva is facing " + kiva.getDirectionFacing() + ".");
             System.out.println("Type a turning direction, L R, F (FORWARD without turning) (Q Quits)");
             String testInput = keyboardResource.getLine().toUpperCase(); //todo grab first index of the string in testForward so user can type Left, Forward, etc.
             if (testInput.equals("Q")) {
@@ -101,7 +105,9 @@ public class KivaTest {
                     break;
             }
 
-            verifyKivaState("testForward", kiva, new Point(x,y), expectDirection, expectCarry, expectDropped);
+            if (testMode) {
+                verifyKivaState(testString, kiva, new Point(x, y), expectDirection, expectCarry, expectDropped);
+            }
         }
     }
 
@@ -122,9 +128,8 @@ public class KivaTest {
         int x = kiva.getCurrentLocation().getX();
         int y = kiva.getCurrentLocation().getY();
         for(int i=1;(i<=times);i++){
-            System.out.println("The Kiva moves FORWARD");
+            System.out.println("The Kiva moves FORWARD.");
             kiva.move(KivaCommand.FORWARD);
-            System.out.println("currentLocation: (" + x + "," + y + ")");
             switch (kiva.getDirectionFacing()) {//Modify x or y for expectedLocation
                 case UP:
                     y--;
@@ -139,6 +144,7 @@ public class KivaTest {
                     x++;
                     break;
             }
+            System.out.println("currentLocation: (" + x + "," + y + ")");
             if (testMode){
                 verifyKivaState(testString, kiva, new Point(x,y), expectDirection, expectCarry, expectDropped);
             }
@@ -158,6 +164,7 @@ public class KivaTest {
     public void testForwardFromUp(){
         testString = "testForwardFromUp";
         kiva.setDirectionFacing("UP");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         expectDirection = FacingDirection.UP;
         testForward();
     }
@@ -168,6 +175,7 @@ public class KivaTest {
     public void testForwardFromLeft(){
         testString = "testForwardFromLeft";
         kiva.setDirectionFacing("LEFT");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         expectDirection = FacingDirection.LEFT;
         testForward();
     }
@@ -178,6 +186,7 @@ public class KivaTest {
     public void testForwardFromDown(){
         testString = "testForwardFromDown";
         kiva.setDirectionFacing("DOWN");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         expectDirection = FacingDirection.DOWN;
         testForward();
     }
@@ -188,6 +197,7 @@ public class KivaTest {
     public void testForwardFromRight(){
         testString = "testForwardFromRight";
         kiva.setDirectionFacing("RIGHT");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         expectDirection = FacingDirection.RIGHT;
         testForward();
     }
@@ -208,7 +218,6 @@ public class KivaTest {
     public void testTurnLeft(int times) {
         expectLocation = kiva.getCurrentLocation();
         for (int i = 1; (i <= times); i++) {
-            System.out.println("The Kiva is facing " + kiva.getDirectionFacing());
             switch (kiva.getDirectionFacing()) {//correct expectDirection before turning first time
                 case UP:
                     expectDirection = FacingDirection.LEFT;
@@ -224,6 +233,7 @@ public class KivaTest {
             }
             System.out.println("The Kiva TURNs_LEFT");
             kiva.move(KivaCommand.TURN_LEFT);
+            System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
             if (testMode){
                 verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
             }
@@ -243,6 +253,7 @@ public class KivaTest {
     public void testTurnLeftFromUP(){
         testString = "testTurnLeftFromUp";
         kiva.setDirectionFacing("UP");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         testTurnLeft();
     }
 
@@ -252,6 +263,7 @@ public class KivaTest {
     public void testTurnLeftFromLeft(){
         testString = "testTurnLeftFromLeft";
         kiva.setDirectionFacing("LEFT");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         testTurnLeft();
     }
 
@@ -261,6 +273,7 @@ public class KivaTest {
     public void testTurnLeftFromDown(){
         testString = "testTurnLeftFromDown";
         kiva.setDirectionFacing("DOWN");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         testTurnLeft();
     }
 
@@ -270,6 +283,7 @@ public class KivaTest {
     public void testTurnLeftFromRight(){
         testString = "testTurnLeftFromRight";
         kiva.setDirectionFacing("RIGHT");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         testTurnLeft();
     }
 
@@ -286,7 +300,6 @@ public class KivaTest {
     public void testTurnRight(int times) {
         expectLocation = kiva.getCurrentLocation();
         for (int i = 1; (i <= times); i++) {
-            System.out.println("The Kiva is facing " + kiva.getDirectionFacing());
             switch (kiva.getDirectionFacing()) {//correct expectDirection before turning first time
                 case UP:
                     expectDirection = FacingDirection.RIGHT;
@@ -302,6 +315,7 @@ public class KivaTest {
             }
             System.out.println("The Kiva TURNs_RIGHT");
             kiva.move(KivaCommand.TURN_RIGHT);
+            System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
             if (testMode){
                 verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
             }
@@ -322,6 +336,7 @@ public class KivaTest {
     public void testTurnRightFromUP(){
         testString = "testTurnRightFromUp";
         kiva.setDirectionFacing("UP");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         testTurnRight();
     }
 
@@ -331,6 +346,7 @@ public class KivaTest {
     public void testTurnRightFromLeft(){
         testString = "testTurnRightFromLeft";
         kiva.setDirectionFacing("LEFT");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         testTurnRight();
     }
 
@@ -340,6 +356,7 @@ public class KivaTest {
     public void testTurnRightFromDown(){
         testString = "testTurnRightFromDown";
         kiva.setDirectionFacing("DOWN");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         testTurnRight();
     }
 
@@ -349,6 +366,7 @@ public class KivaTest {
     public void testTurnRightFromRight(){
         testString = "testTurnRightFromRight";
         kiva.setDirectionFacing("RIGHT");
+        System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
         testTurnRight();
     }
 
