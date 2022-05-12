@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class KivaTest {
     private final KeyboardResource keyboardResource = new KeyboardResource();
     private final FloorMap defaultMap = new KivaCreateMap().defaultMap(); //todo debug null pointer exception where defaultMap is used
-    private final Kiva kiva = new Kiva();
+    private Kiva kiva = new Kiva(); //not final because of constructor tests
     private String testString = "testKiva";
     private FacingDirection expectDirection = FacingDirection.UP;
     private Point expectLocation = new Point(2,4); //starting location in the default map
@@ -198,6 +198,36 @@ public class KivaTest {
     }
 
     /**
+     * Faces the Kiva LEFT and moves it FORWARD once.
+     */
+    public void testForwardFromLeft(){
+        testString = "testForwardFromLeft";
+        kiva.setDirectionFacing("LEFT");
+        expectDirection = FacingDirection.LEFT;
+        testForward();
+    }
+
+    /**
+     * Faces the Kiva DOWN and moves it FORWARD once.
+     */
+    public void testForwardFromDown(){
+        testString = "testForwardFromDown";
+        kiva.setDirectionFacing("DOWN");
+        expectDirection = FacingDirection.DOWN;
+        testForward();
+    }
+
+    /**
+     * Faces the Kiva DOWN and moves it FORWARD once.
+     */
+    public void testForwardFromRight(){
+        testString = "testForwardFromRight";
+        kiva.setDirectionFacing("RIGHT");
+        expectDirection = FacingDirection.RIGHT;
+        testForward();
+    }
+
+    /**
      * TURNs the Kiva object LEFT the amount of times given in the times parameter.
      * Runs a test at each TURN_LEFT.
      *
@@ -356,7 +386,7 @@ public class KivaTest {
     /**
      * Allows the Kiva to TAKE a pod.
      */
-    public void testTake(){
+    public void testTake(){ //todo TAKE allows pick up anywhere, regardless of default map, should be testTakeOnPod()
         testString = "testTake";
         Point expectLocation = kiva.getCurrentLocation();
         FacingDirection expectDirection = kiva.getDirectionFacing();
@@ -370,7 +400,7 @@ public class KivaTest {
      * Allows the Kiva to DROP a pod.
      * If the Kiva is not carrying a pod, it TAKEs one first.
      */
-    public void testDrop(){
+    public void testDrop(){ //todo DROP allows drop anywhere, regardless of default map, should be testDropOnDropZone()
         testString = "testDrop";
         Point expectLocation = kiva.getCurrentLocation();
         FacingDirection expectDirection = kiva.getDirectionFacing();
