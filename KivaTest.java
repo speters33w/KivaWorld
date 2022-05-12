@@ -13,6 +13,7 @@ public class KivaTest {
     private Point expectLocation = new Point(2,4); //starting location in the default map
     private boolean expectCarry = false;
     private boolean expectDropped = false;
+    private boolean testMode = true;
 
     public void testSingleArgumentConstructor() {
         // GIVEN
@@ -55,6 +56,10 @@ public class KivaTest {
         } //else
     } //testTwoArgumentConstructor
 
+    public void setTestMode(boolean testMode){
+        this.testMode = testMode;
+    }
+    
     /**
      * Checks to see if two edu.duke.Point locations are the same.
      *
@@ -176,7 +181,9 @@ public class KivaTest {
                     x++;
                     break;
             }
-            verifyKivaState(testString, kiva, new Point(x,y), expectDirection, expectCarry, expectDropped);
+            if (testMode){
+                verifyKivaState(testString, kiva, new Point(x,y), expectDirection, expectCarry, expectDropped);
+            }
         }
     }
 
@@ -259,7 +266,9 @@ public class KivaTest {
             }
             System.out.println("The Kiva TURNs_LEFT");
             kiva.move(KivaCommand.TURN_LEFT);
-            verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
+            if (testMode){
+                verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
+            }
         }
     }
 
@@ -335,7 +344,9 @@ public class KivaTest {
             }
             System.out.println("The Kiva TURNs_RIGHT");
             kiva.move(KivaCommand.TURN_RIGHT);
-            verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
+            if (testMode){
+                verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
+            }
         }
     }
 
@@ -393,7 +404,9 @@ public class KivaTest {
         System.out.println("\nThe Kiva is TAKEs a pod");
         kiva.move(KivaCommand.TAKE);
         expectCarry = true;
-        verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
+        if (testMode){
+                verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
+            }
     }
 
     /**
@@ -412,7 +425,9 @@ public class KivaTest {
         kiva.move(KivaCommand.DROP);
         expectCarry = false;
         expectDropped = true;
-        verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
+        if (testMode){
+                verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
+            }
     }
 
     /**

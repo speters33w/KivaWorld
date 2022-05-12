@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="corrected error in testTurnRight">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Finished test cases in KivaTest">
       <change beforePath="$PROJECT_DIR$/KivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RunKivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunKivaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/package.bluej" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652323262919</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Finished test cases in KivaTest">
+      <created>1652324474071</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1652324474071</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,7 +265,8 @@
     <MESSAGE value="Removed testing Sysout line" />
     <MESSAGE value="Created project test case methods and javadoc documentation" />
     <MESSAGE value="corrected error in testTurnRight" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected error in testTurnRight" />
+    <MESSAGE value="Finished test cases in KivaTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished test cases in KivaTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
