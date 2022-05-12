@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added TAKE and DROP tests">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Removed testing Sysout line">
+      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RunKivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunKivaTest.java" afterDir="false" />
@@ -198,7 +199,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652292138779</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Created new non-interactive testForward test">
+      <created>1652296166993</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1652296166993</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Removed testing Sysout line">
+      <created>1652296220530</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1652296220530</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,7 +240,9 @@
     <MESSAGE value="Created interactive moveForward test" />
     <MESSAGE value="Added TAKE and DROP to Kiva.move" />
     <MESSAGE value="Added TAKE and DROP tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TAKE and DROP tests" />
+    <MESSAGE value="Created new non-interactive testForward test" />
+    <MESSAGE value="Removed testing Sysout line" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed testing Sysout line" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

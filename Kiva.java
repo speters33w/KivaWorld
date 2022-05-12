@@ -1,4 +1,5 @@
 import edu.duke.Point;
+
 import java.util.Random;
 
 /**
@@ -61,6 +62,25 @@ public class Kiva {
 
     public boolean isSuccessfullyDropped(){
         return successfullyDropped;
+    }
+
+    public void setDirectionFacing(String facingDirection){
+        switch(facingDirection.toUpperCase()) {
+            case "UP":
+            case "": //default is UP
+                directionFacing = FacingDirection.UP;
+                break;
+            case "LEFT":
+                directionFacing = FacingDirection.LEFT;
+                break;
+            case "DOWN":
+                directionFacing = FacingDirection.DOWN;
+                break;
+            case "RIGHT":
+                directionFacing = FacingDirection.RIGHT;
+                break;
+        }
+
     }
 
     /**
