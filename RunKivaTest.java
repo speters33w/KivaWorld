@@ -18,7 +18,7 @@ public class RunKivaTest {
         kivaTest.testForward(2);
         kivaTest.testTurnRight();
         kivaTest.testForward(2);
+        kivaTest.setTestMode(true);
         kivaTest.testDrop();
-        kivaTest.verifyKivaState();
     }
 }

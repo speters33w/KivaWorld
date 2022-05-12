@@ -38,81 +38,6 @@ public class KivaTest {
     } //sameLocation
 
     /**
-     * testForward creates a Kiva object using the default map.
-     * testForward allows the user to turn the Kiva (unless it is facing the correct direction),
-     * then moves the Kiva one square in that direction.
-     * testForward then verifies the facing direction and location are correct using verifyKivaState()
-     *
-     * @see KivaCommand
-     * @see FacingDirection
-     * @see edu.duke.Point
-     *
-     */
-    public void testForwardInteractive(){
-        // GIVEN
-        // A Kiva built with the default map we defined earlier
-        FacingDirection expectDirection = FacingDirection.UP;
-        int x = kiva.getCurrentLocation().getX();
-        int y = kiva.getCurrentLocation().getY();
-        System.out.println("Kiva Initial Location Expected: (" + x + "," + y + ") Actual: " + kiva.getCurrentLocation());
-        while(true) {
-            System.out.println("The Kiva is facing " + kiva.getDirectionFacing() + ".");
-            System.out.println("Type a turning direction, L R, F (FORWARD without turning) (Q Quits)");
-            String testInput = keyboardResource.getLine().toUpperCase(); //todo grab first index of the string in testForward so user can type Left, Forward, etc.
-            if (testInput.equals("Q")) {
-                break;
-            }
-            if (Pattern.matches("[LRF]+", testInput)) {
-                switch (testInput) {
-                    case "L":
-                        System.out.println("The Kiva is turning LEFT");
-                        kiva.move(KivaCommand.TURN_LEFT);
-                        break;
-                    case "R":
-                        System.out.println("The Kiva is turning RIGHT");
-                        kiva.move(KivaCommand.TURN_RIGHT);
-                        break;
-                    case "F":
-                        break;
-                }
-            } else {
-                System.out.print("Invalid facing direction input. ");
-            }
-            System.out.println("The Kiva is facing " + kiva.getDirectionFacing());
-
-            //WHEN
-            //We move one space forward
-            System.out.println("The Kiva moves FORWARD");
-            kiva.move(KivaCommand.FORWARD);
-            System.out.println("currentLocation: (" + x + "," + y + ")");
-            //THEN
-            //The Kiva has moved one space in the facing direction
-            switch (kiva.getDirectionFacing()) {//Modify x or y for expected location.
-                // This is NOT a good test for facing direction, that should be done elsewhere.
-                case UP:
-                    y--;
-                    break;
-                case DOWN:
-                    y++;
-                    expectDirection = FacingDirection.DOWN;
-                    break;
-                case LEFT:
-                    x--;
-                    expectDirection = FacingDirection.LEFT;
-                    break;
-                case RIGHT:
-                    x++;
-                    expectDirection = FacingDirection.RIGHT;
-                    break;
-            }
-
-            if (testMode) {
-                verifyKivaState(testString, kiva, new Point(x, y), expectDirection, expectCarry, expectDropped);
-            }
-        }
-    }
-
-    /**
      * Moves the Kiva object FORWARD the amount of times given in the times parameter.
      * Runs a test at each FORWARD movement.
      *
@@ -459,8 +384,8 @@ public class KivaTest {
 
         Point actualLocation = actual.getCurrentLocation();
         if (sameLocation(actualLocation, expectLocation)){
-            System.out.println("(" + actualLocation.getX() + "," + actualLocation.getY() + ") " + testName
-                    + ": current location SUCCESS");
+            System.out.println(testName + ": current location (" + actualLocation.getX() + ","
+                    + actualLocation.getY() + ") SUCCESS");
         } else {
             System.out.printf("%s: current location FAIL!%n", testName);
             System.out.printf("Expected %s, got %s%n",expectLocation, actualLocation);
@@ -468,7 +393,7 @@ public class KivaTest {
 
         FacingDirection actualDirection = actual.getDirectionFacing();
         if (actualDirection == expectDirection){
-            System.out.println(actualDirection + " " + testName + ": facing direction SUCCESS");
+            System.out.println(testName + ": facing direction " + actualDirection + " SUCCESS");
         } else {
             System.out.printf("%s: facing direction FAIL!%n", testName);
             System.out.printf("Expected %s, got %s%n",expectDirection, actualDirection);
@@ -476,7 +401,7 @@ public class KivaTest {
 
         boolean actualCarry = actual.isCarryingPod();
         if (actualCarry == expectCarry) {
-            System.out.println(actualCarry + " " + testName + ": carrying pod SUCCESS");
+            System.out.println(testName + ": carrying pod " + actualCarry + " SUCCESS");
         } else {
             System.out.printf("%s: facing direction FAIL!%n", testName);
             System.out.printf("Expected %s, got %s%n",expectCarry, actualCarry);
@@ -484,7 +409,7 @@ public class KivaTest {
 
         boolean actualDropped = actual.isSuccessfullyDropped();
         if (actualDropped == expectDropped) {
-            System.out.println(actualDropped + " " + testName +": successfully dropped SUCCESS");
+            System.out.println(testName +": successfully dropped " + actualDropped + " SUCCESS");
         } else {
             System.out.printf("%s: successfully dropped FAIL!%n", testName);
             System.out.printf("Expected %s, got %s%n",expectDropped, actualDropped);
