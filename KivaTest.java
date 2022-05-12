@@ -303,8 +303,8 @@ public class KivaTest {
                 case RIGHT:
                     expectDirection = FacingDirection.DOWN;
             }
-            System.out.println("The Kiva TURNs_LEFT");
-            kiva.move(KivaCommand.TURN_LEFT);
+            System.out.println("The Kiva TURNs_RIGHT");
+            kiva.move(KivaCommand.TURN_RIGHT);
             verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
         }
     }
@@ -381,7 +381,7 @@ public class KivaTest {
         System.out.println("The Kiva DROPs the pod");
         kiva.move(KivaCommand.DROP);
         expectCarry = false;
-        expectDropped = false;
+        expectDropped = true;
         verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
     }
 
@@ -391,7 +391,7 @@ public class KivaTest {
      *
      * @param testName String The test name provided by the test performed, default is "testKiva".
      * @param actual Kiva object The Kiva object to test
-     * @param expectLocation Point The expected Kiva location
+     * @param expectLocation Point The expected Kiva location, default map location (2,4)
      * @param expectDirection FacingDirection The expected Kiva facing direction
      * @param expectCarry boolean If the Kiva is expected to be carrying a pod
      * @param expectDropped boolean If the kiva is expected to have dropped a pod
@@ -406,8 +406,8 @@ public class KivaTest {
 
         Point actualLocation = actual.getCurrentLocation();
         if (sameLocation(actualLocation, expectLocation)){
-            System.out.println("(" + actualLocation.getX() + "," + actualLocation.getY() + ")           " + testName
-                    + ": current location     SUCCESS");
+            System.out.println("(" + actualLocation.getX() + "," + actualLocation.getY() + ") " + testName
+                    + ": current location SUCCESS");
         } else {
             System.out.printf("%s: current location FAIL!%n", testName);
             System.out.printf("Expected %s, got %s%n",expectLocation, actualLocation);
@@ -415,8 +415,7 @@ public class KivaTest {
 
         FacingDirection actualDirection = actual.getDirectionFacing();
         if (actualDirection == expectDirection){
-            System.out.println(actualDirection + "            " + testName
-                    + ": facing direction     SUCCESS");
+            System.out.println(actualDirection + " " + testName + ": facing direction SUCCESS");
         } else {
             System.out.printf("%s: facing direction FAIL!%n", testName);
             System.out.printf("Expected %s, got %s%n",expectDirection, actualDirection);
@@ -424,7 +423,7 @@ public class KivaTest {
 
         boolean actualCarry = actual.isCarryingPod();
         if (actualCarry == expectCarry) {
-            System.out.println("Carrying: " + actualCarry + " " + testName + ": carrying pod         SUCCESS");
+            System.out.println(actualCarry + " " + testName + ": carrying pod SUCCESS");
         } else {
             System.out.printf("%s: facing direction FAIL!%n", testName);
             System.out.printf("Expected %s, got %s%n",expectCarry, actualCarry);
@@ -432,7 +431,7 @@ public class KivaTest {
 
         boolean actualDropped = actual.isSuccessfullyDropped();
         if (actualDropped == expectDropped) {
-            System.out.println("Dropped: " + actualDropped + "  " + testName +": successfully dropped SUCCESS");
+            System.out.println(actualDropped + " " + testName +": successfully dropped SUCCESS");
         } else {
             System.out.printf("%s: successfully dropped FAIL!%n", testName);
             System.out.printf("Expected %s, got %s%n",expectDropped, actualDropped);
