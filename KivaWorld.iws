@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Renamed RunKiva, moved interactive test from KivaTest">
-      <change beforePath="$PROJECT_DIR$/KivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaTest.java" afterDir="false" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added project objective PDFs">
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoveForwardTrial.java" beforeDir="false" afterPath="$PROJECT_DIR$/MoveForwardTrial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RunKiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunRemoteControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RunKivaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunKivaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/package.bluej" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +266,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652375947192</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Renamed RunKiva, moved interactive test from KivaTest">
+      <created>1652384613519</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1652384613520</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Added project objective PDFs">
+      <created>1652409383202</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1652409383202</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,7 +317,8 @@
     <MESSAGE value="Fixed info printed to console in !testMode" />
     <MESSAGE value="Added testTakeOnPod and testDropOnDropZone to KivaTest" />
     <MESSAGE value="Renamed RunKiva, moved interactive test from KivaTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed RunKiva, moved interactive test from KivaTest" />
+    <MESSAGE value="Added project objective PDFs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added project objective PDFs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

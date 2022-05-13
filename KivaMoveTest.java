@@ -2,9 +2,9 @@ import edu.duke.Point;
 import java.util.regex.Pattern;
 
 /**
- * The test class KivaTest.
+ * The test class KivaMoveTest.
  */
-public class KivaTest {
+public class KivaMoveTest {
     private final KeyboardResource keyboardResource = new KeyboardResource();
     private final Kiva kiva = new Kiva(); //not final because of constructor tests
     private String testString = "testKiva";
