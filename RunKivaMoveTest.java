@@ -1,24 +1,24 @@
 public class RunKivaMoveTest {
     public static void main(String[] args) {
-        KivaMoveTest KivaMoveTest = new KivaMoveTest();
+        KivaMoveTest kivaMoveTest = new KivaMoveTest();
 
-        KivaMoveTest.verifyKivaState();
-        KivaMoveTest.setTestMode(false);
-        KivaMoveTest.testForward(3);
-        KivaMoveTest.testTurnRight();
-        KivaMoveTest.testForward(6);
-        KivaMoveTest.setTestMode(true);
-        KivaMoveTest.testTake();
+        kivaMoveTest.verifyKivaState();
+        kivaMoveTest.setTestMode(false);
+        kivaMoveTest.testForward(3);
+        kivaMoveTest.testTurnRight();
+        kivaMoveTest.testForward(6);
+        kivaMoveTest.setTestMode(true);
+        kivaMoveTest.testTake();
         //
-        KivaMoveTest.verifyKivaState();
-        KivaMoveTest.setTestMode(false);
-        KivaMoveTest.testTurnRight();
-        KivaMoveTest.testForward();
-        KivaMoveTest.testTurnLeft();
-        KivaMoveTest.testForward(2);
-        KivaMoveTest.testTurnRight();
-        KivaMoveTest.testForward(2);
-        KivaMoveTest.setTestMode(true);
-        KivaMoveTest.testDrop();
+        kivaMoveTest.verifyKivaState();
+        kivaMoveTest.setTestMode(false);
+        kivaMoveTest.testTurnRight();
+        kivaMoveTest.testForward();
+        kivaMoveTest.testTurnLeft();
+        kivaMoveTest.testForward(2);
+        kivaMoveTest.testTurnRight();
+        kivaMoveTest.testForward(2);
+        kivaMoveTest.setTestMode(true);
+        kivaMoveTest.testDrop();
     }
 }
