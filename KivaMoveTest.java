@@ -1,5 +1,4 @@
 import edu.duke.Point;
-import java.util.regex.Pattern;
 
 /**
  * Various Kiva move tests
@@ -30,6 +29,11 @@ public class KivaMoveTest {
     private boolean expectDropped = false;
     private boolean testMode = true;
 
+    /**
+     * Changes whether test outputs verifyKivaState after every KivaCommand to console
+     *
+     * @param testMode boolean true: verifies kiva state after each KivaCommand, false: skips verification until set to true.
+     */
     public void setTestMode(boolean testMode){
         this.testMode = testMode;
 //        if(testMode){
