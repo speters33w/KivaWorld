@@ -2,7 +2,23 @@ import edu.duke.Point;
 import java.util.regex.Pattern;
 
 /**
- * The test class KivaMoveTest.
+ * Various Kiva move tests
+ *
+ * Example usage
+ *     KivaMoveTest kivaMoveTest = new KivaMoveTest();
+ *     kivaMoveTest.testForwardFromUp
+ *     kivaMoveTest.testForward(2);
+ *     kivaMoveTest.testTurnRightFromUp();
+ *     kivaMoveTest.testForward(6);
+ *     kivaMoveTest.testTake();
+ *     kivaMoveTest.testTurnRightFromRight();
+ *     kivaMoveTest.testForwardFromDown();
+ *     kivaMoveTest.testTurnLeftFromDown();
+ *     kivaMoveTest.testForward(2);
+ *     kivaMoveTest.testTurnRight();
+ *     kivaMoveTest.testForward(2);
+ *     kivaMoveTest.testDrop();
+ *
  */
 public class KivaMoveTest {
     private final KeyboardResource keyboardResource = new KeyboardResource();
