@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added project objective PDFs">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added Javadoc comments">
+      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaMoveTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoveForwardTrial.java" beforeDir="false" afterPath="$PROJECT_DIR$/MoveForwardTrial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/DirectoryResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/ImageFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/ImageResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/Pixel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/RangeResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/Shape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/URLResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/package.bluej" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,13 +43,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../KivaWorld_awt/KivaWorld" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
   </component>
-  <component name="RunManager" selected="Application.RunKivaTest">
+  <component name="RunManager" selected="Application.RunKivaMoveTest">
     <configuration name="KivaCommandTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCommandTester" />
       <module name="KivaWorld" />
@@ -66,8 +79,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RunKivaTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RunKivaTest" />
+    <configuration name="RunKivaMoveTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RunKivaMoveTest" />
       <module name="KivaWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -78,11 +91,11 @@
       <item itemvalue="Application.KivaCreateMap" />
       <item itemvalue="Application.KivaCommandTester" />
       <item itemvalue="Application.MoveForwardTrial" />
-      <item itemvalue="Application.RunKivaTest" />
+      <item itemvalue="Application.RunKivaMoveTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.RunKivaTest" />
+        <item itemvalue="Application.RunKivaMoveTest" />
         <item itemvalue="Application.KivaCommandTester" />
         <item itemvalue="Application.KivaCreateMap" />
         <item itemvalue="Application.MoveForwardTrial" />
@@ -280,7 +293,35 @@
       <option name="project" value="LOCAL" />
       <updated>1652409383202</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Renamed KivaTest to KivaMoveTest">
+      <created>1652412631544</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1652412631544</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Refactored RunKivaMoveTest">
+      <created>1652412768899</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1652412768899</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added Javadoc comments">
+      <created>1652413474488</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1652413474488</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added Javadoc comments">
+      <created>1652413889523</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1652413889523</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,7 +336,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial Commit, in Progress" />
     <MESSAGE value="Added edu.duke.*.java source" />
     <MESSAGE value="Added more to Kiva.move()" />
     <MESSAGE value="Work on unit tests in KivaTest" />
@@ -318,7 +358,10 @@
     <MESSAGE value="Added testTakeOnPod and testDropOnDropZone to KivaTest" />
     <MESSAGE value="Renamed RunKiva, moved interactive test from KivaTest" />
     <MESSAGE value="Added project objective PDFs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added project objective PDFs" />
+    <MESSAGE value="Renamed KivaTest to KivaMoveTest" />
+    <MESSAGE value="Refactored RunKivaMoveTest" />
+    <MESSAGE value="Added Javadoc comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Javadoc comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
