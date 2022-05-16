@@ -77,7 +77,7 @@ public class MoveForwardTrial {
         while(true) {
             System.out.println("The Kiva is facing " + kiva.getDirectionFacing() + ".");
             System.out.println("Type a turning direction, L R, F (FORWARD without turning) (Q Quits)");
-            String testInput = keyboardResource.getLine().toUpperCase(); //todo grab first index of the string in testForward so user can type Left, Forward, etc.
+            String testInput = keyboardResource.getLine().toUpperCase(); //todo grab first index of the string in interactive testForward so user can type Left, Forward, etc.
             if (testInput.equals("Q")) {
                 break;
             }

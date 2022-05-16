@@ -155,7 +155,7 @@ public class Kiva {
      * Moves the Kiva forward in the direction it is facing.
      * This is a helper method for Kiva.move().
      */
-    private void moveForward(){ //todo moveForward is not consistently moving current location on an object created in BlueJ with the default map
+    private void moveForward(){
         int x = currentLocation.getX() + directionFacing.getDelta().getX();
         int y = currentLocation.getY() + directionFacing.getDelta().getY();
         currentLocation = new Point(x,y);

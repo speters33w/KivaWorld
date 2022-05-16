@@ -47,7 +47,7 @@ public class KivaCreateMap
     /**
      * create randomized map
      */
-    public StringJoiner createMap(int mapWidth, int mapHeight) { //todo finish random map
+    public StringJoiner createMap(int mapWidth, int mapHeight) { //todo finish random map generator
         //obstruction = "*" 17% should be *
         //kiva = "K"
         //pod = "P"

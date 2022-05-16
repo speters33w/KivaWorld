@@ -323,7 +323,7 @@ public class KivaMoveTest {
         testString = "testTake";
         Point expectLocation = kiva.getCurrentLocation();
         FacingDirection expectDirection = kiva.getDirectionFacing();
-        System.out.println("The Kiva is TAKEs a pod");
+        System.out.println("The Kiva TAKEs a pod");
         kiva.move(KivaCommand.TAKE);
         expectCarry = true;
         if (testMode){
@@ -354,7 +354,7 @@ public class KivaMoveTest {
         Point expectLocation = kiva.getCurrentLocation();
         FacingDirection expectDirection = kiva.getDirectionFacing();
         if (!kiva.isCarryingPod()) {
-            System.out.println("The Kiva is TAKEs a pod");
+            System.out.println("The Kiva TAKEs a pod");
             kiva.move(KivaCommand.TAKE);
         }
         System.out.println("The Kiva DROPs the pod");
