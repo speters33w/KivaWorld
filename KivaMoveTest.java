@@ -4,6 +4,7 @@ import edu.duke.Point;
  * Various Kiva move tests
  *
  * Example usage
+ * <pre>
  *     KivaMoveTest kivaMoveTest = new KivaMoveTest();
  *     kivaMoveTest.testForwardFromUp
  *     kivaMoveTest.testForward(2);
@@ -17,7 +18,7 @@ import edu.duke.Point;
  *     kivaMoveTest.testTurnRight();
  *     kivaMoveTest.testForward(2);
  *     kivaMoveTest.testDrop();
- *
+ *</pre>
  */
 public class KivaMoveTest {
     private final KeyboardResource keyboardResource = new KeyboardResource();

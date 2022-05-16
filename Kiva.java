@@ -24,13 +24,13 @@ public class Kiva {
      * Returns the current Kiva location as an edu.duke.Point object.
      *
      * Example usage:
-     *
+     *<pre>
      *     Kiva kiva = new Kiva();
      *     kiva.move(KivaCommand.FORWARD);
      *     System.out.println("The Kiva is at location ("
      *         + kiva.getCurrentLocation().getX() + ", "
      *         + kiva.getCurrentLocation().getY() + ").");
-     *
+     *</pre>
      * @return edu.duke Point
      *
      * @see edu.duke.Point
@@ -43,11 +43,11 @@ public class Kiva {
      * Returns the current Kiva facing direction, UP, DOWN, LEFT, RIGHT.
      *
      * Example usage:
-     *
+     *<pre>
      *     Kiva kiva = new Kiva();
      *     kiva.move(KivaCommand.TURN_LEFT);
      *     System.out.println("The Kiva is facing " + kiva.getDirectionFacing());
-     *
+     *</pre>
      * @return KivaWorld FacingDirection: UP, RIGHT, DOWN,
      *
      * @see FacingDirection
@@ -120,11 +120,12 @@ public class Kiva {
      * Moves the Kiva FORWARD, turn RIGHT, turn LEFT, TAKE a pod, DROP a pod
      *
      * Example usage:
+     * <pre>
      *     Kiva kiva = new Kiva();
      *     kiva.move(KivaCommand.TURN_LEFT);
      *     kiva.move(KivaCommand.FORWARD);
      *     kiva.move(KivaCommand.TAKE);
-     *
+     *</pre>
      * @param command KivaCommand command
      *
      * @see KivaCommand

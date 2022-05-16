@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added Javadoc comments">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Fixed typo, small tweaks">
       <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaMoveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MoveForwardTrial.java" beforeDir="false" afterPath="$PROJECT_DIR$/MoveForwardTrial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/DirectoryResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/ImageFrame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/ImageResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/Pixel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/RangeResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/Shape.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/URLResource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/package.bluej" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +26,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/KivaCreateMap.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Kiva.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/edu/duke/package-info.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/KivaCommandTester.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/RunKivaMoveTest.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/KivaMoveTest.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/edu/duke/Point.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MoveForwardTrial.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/KivaConstructorTest.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="KivaWorld" pattern="src:*..*&amp;&amp;!src:kivaworld.*&amp;&amp;!src:objective.*||src:*" />
   </component>
   <component name="ProjectId" id="28lvSXWoVOBZxIdkd6byRChHb5R" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -44,10 +53,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../KivaWorld_awt/KivaWorld" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/+libs/KivaWorld-1.0.jar" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
   </component>
   <component name="RunManager" selected="Application.RunKivaMoveTest">
@@ -321,7 +330,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652413889523</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Deleted unnecessary edu.duke files">
+      <created>1652668188168</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1652668188168</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Fixed typo, small tweaks">
+      <created>1652668353657</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1652668353657</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,8 +359,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added edu.duke.*.java source" />
-    <MESSAGE value="Added more to Kiva.move()" />
     <MESSAGE value="Work on unit tests in KivaTest" />
     <MESSAGE value="Changed name of CreateMap for naming convention consistency" />
     <MESSAGE value="Updated todos" />
@@ -361,7 +382,9 @@
     <MESSAGE value="Renamed KivaTest to KivaMoveTest" />
     <MESSAGE value="Refactored RunKivaMoveTest" />
     <MESSAGE value="Added Javadoc comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Javadoc comments" />
+    <MESSAGE value="Deleted unnecessary edu.duke files" />
+    <MESSAGE value="Fixed typo, small tweaks" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed typo, small tweaks" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
