@@ -1,24 +1,22 @@
+import edu.duke.Point;
+
 public class RunKivaMoveTest {
+
     public static void main(String[] args) {
         KivaMoveTest kivaMoveTest = new KivaMoveTest();
+        kivaMoveTest.testKivaTakeDrop(kivaMoveTest);
 
-        kivaMoveTest.verifyKivaState();
-        kivaMoveTest.setTestMode(false);
-        kivaMoveTest.testForward(3);
-        kivaMoveTest.testTurnRight();
-        kivaMoveTest.testForward(6);
-        kivaMoveTest.setTestMode(true);
-        kivaMoveTest.testTake();
-        //
-        kivaMoveTest.verifyKivaState();
-        kivaMoveTest.setTestMode(false);
-        kivaMoveTest.testTurnRight();
-        kivaMoveTest.testForward();
-        kivaMoveTest.testTurnLeft();
-        kivaMoveTest.testForward(2);
-        kivaMoveTest.testTurnRight();
-        kivaMoveTest.testForward(2);
-        kivaMoveTest.setTestMode(true);
-        kivaMoveTest.testDrop();
+        // EXCEPTION tests
+//        kivaMoveTest = new KivaMoveTest(); // Re-initialize Kiva to default location
+//        kivaMoveTest.testMoveOutOfBounds(); // should terminate in IllegalMoveException
+//        kivaMoveTest.testMoveIntoObstacle(); // should terminate in IllegalMoveException
+        kivaMoveTest.testPodCollision(); // should terminate in IllegalMoveException
+//        kivaMoveTest.testNoPodAtLocation();
+//        kivaMoveTest.testIllegalDropZone();
+
+//        Kiva kiva = new Kiva();
+//        kiva.tempExceptionMessageTester();
     }
+
+
 }

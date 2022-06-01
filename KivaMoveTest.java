@@ -1,7 +1,11 @@
 import edu.duke.Point;
+import java.util.Scanner;
 
 /**
  * Various Kiva move tests
+ *
+ * @author Stephan Peters (peterstz)
+ * @version 20220601.1700
  *
  * Example usage
  * <pre>
@@ -350,7 +354,7 @@ public class KivaMoveTest {
      * Allows the Kiva to DROP a pod.
      * If the Kiva is not carrying a pod, it TAKEs one first.
      */
-    public void testDrop(){ //todo DROP allows drop anywhere, regardless of default map, should be testDropOnDropZone()
+    public void testDrop(){
         testString = "testDrop";
         Point expectLocation = kiva.getCurrentLocation();
         FacingDirection expectDirection = kiva.getDirectionFacing();
@@ -382,6 +386,27 @@ public class KivaMoveTest {
         testForward(2);
         setTestMode(true);
         testDrop();
+    }
+
+    public void testKivaTakeDrop(KivaMoveTest kivaMoveTest) {
+        kivaMoveTest.verifyKivaState();
+        kivaMoveTest.setTestMode(false);
+        kivaMoveTest.testForward(3);
+        kivaMoveTest.testTurnRight();
+        kivaMoveTest.testForward(6);
+        kivaMoveTest.setTestMode(true);
+        kivaMoveTest.testTake();
+        //
+        kivaMoveTest.verifyKivaState();
+        kivaMoveTest.setTestMode(false);
+        kivaMoveTest.testTurnRight();
+        kivaMoveTest.testForward();
+        kivaMoveTest.testTurnLeft();
+        kivaMoveTest.testForward(2);
+        kivaMoveTest.testTurnRight();
+        kivaMoveTest.testForward(2);
+        kivaMoveTest.setTestMode(true);
+        kivaMoveTest.testDrop();
     }
 
     /**
@@ -435,8 +460,6 @@ public class KivaMoveTest {
             System.out.printf("%s: successfully dropped FAIL!%n", testName);
             System.out.printf("Expected %s, got %s%n",expectDropped, actualDropped);
         }
-//        kiva.successfullyDropped = false;
-//        expectDropped = false; //todo make kiva.successfullyDropped at end of verifyKivaState work right
         testString = "testKiva";
         System.out.println();
     }
@@ -448,5 +471,111 @@ public class KivaMoveTest {
     void verifyKivaState(){
         verifyKivaState("currentKivaState", kiva, kiva.getCurrentLocation(), kiva.getDirectionFacing(), kiva.isCarryingPod(), kiva.isSuccessfullyDropped());
     }
+
+    public  void testMoveOutOfBounds(){
+        Kiva kiva = new Kiva();
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.TURN_LEFT);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("testMoveOutOfBounds: (Expect an illegalMoveException). Type [enter] to continue...");
+        KeyboardResource scanner = new KeyboardResource();
+        String string = scanner.getLine();
+        kiva.move(KivaCommand.FORWARD);
+
+        // The following only runs if no exception was thrown.
+        System.out.println("testMoveOutOfBound FAIL!");
+        System.out.println("Moved outside the FloorMap!");
+    }
+
+    public void testMoveIntoObstacle(){
+        FloorMap map = new KivaCreateMap().defaultMap();
+        Kiva kiva = new Kiva(map);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.TURN_RIGHT);
+        System.out.println("testMoveIntoObstacle: (Expect an illegalMoveException). Type [enter] to continue...");
+        KeyboardResource scanner = new KeyboardResource();
+        String string = scanner.getLine();
+        kiva.move(KivaCommand.FORWARD);
+
+        // The following only runs if no exception was thrown.
+        System.out.println("testMoveIntoObstacle FAIL!");
+        System.out.println("Moved into an OBSTACLE!");
+        System.out.println("Object at location " + map.getObjectAtLocation(kiva.getCurrentLocation()));
+    }
+
+    public void testPodCollision(){
+        FloorMap map = new KivaCreateMap().defaultMap();
+        Kiva kiva = new Kiva(map);
+        kiva.carryingPod=true;
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.TURN_RIGHT);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("testPodCollision: (Expect an illegalMoveException). Type [enter] to continue...");
+        KeyboardResource scanner = new KeyboardResource();
+        String string = scanner.getLine();
+        kiva.move(KivaCommand.FORWARD);
+
+        // The following only runs if no exception was thrown.
+        System.out.println("testPodCollision FAIL!");
+        System.out.println("Moved into another POD while carrying a POD!");
+        System.out.println("Object at location " + map.getObjectAtLocation(kiva.getCurrentLocation()));
+    }
+
+    public void testNoPodAtLocation(){
+        FloorMap map = new KivaCreateMap().defaultMap();
+        Kiva kiva = new Kiva(map);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.TURN_RIGHT);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("testNoPodAtLocation: (Expect a NoPodException). Type [enter] to continue...");
+        KeyboardResource scanner = new KeyboardResource();
+        String string = scanner.getLine();
+        kiva.move(KivaCommand.TAKE);
+
+        // The following only runs if no exception was thrown.
+        System.out.println("testIllegalDropZone FAIL!");
+        System.out.println("DROP POD on an empty location!");
+        System.out.println("Object at location " + map.getObjectAtLocation(kiva.getCurrentLocation()));
+    }
+
+    public void testIllegalDropZone(){
+        FloorMap map = new KivaCreateMap().defaultMap();
+        Kiva kiva = new Kiva(map);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.TURN_RIGHT);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.FORWARD);
+        kiva.move(KivaCommand.TAKE);
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("testIllegalDropZone: (Expect an illegalMoveException). Type [enter] to continue...");
+        KeyboardResource scanner = new KeyboardResource();
+        String string = scanner.getLine();
+        kiva.move(KivaCommand.DROP);
+
+        // The following only runs if no exception was thrown.
+        System.out.println("testIllegalDropZone FAIL!");
+        System.out.println("DROP POD on an empty location!");
+        System.out.println("Object at location " + map.getObjectAtLocation(kiva.getCurrentLocation()));
+    }
+
 }//KivaTest
 

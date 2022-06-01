@@ -1,8 +1,14 @@
 import edu.duke.Point;
 
+/**
+ * Test Kiva constructors
+ *
+ * @author Stephan Peters (peterstz)
+ * @version 20220601.1700
+ */
 public class KivaConstructorTest{
 
-    private final FloorMap defaultMap = new KivaCreateMap().defaultMap(); //todo debug null pointer exception where defaultMap is used
+    private final FloorMap defaultMap = new KivaCreateMap().defaultMap();
 
     public void testSingleArgumentConstructor() {
         // GIVEN

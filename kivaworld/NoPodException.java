@@ -6,7 +6,6 @@ package kivaworld;
 //
 
 public class NoPodException extends RuntimeException {
-    private static final long serialVersionUID = 5087830688658428714L;
 
     public NoPodException(String message) {
         super(message);

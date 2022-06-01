@@ -10,6 +10,37 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * FloorMap represents Kiva's environment, including pod pickup/dropoff points, obstacles, and Kiva's starting location.
+ * It allows identifying what, if anything, exists at a given location, as well as rendering the entire map to a String.
+ *
+ * FloorMap's coordinate system is zero-indexed (first row and first column are both 0), and the origin, (0,0), is in the upper left.
+ * The Y coordinate of a Points increases as you traverse down, and X increases as you move right.
+ * Note that this corresponds to the layout of the floor inside the String representation passed into constructor.
+ *
+ * Each location on the FloorMap is represented by a Point, with the first coordinate--X--representing the column,
+ * and the second coordinate--Y--representing the row.
+ * For example, the floor location on the far left column three rows from the top would be located at (X,Y) == (0, 2).
+ *
+ * In the text/String representation of the floor map, each character in the String represents one square on the map,
+ * and the following symbols are used:
+ *
+ *     <ul>
+ *     <li>K represents starting point of the robot, which is initially facing upward on the map
+ *         (Kiva's first forward move would end up one square higher than this location if Kiva doesn't turn left or right first).</li>
+ *     <li>P represents starting point of the pod. Kiva must be ON this location to pick up the pod.</li>
+ *     <li>D represents where the pod should be dropped</li>
+ *     <li>* - | (a vertical bar) all represent objects and barriers that the robot cannot pass through.</li>
+ *     </ul>
+ *
+ * Note that the floor map contains blank locations (where you have SPACE characters - ' '), so spaces will be considered part of the map.
+ * If you have a few spaces at the end of lines or on blank lines of their own, you may get InvalidMapLayoutException.
+ * Be sure not to have trailing whitespace on your maps rows or on blank lines!
+ *
+ * See the sample floor map text file in sample_floor_map1.txt in your BlueJ project directory
+ *
+ * @see FloorMapObject
+ */
 public class FloorMap {
     private static final char KIVA_REPRESENTATION = 'K';
     private char[][] map;
@@ -17,10 +48,25 @@ public class FloorMap {
     private Point podLocation;
     private Point dropZoneLocation;
 
+    /**
+     * Construct a FloorMap from a String containing the floor layout, including Kiva's initial location.
+     *
+     * @param inputMap String FloorMap
+     */
     public FloorMap(String inputMap) {
         this.map = this.populateMap(inputMap);
     }
 
+    /**
+     * Given a Point location in the map, returns the corresponding FloorMapObject.
+     *
+     * @param location The Point representing the location to look in for an object,
+     *                 which must be a valid location within the FloorMap.
+     * @return the FloorMapObject at the given location (including EMPTY).
+     *
+     * @see FloorMapObject
+     * @see edu.duke.Point
+     */
     public FloorMapObject getObjectAtLocation(Point location) {
         if (location.getX() < 0) {
             throw new InvalidFloorMapLocationException(String.format("Cannot access a negative column: %d", location.getX()));
@@ -38,34 +84,92 @@ public class FloorMap {
         }
     }
 
+    /**
+     * Returns Kiva's initial location.
+     *
+     * @return Point representing Kiva's initial location.
+     *
+     * @see edu.duke.Point
+     */
     public Point getInitialKivaLocation() {
         return new Point(this.initialKivaLocation.getX(), this.initialKivaLocation.getY());
     }
 
+    /**
+     * Returns pod's location.
+     *
+     * @return Point representing the pod's location.
+     *
+     * @see edu.duke.Point
+     */
     public Point getPodLocation() {
         return new Point(this.podLocation.getX(), this.podLocation.getY());
     }
 
+    /**
+     * Returns drop zone's location.
+     *
+     * @return Point representing the drop zone's location.
+     *
+     * @see edu.duke.Point
+     */
     public Point getDropZoneLocation() {
         return new Point(this.dropZoneLocation.getX(), this.dropZoneLocation.getY());
     }
 
+    /**
+     * Returns minimum valid column number (y) that can be accessed by a call to getObjectAtLocation.
+     * Requesting a location with column number less than this will result in InvalidMapLocationException.
+     *
+     * @return integer minimum valid column number (y)
+     *
+     * @see InvalidMapLayoutException
+     */
     public int getMinColNum() {
         return 0;
     }
 
+    /**
+     * Returns maximum valid column number (y) that can be accessed by a call to getObjectAtLocation.
+     * Requesting a location with column number greater than this will result in InvalidMapLocationException.
+     *
+     * @return integer maximum valid column number (y)
+     *
+     * @see InvalidMapLayoutException
+     */
     public int getMaxColNum() {
         return this.map[0].length - 1;
     }
 
+    /**
+     * Returns minimum valid row number (x) that can be accessed by a call to getObjectAtLocation.
+     * Requesting a location with row number less than this will result in InvalidMapLocationException.
+     *
+     * @return integer minimum valid row number (x)
+     *
+     * @see InvalidMapLayoutException
+     */
     public int getMinRowNum() {
         return 0;
     }
 
+    /**
+     * Returns maximum valid row number (x) that can be accessed by a call to getObjectAtLocation.
+     * Requesting a location with row number greater than this will result in InvalidMapLocationException.
+     *
+     * @return integer maximum valid row number (x)
+     *
+     * @see InvalidMapLayoutException
+     */
     public int getMaxRowNum() {
         return this.map.length - 1;
     }
 
+    /**
+     * Return pretty String representation of the FloorMap.
+     *
+     * @overrides toString in class java.lang.Object
+     */
     public String toString() {
         StringBuilder mapStr = new StringBuilder();
 

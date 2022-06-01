@@ -9,19 +9,48 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * Objects that can exist in Kiva's world: empty squares, obstacles, pods, dropzones.
+ *
+ * The valueOf(String) method provided by all enumerations won't work because it uses the enumeration value's name, not its map symbol.
+ * Use fromChar(char) to convert a char to a FloorMapObject.
+ */
 public enum FloorMapObject {
+    /**
+     * An empty square that Kiva is welcome to tread upon.
+     */
     EMPTY(" "),
+    /**
+     * An obstacle that Kiva cannot walk into/through.
+     */
     OBSTACLE("|-*"),
+    /**
+     * A pod with inventory that Kiva can pick up. Kiva must be ON this location to take the pod.
+     */
     POD("P"),
+    /**
+     * Location where a pod can be dropped off. Kiva must be ON this location to drop the pod.
+     */
     DROP_ZONE("D");
 
     private static Map<Character, FloorMapObject> charToEnum = registerCharMappings();
     private final String validRepresentations;
 
+    /**
+     * Returns the enum constant of this type with the specified name.
+     *
+     * @param validCharRepresentations
+     */
     private FloorMapObject(String validCharRepresentations) {
         this.validRepresentations = validCharRepresentations;
     }
 
+    /**
+     * Look up a FloorMapObject by char representation.
+     *
+     * @param symbol valid char representation of the object
+     * @return
+     */
     public static Optional<FloorMapObject> fromChar(char symbol) {
         return Optional.ofNullable(charToEnum.get(symbol));
     }
@@ -42,6 +71,13 @@ public enum FloorMapObject {
         return mapping;
     }
 
+    /**
+     * Returns a valid char representation for the object.
+     * For a FloorMapObject that is representable by more than one possible, char, one will be selected,
+     *     but no guarantee about which it will be other than that it is a valid representation of that object type.
+     *
+     * @return valid char representation of the object
+     */
     public char toChar() {
         return this.validRepresentations.charAt(0);
     }

@@ -5,11 +5,19 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Fixed typo, small tweaks">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Fixed extraneous import">
       <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaConstructorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaConstructorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaMoveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RunKivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunKivaMoveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivaworld/FacingDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/FacingDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivaworld/FloorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/FloorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivaworld/FloorMapObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/FloorMapObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivaworld/IllegalDropZoneException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/IllegalDropZoneException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivaworld/NoPodException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/NoPodException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objective/NEW_Project_self-service-course-4-project-kiva-robot-remote-control_1-21.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/package.bluej" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +33,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/KivaCreateMap.java" root0="FORCE_HIGHLIGHTING" />
@@ -344,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652668353657</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Fixed extraneous import">
+      <created>1652669951687</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1652669951687</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -359,7 +382,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Work on unit tests in KivaTest" />
     <MESSAGE value="Changed name of CreateMap for naming convention consistency" />
     <MESSAGE value="Updated todos" />
     <MESSAGE value="Created javadoc comments" />
@@ -384,7 +406,8 @@
     <MESSAGE value="Added Javadoc comments" />
     <MESSAGE value="Deleted unnecessary edu.duke files" />
     <MESSAGE value="Fixed typo, small tweaks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed typo, small tweaks" />
+    <MESSAGE value="Fixed extraneous import" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed extraneous import" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
