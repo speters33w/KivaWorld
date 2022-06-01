@@ -1,15 +1,12 @@
 import edu.duke.Point;
-import kivaworld.IllegalDropZoneException;
-import kivaworld.NoPodException;
-
 import java.util.Objects;
-import java.util.Scanner;
+
 
 /**
  * The Kiva class allows a Kiva robot object to navigate a map to pick up and drop pods.
  *
  * @author Stephan Peters (peterstz)
- * @version 20220601.1700
+ * @version 20220601.1930
  * @see KivaCommand
  * @see FloorMap
  */
@@ -39,7 +36,7 @@ public class Kiva {
     /**
      * Creates Kiva using a user provided map and a defined Kiva location.
      *
-     * @param map             KivaWorld FloorMap
+     * @param map KivaWorld FloorMap
      * @param currentLocation edu.duke Point
      * @see edu.duke.Point
      * @see FloorMap
@@ -183,7 +180,6 @@ public class Kiva {
 
         if (debugging) {
             System.out.println("Current location before moving: " + currentLocation + ".");
-            ;
         }
         int x = currentLocation.getX() + directionFacing.getDelta().getX();
         int y = currentLocation.getY() + directionFacing.getDelta().getY();
@@ -262,7 +258,6 @@ public class Kiva {
     }
 
     public void tempExceptionMessageTester() {
-        Kiva kiva = new Kiva();
         FloorMapObject terrain = map.getObjectAtLocation(currentLocation);
         if (terrain != FloorMapObject.POD) {
             throw new NoPodException(String.format(

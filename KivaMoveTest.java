@@ -5,7 +5,7 @@ import java.util.Scanner;
  * Various Kiva move tests
  *
  * @author Stephan Peters (peterstz)
- * @version 20220601.1700
+ * @version 20220601.1930
  *
  * Example usage
  * <pre>
@@ -388,6 +388,11 @@ public class KivaMoveTest {
         testDrop();
     }
 
+    /**
+     * Tests a Kiva during a successful move, take, move, ad drop run
+     *
+     * @param kivaMoveTest Dummy object to access from static runner classes
+     */
     public void testKivaTakeDrop(KivaMoveTest kivaMoveTest) {
         kivaMoveTest.verifyKivaState();
         kivaMoveTest.setTestMode(false);
@@ -472,6 +477,9 @@ public class KivaMoveTest {
         verifyKivaState("currentKivaState", kiva, kiva.getCurrentLocation(), kiva.getDirectionFacing(), kiva.isCarryingPod(), kiva.isSuccessfullyDropped());
     }
 
+    /**
+     * Tests for exception if Kiva moves off defined FloorMap
+     */
     public  void testMoveOutOfBounds(){
         Kiva kiva = new Kiva();
         kiva.move(KivaCommand.FORWARD);
@@ -488,6 +496,9 @@ public class KivaMoveTest {
         System.out.println("Moved outside the FloorMap!");
     }
 
+    /**
+     * Tests for exception if Kiva runs into a FloorMapObject.OBSTACLE
+     */
     public void testMoveIntoObstacle(){
         FloorMap map = new KivaCreateMap().defaultMap();
         Kiva kiva = new Kiva(map);
@@ -504,6 +515,9 @@ public class KivaMoveTest {
         System.out.println("Object at location " + map.getObjectAtLocation(kiva.getCurrentLocation()));
     }
 
+    /**
+     * Tests for exception if Kiva carrying a POD collides with another POD.
+     */
     public void testPodCollision(){
         FloorMap map = new KivaCreateMap().defaultMap();
         Kiva kiva = new Kiva(map);
@@ -528,6 +542,9 @@ public class KivaMoveTest {
         System.out.println("Object at location " + map.getObjectAtLocation(kiva.getCurrentLocation()));
     }
 
+    /**
+     * Tests for exception if Kiva attempts to TAKE a POD at an empty location.
+     */
     public void testNoPodAtLocation(){
         FloorMap map = new KivaCreateMap().defaultMap();
         Kiva kiva = new Kiva(map);
@@ -546,11 +563,14 @@ public class KivaMoveTest {
         kiva.move(KivaCommand.TAKE);
 
         // The following only runs if no exception was thrown.
-        System.out.println("testIllegalDropZone FAIL!");
-        System.out.println("DROP POD on an empty location!");
+        System.out.println("testNoPodAtLocation: FAIL!");
+        System.out.println("Attempt to take POD at EMPTY location!");
         System.out.println("Object at location " + map.getObjectAtLocation(kiva.getCurrentLocation()));
     }
 
+    /**
+     * Tests for exception if Kiva attempts to DROP a POD outside the DROP_ZONE.
+     */
     public void testIllegalDropZone(){
         FloorMap map = new KivaCreateMap().defaultMap();
         Kiva kiva = new Kiva(map);
