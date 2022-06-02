@@ -1,11 +1,12 @@
 import edu.duke.Point;
-import java.util.Scanner;
+import java.text.DecimalFormat;
+import java.util.Random;
 
 /**
  * Various Kiva move tests
  *
  * @author Stephan Peters (peterstz)
- * @version 20220601.1930
+ * @version 20220601.2200
  *
  * Example usage
  * <pre>
@@ -95,6 +96,7 @@ public class KivaMoveTest {
                     x++;
                     break;
             }
+            kiva.setMotorLifetime(kiva.getMotorLifetime()+(times*1000L));
             System.out.println("currentLocation: (" + x + "," + y + ")");
             if (testMode){
                 verifyKivaState(testString, kiva, new Point(x,y), expectDirection, expectCarry, expectDropped);
@@ -184,6 +186,7 @@ public class KivaMoveTest {
             }
             System.out.println("The Kiva TURNs_LEFT");
             kiva.move(KivaCommand.TURN_LEFT);
+            kiva.setMotorLifetime(kiva.getMotorLifetime()+(times*1000L));
             System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
             if (testMode){
                 verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
@@ -266,6 +269,7 @@ public class KivaMoveTest {
             }
             System.out.println("The Kiva TURNs_RIGHT");
             kiva.move(KivaCommand.TURN_RIGHT);
+            kiva.setMotorLifetime(kiva.getMotorLifetime()+(times*1000L));
             System.out.println ("The Kiva is facing " + kiva.getDirectionFacing() + ".");
             if (testMode){
                 verifyKivaState(testString, kiva, expectLocation, expectDirection, expectCarry, expectDropped);
@@ -595,6 +599,36 @@ public class KivaMoveTest {
         System.out.println("testIllegalDropZone FAIL!");
         System.out.println("DROP POD on an empty location!");
         System.out.println("Object at location " + map.getObjectAtLocation(kiva.getCurrentLocation()));
+    }
+
+    public void testKivaMotorLifetime(){
+        Kiva kiva = new Kiva();
+        Random random = new Random();
+        int MotorLifetimeHours = random.nextInt(20000);
+        long motorLifetime = (long) MotorLifetimeHours * 60 * 60 * 60 * 1000;
+        kiva.setMotorLifetime(motorLifetime);
+        System.out.println("Current Kiva motor lifetime: " + kiva.getMotorLifetime());
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("Current Kiva motor lifetime: " + kiva.getMotorLifetime());
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("Current Kiva motor lifetime: " + kiva.getMotorLifetime());
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("Current Kiva motor lifetime: " + kiva.getMotorLifetime());
+        kiva.move(KivaCommand.TURN_RIGHT);
+        System.out.println("Current Kiva motor lifetime: " + kiva.getMotorLifetime());
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("Current Kiva motor lifetime: " + kiva.getMotorLifetime());
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("Current Kiva motor lifetime: " + kiva.getMotorLifetime());
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("Current Kiva motor lifetime: " + kiva.getMotorLifetime());
+        kiva.move(KivaCommand.FORWARD);
+        System.out.println("Current Kiva motor lifetime: " + kiva.getMotorLifetime());
+        kiva.move(KivaCommand.FORWARD);
+        double motorLifetimeHoursRemaining = (double)((4320000000000.0 - kiva.getMotorLifetime())/60/60/60/1000);
+        DecimalFormat decimalFormat = new DecimalFormat("#.#"); //todo format in hours is not displaying correctly (minor).
+        System.out.println("Ending Kiva motor lifetime (ms): " + kiva.getMotorLifetime());
+        System.out.println("Kiva motor lifetime remaining: " +  decimalFormat.format(motorLifetimeHoursRemaining) + " hours.");
     }
 
 }//KivaTest

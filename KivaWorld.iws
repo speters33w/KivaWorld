@@ -5,10 +5,11 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Created Kiva exceptions, repaired Kiva constructors">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added some Javadoc comments">
       <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaMoveTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RunKivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunKivaMoveTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +61,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/+libs/KivaWorld-1.0.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../HackerRank/JavaDataTypes" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
   </component>
-  <component name="RunManager" selected="Application.RunKivaMoveTest">
+  <component name="RunManager" selected="Application.KivaMotorLifetimeTester">
     <configuration name="KivaCommandTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCommandTester" />
       <module name="KivaWorld" />
@@ -76,6 +77,13 @@
     </configuration>
     <configuration name="KivaCreateMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCreateMap" />
+      <module name="KivaWorld" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KivaMotorLifetimeTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KivaMotorLifetimeTester" />
       <module name="KivaWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,9 +116,11 @@
       <item itemvalue="Application.KivaCommandTester" />
       <item itemvalue="Application.MoveForwardTrial" />
       <item itemvalue="Application.RunKivaMoveTest" />
+      <item itemvalue="Application.KivaMotorLifetimeTester" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KivaMotorLifetimeTester" />
         <item itemvalue="Application.RunKivaMoveTest" />
         <item itemvalue="Application.KivaCommandTester" />
         <item itemvalue="Application.KivaCreateMap" />
@@ -365,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654119478550</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Added some Javadoc comments">
+      <created>1654125826642</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1654125826642</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -380,7 +397,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated todos" />
     <MESSAGE value="Created javadoc comments" />
     <MESSAGE value="Edited javadoc comments" />
     <MESSAGE value="Fixed nullpointer in KivaTest" />
@@ -405,7 +421,8 @@
     <MESSAGE value="Fixed typo, small tweaks" />
     <MESSAGE value="Fixed extraneous import" />
     <MESSAGE value="Created Kiva exceptions, repaired Kiva constructors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Kiva exceptions, repaired Kiva constructors" />
+    <MESSAGE value="Added some Javadoc comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some Javadoc comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

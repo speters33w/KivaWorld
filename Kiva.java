@@ -6,7 +6,7 @@ import java.util.Objects;
  * The Kiva class allows a Kiva robot object to navigate a map to pick up and drop pods.
  *
  * @author Stephan Peters (peterstz)
- * @version 20220601.1930
+ * @version 20220601.2200
  * @see KivaCommand
  * @see FloorMap
  */
@@ -19,8 +19,8 @@ public class Kiva {
     private FloorMap map = new KivaCreateMap().defaultMap(); //initializes a default map
     boolean carryingPod = false; //initializes carryingPod
     boolean successfullyDropped = false; //initializes successfullyDropped
-    //private motorLifetime;
-
+    private long motorLifetime = 0L; //motor lifetime in milliseconds. Max lifetime is 4320000000000 ms (20,000 Hours)
+    private double motorLifetimeHours;
     /**
      * Creates Kiva using a provided map
      *
@@ -97,6 +97,10 @@ public class Kiva {
         return directionFacing;
     }
 
+    public long getMotorLifetime(){
+        return motorLifetime;
+    }
+
     public boolean isCarryingPod() {
         return carryingPod;
     }
@@ -124,6 +128,14 @@ public class Kiva {
 
     }
 
+    public void setMotorLifetime(long motorLifetime){
+        this.motorLifetime = motorLifetime;
+    }
+
+    private void incrementMotorLifetime(){
+        motorLifetime = motorLifetime+1000L;
+    }
+
     /**
      * Moves the Kiva FORWARD, turn RIGHT, turn LEFT, TAKE a pod, DROP a pod
      * <p>
@@ -142,12 +154,15 @@ public class Kiva {
         switch (command) {
             case FORWARD:
                 moveForward();
+                incrementMotorLifetime();
                 break;
             case TURN_LEFT:
                 turnWiddershins();
+                incrementMotorLifetime();
                 break;
             case TURN_RIGHT:
                 turnSunwise();
+                incrementMotorLifetime();
                 break;
             case TAKE:
                 if (map.getObjectAtLocation(currentLocation).equals(FloorMapObject.POD)) {
@@ -195,6 +210,9 @@ public class Kiva {
      * TurnWiddershins is a helper method for Kiva.move().
      */
     private void turnWiddershins() {
+        if (debugging) {
+            System.out.println("Facing location before turning: " + directionFacing + ".");
+        }
         switch (directionFacing) {
             case UP:
                 directionFacing = FacingDirection.LEFT;
@@ -209,6 +227,9 @@ public class Kiva {
                 directionFacing = FacingDirection.UP;
                 break;
         }
+        if (debugging) {
+            System.out.println("Facing location after turning: " + directionFacing + ".");
+        }
     }
 
     /**
@@ -216,6 +237,9 @@ public class Kiva {
      * TurnSunwise is a helper method for Kiva.move().
      */
     private void turnSunwise() {
+        if (debugging) {
+            System.out.println("Facing location before turning: " + directionFacing + ".");
+        }
         switch (directionFacing) {
             case UP:
                 directionFacing = FacingDirection.RIGHT;
@@ -229,6 +253,9 @@ public class Kiva {
             case LEFT:
                 directionFacing = FacingDirection.UP;
                 break;
+        }
+        if (debugging) {
+            System.out.println("Facing location after turning: " + directionFacing + ".");
         }
     }
 
