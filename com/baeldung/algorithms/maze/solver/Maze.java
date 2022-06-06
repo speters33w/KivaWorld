@@ -16,18 +16,19 @@ public class Maze {
 
     private int[][] maze;
     private boolean[][] visited;
+    private Coordinate currentStartLocation;
     private Coordinate initialKivaLocation;
-    private Coordinate pod;
+    private Coordinate podLocation = new Coordinate(-1, -1); //(-1,-1) if simple start to exit with no pod.
     private Coordinate dropZoneLocation;
 
     public Maze(File maze) throws FileNotFoundException {
-        String fileText = "";
+        StringBuilder fileText = new StringBuilder();
         try (Scanner input = new Scanner(maze)) {
             while (input.hasNextLine()) {
-                fileText += input.nextLine() + "\n";
+                fileText.append(input.nextLine()).append("\n");
             }
         }
-        initializeMaze(fileText);
+        initializeMaze(fileText.toString());
     }
 
     private void initializeMaze(String text) {
@@ -60,7 +61,7 @@ public class Maze {
                         break;
                     case 'P' :
                         maze[row][col] = POD;
-                        pod = new Coordinate(row, col);
+                        podLocation = new Coordinate(row, col);
                         break;
                     case 'E' :
                     case 'D' :
@@ -82,20 +83,32 @@ public class Maze {
         return maze[0].length;
     }
 
+    public void setCurrentStartLocation(Coordinate currentStartLocation) {
+        this.currentStartLocation = currentStartLocation;
+    }
+
     public Coordinate getInitialKivaLocation() {
         return initialKivaLocation;
+    }
+
+    public Coordinate getPodLocation() {
+        return podLocation;
     }
 
     public Coordinate getDropZoneLocation() {
         return dropZoneLocation;
     }
 
-    public boolean isDropZone(int x, int y) {
-        return x == dropZoneLocation.getX() && y == dropZoneLocation.getY();
-    }
-
     public boolean isInitialKivaLocation(int x, int y) {
         return x == initialKivaLocation.getX() && y == initialKivaLocation.getY();
+    }
+
+    public boolean isPodLocation(int x, int y) {
+        return x == podLocation.getX() && y == podLocation.getY();
+    }
+
+    public boolean isDropZone(int x, int y) {
+        return x == dropZoneLocation.getX() && y == dropZoneLocation.getY();
     }
 
     public boolean isExplored(int row, int col) {
@@ -111,10 +124,7 @@ public class Maze {
     }
 
     public boolean isValidLocation(int row, int col) {
-        if (row < 0 || row >= getHeight() || col < 0 || col >= getWidth()) {
-            return false;
-        }
-        return true;
+        return row >= 0 && row < getHeight() && col >= 0 && col < getWidth();
     }
 
     public void printPath(List<Coordinate> path) {
@@ -132,6 +142,9 @@ public class Maze {
 
     public String toString(int[][] maze) {
         StringBuilder result = new StringBuilder(getWidth() * (getHeight() + 1));
+        if (!(podLocation.getX() == -1)) {
+            maze[podLocation.getX()][podLocation.getY()] = POD;
+        }
         for (int row = 0; row < getHeight(); row++) {
             for (int col = 0; col < getWidth(); col++) {
                 if (maze[row][col] == EMPTY) {
@@ -154,7 +167,6 @@ public class Maze {
     }
 
     public void reset() {
-        for (int i = 0; i < visited.length; i++)
-            Arrays.fill(visited[i], false);
+        for (boolean[] booleans : visited) Arrays.fill(booleans, false);
     }
 }

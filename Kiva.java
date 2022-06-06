@@ -57,7 +57,8 @@ public class Kiva {
      * @see KivaCreateMap
      */
     public Kiva() {
-        this.currentLocation = new Point(2, 4);
+        //this.currentLocation = new Point(2, 4);
+        this.currentLocation = map.getInitialKivaLocation();
         new Kiva(map, currentLocation); // map is already defined as default map in field
     }
 

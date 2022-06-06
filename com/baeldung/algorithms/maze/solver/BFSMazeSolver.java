@@ -5,13 +5,29 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BFSMazeSolver {
-    private static final int[][] DIRECTIONS = { { 0, -1 }, { 1, 0 }, { 0, 1 }, { -1, 0 } };
+import static java.util.Collections.addAll;
 
-    public List<Coordinate> solve(Maze maze) {
+public class BFSMazeSolver {
+    private static final int[][] DIRECTIONS = { { 0, -1 }, { 1, 0 }, { -1, 0 }, { 0, 1 } };
+    private boolean isPodFound = false;
+
+    public List<Coordinate> solve(Maze maze){
+        if (!(maze.getPodLocation().getX() == -1)) {
+            List<Coordinate> returnList;
+            returnList = (solver(maze,maze.getInitialKivaLocation()));
+            returnList.addAll(solver(maze,maze.getPodLocation()));
+            returnList.add(maze.getPodLocation()); //todo fix the map so if the Kiva backtracks after getting the pod, entire path is still displayed.
+            return returnList;
+        } else {
+            isPodFound = true;
+            Coordinate startLocation = maze.getInitialKivaLocation();
+            return solver(maze,startLocation);
+        }
+    }
+
+    public List<Coordinate> solver(Maze maze, Coordinate startLocation) {
         LinkedList<Coordinate> nextToVisit = new LinkedList<>();
-        Coordinate initialKivaLocation = maze.getInitialKivaLocation();
-        nextToVisit.add(initialKivaLocation);
+        nextToVisit.add(startLocation);
 
         while (!nextToVisit.isEmpty()) {
             Coordinate cur = nextToVisit.remove();
@@ -25,8 +41,17 @@ public class BFSMazeSolver {
                 continue;
             }
 
+            if (maze.isPodLocation(cur.getX(), cur.getY())) {
+                if(!isPodFound) {
+                    isPodFound = true;
+                    return backtrackPath(cur);
+                }
+            }
+
             if (maze.isDropZone(cur.getX(), cur.getY())) {
-                return backtrackPath(cur);
+                if(isPodFound) {
+                   return backtrackPath(cur);
+                }
             }
 
             for (int[] direction : DIRECTIONS) {

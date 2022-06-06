@@ -6,7 +6,7 @@ import java.util.StringJoiner;
  * This can be a random map, or a default map as a string or FloorMap
  *
  * @author Stephan Peters
- * @version (0.1)
+ * @version 20200601.2200
  */
 public class KivaCreateMap
 {

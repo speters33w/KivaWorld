@@ -21,7 +21,7 @@ public class MazeDriver {
      */
     private static File selectFile(){
         JFileChooser fileChooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt", "map", "maz", "maze", "fm", "FloorMap");
         fileChooser.setFileFilter(filter);
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
         fileChooser.showDialog(null,"Select");
@@ -31,20 +31,12 @@ public class MazeDriver {
 
     private static void execute(File file) throws Exception {
         Maze maze = new Maze(file);
-//        dfs(maze); // Modified brute-force, backtracks and marks visited nodes to obtain a path in a reasonable time. This algorithm is also known as Depth-first search.
-        bfs(maze); // To find the shortest path, we can use another graph traversal approach known as Breadth-first search.
+        bfs(maze); // To find the shortest path, a graph traversal approach known as Breadth-first search.
     }
 
     private static void bfs(Maze maze) {
         BFSMazeSolver bfs = new BFSMazeSolver();
         List<Coordinate> path = bfs.solve(maze);
-        maze.printPath(path);
-        maze.reset();
-    }
-
-    private static void dfs(Maze maze) {
-        DFSMazeSolver dfs = new DFSMazeSolver();
-        List<Coordinate> path = dfs.solve(maze);
         maze.printPath(path);
         maze.reset();
     }

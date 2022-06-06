@@ -1,4 +1,9 @@
 /out/
-/*.class
-/*.ctxt
-/edu/duke/*.class
+*.class
+*.ctxt
+/KivaSimpleWorld/
+/com/package.bluej
+/com/baeldung/package.bluej
+/com/baeldung/algorithms/package.bluej
+/com/baeldung/algorithms/maze/package.bluej
+/edu/package.bluej
