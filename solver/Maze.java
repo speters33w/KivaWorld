@@ -16,9 +16,8 @@ public class Maze {
 
     private int[][] maze;
     private boolean[][] visited;
-    private Coordinate currentStartLocation;
     private Coordinate initialKivaLocation;
-    private Coordinate podLocation = new Coordinate(-1, -1); //(-1,-1) if simple start to exit with no pod.
+    private Coordinate podLocation = null;
     private Coordinate dropZoneLocation;
 
     public Maze(File maze) throws FileNotFoundException {
@@ -83,10 +82,6 @@ public class Maze {
         return maze[0].length;
     }
 
-    public void setCurrentStartLocation(Coordinate currentStartLocation) {
-        this.currentStartLocation = currentStartLocation;
-    }
-
     public Coordinate getInitialKivaLocation() {
         return initialKivaLocation;
     }
@@ -104,7 +99,11 @@ public class Maze {
     }
 
     public boolean isPodLocation(int x, int y) {
-        return x == podLocation.getX() && y == podLocation.getY();
+        if (podLocation != null) {
+            return x == podLocation.getX() && y == podLocation.getY();
+        } else {
+            return false;
+        }
     }
 
     public boolean isDropZone(int x, int y) {
@@ -142,7 +141,7 @@ public class Maze {
 
     public String toString(int[][] maze) {
         StringBuilder result = new StringBuilder(getWidth() * (getHeight() + 1));
-        if (!(podLocation.getX() == -1)) {
+        if (podLocation != null) {
             maze[podLocation.getX()][podLocation.getY()] = POD;
         }
         for (int row = 0; row < getHeight(); row++) {
@@ -150,7 +149,13 @@ public class Maze {
                 if (maze[row][col] == EMPTY) {
                     result.append(' ');
                 } else if (maze[row][col] == OBSTACLE) {
-                    result.append('*');
+                    if (row == 0 || row == getHeight()-1) {
+                        result.append('-');
+                    } else if (col == 0 || col == getWidth()-1) {
+                        result.append('|');
+                    } else {
+                        result.append('*');
+                    }
                 } else if (maze[row][col] == START) {
                     result.append('K');
                 } else if (maze[row][col] == POD) {

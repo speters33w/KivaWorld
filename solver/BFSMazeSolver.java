@@ -8,15 +8,20 @@ import java.util.List;
 import static java.util.Collections.addAll;
 
 public class BFSMazeSolver {
-    private static final int[][] DIRECTIONS = { { 0, -1 }, { 1, 0 }, { -1, 0 }, { 0, 1 } };
+    private static final int[][] DIRECTIONS = {
+            { -1, 0 }, { 0, 1 }, { 1, 0 }, { 0, -1 } }; //in format [row][col] or (y,x)
     private boolean isPodFound = false;
+    private FacingDirection facingDirection = FacingDirection.UP; //todo base search for shortest path to include facing movements as a movement
 
     public List<Coordinate> solve(Maze maze){
-        if (!(maze.getPodLocation().getX() == -1)) {
+        if (maze.getPodLocation() != null) { //if this is not a simple start to finish maze
             List<Coordinate> returnList;
             returnList = (solver(maze,maze.getInitialKivaLocation()));
+//            System.out.println(returnList);
+//            returnList = (solver(maze,maze.getPodLocation()));
             returnList.addAll(solver(maze,maze.getPodLocation()));
-            returnList.add(maze.getPodLocation()); //todo fix the map so if the Kiva backtracks after getting the pod, entire path is still displayed.
+//            System.out.println(solver(maze,maze.getPodLocation()));
+//            System.out.println(returnList); //todo fix the map so if the Kiva backtracks after getting the pod, entire path is  displayed.
             return returnList;
         } else {
             isPodFound = true;

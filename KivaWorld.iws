@@ -5,7 +5,15 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Several fixes to solver." />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Changed com.baeldung package to simple solver">
+      <change afterPath="$PROJECT_DIR$/solver/FacingDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RunKivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunKivaMoveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/package.bluej" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/BFSMazeSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/BFSMazeSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/Maze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/solver/package.bluej" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,6 +70,11 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="solver" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.MazeDriver">
     <configuration name="KivaCommandTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCommandTester" />
@@ -78,11 +91,11 @@
       </method>
     </configuration>
     <configuration name="MazeDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.baeldung.algorithms.maze.solver.MazeDriver" />
+      <option name="MAIN_CLASS_NAME" value="solver.MazeDriver" />
       <module name="KivaWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.baeldung.algorithms.maze.solver.*" />
+          <option name="PATTERN" value="solver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,31 +117,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tempFileChooser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.baeldung.algorithms.maze.solver.tempFileChooser" />
-      <module name="KivaWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.baeldung.algorithms.maze.solver.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.RemoteControl" />
       <item itemvalue="Application.KivaCommandTester" />
       <item itemvalue="Application.RunKivaMoveTest" />
       <item itemvalue="Application.KivaMotorLifetimeTester" />
       <item itemvalue="Application.MazeDriver" />
-      <item itemvalue="Application.tempFileChooser" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MazeDriver" />
-        <item itemvalue="Application.tempFileChooser" />
         <item itemvalue="Application.KivaMotorLifetimeTester" />
         <item itemvalue="Application.RunKivaMoveTest" />
         <item itemvalue="Application.KivaCommandTester" />
@@ -410,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654533079346</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Changed com.baeldung package to simple solver">
+      <created>1654533586987</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1654533586987</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -425,7 +430,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created interactive moveForward test" />
     <MESSAGE value="Added TAKE and DROP to Kiva.move" />
     <MESSAGE value="Added TAKE and DROP tests" />
     <MESSAGE value="Created new non-interactive testForward test" />
@@ -450,7 +454,8 @@
     <MESSAGE value="Added motorLifetime functionality" />
     <MESSAGE value="Added modified version of com.baeldung.algorithms.maze.solver" />
     <MESSAGE value="Several fixes to solver." />
-    <option name="LAST_COMMIT_MESSAGE" value="Several fixes to solver." />
+    <MESSAGE value="Changed com.baeldung package to simple solver" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed com.baeldung package to simple solver" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
