@@ -1,4 +1,4 @@
-package com.baeldung.algorithms.maze.solver;
+package solver;
 
 /**
  * A point representing a location in (x,y) coordinate space, specified in integer precision.

@@ -1,4 +1,4 @@
-package com.baeldung.algorithms.maze.solver;
+package solver;
 
 import java.util.ArrayList;
 import java.util.Collections;
