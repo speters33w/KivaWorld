@@ -45,8 +45,9 @@ public class Kiva {
         this.map = map;
         this.currentLocation = currentLocation;
         if (debugging) {
-            System.out.println(map.toString());
-            System.out.println("Current location: " + currentLocation + ".");
+            //System.out.println(map.toString());
+            System.out.println("The Kiva starts at: " + currentLocation + ".");
+            System.out.println("The Kiva is facing: " + directionFacing + ".");
         }
 
     }
@@ -168,6 +169,10 @@ public class Kiva {
             case TAKE:
                 if (map.getObjectAtLocation(currentLocation).equals(FloorMapObject.POD)) {
                     carryingPod = true;
+                    if(debugging){
+                        System.out.println("TAKE");
+                        System.out.println("The Kiva took the pod at " + currentLocation + ".");
+                    }
                 } else {
                     throw new NoPodException("The kiva attempted to TAKE a POD while there is no POD at location "
                             + currentLocation + ".");
@@ -177,6 +182,10 @@ public class Kiva {
                 if (carryingPod && map.getObjectAtLocation(currentLocation).equals(FloorMapObject.DROP_ZONE)) {
                     carryingPod = false;
                     successfullyDropped = true;
+                    if(debugging){
+                        System.out.println("DROP");
+                        System.out.println("This Kiva successfully dropped the pod at " + currentLocation + ".");
+                    }
                 } else if (carryingPod) {
                     throw new IllegalDropZoneException("The kiva attempted to DROP not on a DROP_ZONE at location "
                             + currentLocation + ".");
@@ -195,7 +204,8 @@ public class Kiva {
     private void moveForward() {
 
         if (debugging) {
-            System.out.println("Current location before moving: " + currentLocation + ".");
+            //System.out.println("Current location before moving: " + currentLocation + ".");
+            System.out.println("FORWARD");
         }
         int x = currentLocation.getX() + directionFacing.getDelta().getX();
         int y = currentLocation.getY() + directionFacing.getDelta().getY();
@@ -212,7 +222,8 @@ public class Kiva {
      */
     private void turnWiddershins() {
         if (debugging) {
-            System.out.println("Facing location before turning: " + directionFacing + ".");
+            //System.out.println("Facing location before turning: " + directionFacing + ".");
+            System.out.println("TURN_LEFT");
         }
         switch (directionFacing) {
             case UP:
@@ -239,7 +250,8 @@ public class Kiva {
      */
     private void turnSunwise() {
         if (debugging) {
-            System.out.println("Facing location before turning: " + directionFacing + ".");
+            //System.out.println("Facing location before turning: " + directionFacing + ".");
+            System.out.println("TURN_RIGHT");
         }
         switch (directionFacing) {
             case UP:

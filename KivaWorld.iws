@@ -5,14 +5,11 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Changed com.baeldung package to simple solver">
-      <change afterPath="$PROJECT_DIR$/solver/FacingDirection.java" afterDir="false" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Implemented RemoteControl.">
+      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RunKivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RunKivaMoveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/package.bluej" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/BFSMazeSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/BFSMazeSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/Maze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/solver/package.bluej" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default_map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/default_map.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +72,7 @@
       <recent name="solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MazeDriver">
+  <component name="RunManager" selected="Application.RemoteControl">
     <configuration name="KivaCommandTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCommandTester" />
       <module name="KivaWorld" />
@@ -117,15 +114,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TempSandbox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TempSandbox" />
+      <module name="KivaWorld" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.RemoteControl" />
       <item itemvalue="Application.KivaCommandTester" />
       <item itemvalue="Application.RunKivaMoveTest" />
       <item itemvalue="Application.KivaMotorLifetimeTester" />
       <item itemvalue="Application.MazeDriver" />
+      <item itemvalue="Application.TempSandbox" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TempSandbox" />
         <item itemvalue="Application.MazeDriver" />
         <item itemvalue="Application.KivaMotorLifetimeTester" />
         <item itemvalue="Application.RunKivaMoveTest" />
@@ -415,7 +421,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654533586987</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Improved solver map output.">
+      <created>1654541261496</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1654541261496</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -430,8 +443,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added TAKE and DROP to Kiva.move" />
-    <MESSAGE value="Added TAKE and DROP tests" />
     <MESSAGE value="Created new non-interactive testForward test" />
     <MESSAGE value="Removed testing Sysout line" />
     <MESSAGE value="Created project test case methods and javadoc documentation" />
@@ -455,7 +466,9 @@
     <MESSAGE value="Added modified version of com.baeldung.algorithms.maze.solver" />
     <MESSAGE value="Several fixes to solver." />
     <MESSAGE value="Changed com.baeldung package to simple solver" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed com.baeldung package to simple solver" />
+    <MESSAGE value="Improved solver map output." />
+    <MESSAGE value="Implemented RemoteControl." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented RemoteControl." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
