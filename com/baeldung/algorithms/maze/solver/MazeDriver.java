@@ -1,0 +1,51 @@
+package com.baeldung.algorithms.maze.solver;
+
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.File;
+import java.util.List;
+
+
+public class MazeDriver {
+    public static void main(String[] args) throws Exception {
+        execute(selectFile());
+    }
+
+    /**
+     * Opens a GUI file selector dialog in the source directory where the user can select a Maze or FloorMap file.
+     * Restricts extensions to text files (*.txt).
+     *
+     * @return java.io.file the selected file.
+     *
+     * @throws NullPointerException (in main) if user cancels the file open operation.
+     */
+    private static File selectFile(){
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt");
+        fileChooser.setFileFilter(filter);
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+        fileChooser.showDialog(null,"Select");
+        fileChooser.setVisible(true);
+        return fileChooser.getSelectedFile();
+    }
+
+    private static void execute(File file) throws Exception {
+        Maze maze = new Maze(file);
+//        dfs(maze); // Modified brute-force, backtracks and marks visited nodes to obtain a path in a reasonable time. This algorithm is also known as Depth-first search.
+        bfs(maze); // To find the shortest path, we can use another graph traversal approach known as Breadth-first search.
+    }
+
+    private static void bfs(Maze maze) {
+        BFSMazeSolver bfs = new BFSMazeSolver();
+        List<Coordinate> path = bfs.solve(maze);
+        maze.printPath(path);
+        maze.reset();
+    }
+
+    private static void dfs(Maze maze) {
+        DFSMazeSolver dfs = new DFSMazeSolver();
+        List<Coordinate> path = dfs.solve(maze);
+        maze.printPath(path);
+        maze.reset();
+    }
+}
