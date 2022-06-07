@@ -168,7 +168,7 @@ public class FloorMap {
     /**
      * Return pretty String representation of the FloorMap.
      *
-     * @overrides toString in class java.lang.Object
+     * Overrides toString in class java.lang.Object
      */
     public String toString() {
         StringBuilder mapStr = new StringBuilder();

@@ -49,6 +49,8 @@ public class StorageResource {
 
     /**
      * Create a <code>StorageResource</code> object, loaded with the Strings passed as parameters.
+     *
+     * @param data Strings passed as parameters
      */
     StorageResource (String... data) {
         myStrings = new ArrayList<String>(Arrays.asList(data));

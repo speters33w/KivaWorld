@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="3" />
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="pre-final commit">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added Javadoc comments to kivaworld">
+      <change afterPath="$PROJECT_DIR$/kivaworld/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solver/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaMoveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoteControlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControlTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/FileResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/FileResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/FileSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/FileSelector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/ImageFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/ImageFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/ImageResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/ImageResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/RangeResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/RangeResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/StorageResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/StorageResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edu/duke/URLResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/URLResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivaworld/FloorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/FloorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kivaworld/FloorMapObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/FloorMapObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kivaworld/IllegalMoveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/IllegalMoveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/InvalidFloorMapLocationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/InvalidFloorMapLocationException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kivaworld/InvalidKivaCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/InvalidKivaCommandException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kivaworld/InvalidMapLayoutException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/InvalidMapLayoutException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/KeyboardResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/KeyboardResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/NoPodException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/NoPodException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/CSVFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/CSVFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/CSVRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/CSVRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/ExtendedBufferedReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/ExtendedBufferedReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/Lexer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/Token.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +67,9 @@
   <component name="NamedScopeManager">
     <scope name="KivaWorld" pattern="src:*..*&amp;&amp;!src:kivaworld.*&amp;&amp;!src:objective.*||src:*" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="28lvSXWoVOBZxIdkd6byRChHb5R" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -59,7 +80,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../Program Files (x86)/BlueJ/lib/junit-4.11.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -67,13 +88,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\StephanPeters\OneDrive\Java\IdeaProjects\KivaWorld-01\KivaWorld" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RemoteControlTest">
-    <configuration name="KivaConstructorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="KivaConstructorTest" />
+  <component name="RunManager" selected="Application.KivaCreateMap">
+    <configuration name="KivaCreateMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KivaCreateMap" />
       <module name="KivaWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -108,19 +133,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.KivaConstructorTest" />
       <item itemvalue="Application.KivaMotorLifetimeTester" />
       <item itemvalue="Application.KivaMoveTest" />
       <item itemvalue="Application.MoveForwardTrial" />
       <item itemvalue="Application.RemoteControlTest" />
+      <item itemvalue="Application.KivaCreateMap" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KivaCreateMap" />
         <item itemvalue="Application.RemoteControlTest" />
         <item itemvalue="Application.MoveForwardTrial" />
         <item itemvalue="Application.KivaMoveTest" />
         <item itemvalue="Application.KivaMotorLifetimeTester" />
-        <item itemvalue="Application.KivaConstructorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -448,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654630315044</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Added Javadoc comments to kivaworld">
+      <created>1654631658526</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1654631658526</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -463,7 +495,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Finished test cases in KivaTest" />
     <MESSAGE value="Added testMode to KivaTest" />
     <MESSAGE value="Separated KivaConstructorTest from KivaTest" />
     <MESSAGE value="Fixed info printed to console in !testMode" />
@@ -488,7 +519,8 @@
     <MESSAGE value="Added org.apache.commons.csv" />
     <MESSAGE value="Added edu.duke.*" />
     <MESSAGE value="pre-final commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="pre-final commit" />
+    <MESSAGE value="Added Javadoc comments to kivaworld" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Javadoc comments to kivaworld" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

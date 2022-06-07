@@ -63,7 +63,7 @@ public class FileResource {
      * Create a <code>FileResource</code> object that opens the file chosen by the user using a file
      * selection dialog box.
      * 
-     * @throws Exception if no file is selected by the user
+     * @throws java.lang.NullPointerException if no file is selected by the user
      */
     public FileResource () {
         initRead();
@@ -76,7 +76,7 @@ public class FileResource {
      * Useful, for example, when used in conjunction with the <code>DirectoryResource</code> class.
      * 
      * @param file the file to be represented by this resource
-     * @throws Exception if the file cannot be accessed
+     * @throws java.io.IOError if the file cannot be accessed
      */
     public FileResource (File file) {
         initRead(file);
@@ -89,7 +89,6 @@ public class FileResource {
      * The named file should be on the current class path to be found.
      * 
      * @param filename the name of the file to be opened
-     * @throws Exception if the filename cannot be accessed
      */
     public FileResource (String filename) {
         initRead(filename);
@@ -104,7 +103,7 @@ public class FileResource {
      * Otherwise it is assumed the user will only iterate over the existing contents of the file.
      * 
      * @param writable allow changes to this file only if true
-     * @throws Exception if no file is selected by the user
+     * @throws java.lang.NullPointerException if no file is selected by the user
      */
     public FileResource (boolean writable) {
         if (writable) {
@@ -127,7 +126,6 @@ public class FileResource {
      * 
      * @param file the file to be represented by this resource
      * @param writable allow changes to this file only if true
-     * @throws Exception if the file cannot be accessed
      */
     public FileResource (File file, boolean writable) {
         if (writable) {
@@ -150,7 +148,6 @@ public class FileResource {
      * 
      * @param filename the name of the file to be opened
      * @param writable allow changes to this file only if true
-     * @throws Exception if the filename cannot be accessed
      */
     public FileResource (String filename, boolean writable) {
         if (writable) {
@@ -199,7 +196,6 @@ public class FileResource {
      * 
      * @return a <code>CSVParser</code> that can provide access to the records in the file one at a
      *         time
-     * @throws Exception if this file does not represent a CSV formatted data
      */
     public CSVParser getCSVParser () {
         return getCSVParser(true);
@@ -215,7 +211,6 @@ public class FileResource {
      * @param withHeader uses first row of data as a header row only if true
      * @return a <code>CSVParser</code> that can provide access to the records in the file one at a
      *         time
-     * @throws Exception if this file does not represent a CSV formatted data
      */
     public CSVParser getCSVParser (boolean withHeader) {
         return getCSVParser(withHeader, ",");
@@ -233,8 +228,6 @@ public class FileResource {
      * @param delimiter a single character that separates one field of data from another
      * @return a <code>CSVParser</code> that can provide access to the records in the file one at a
      *         time
-     * @throws Exception if this file does not represent a CSV formatted data
-     * @throws Exception if <code>delimiter.length() != 1</code>
      */
     public CSVParser getCSVParser (boolean withHeader, String delimiter) {
         if (delimiter == null || delimiter.length() != 1) {

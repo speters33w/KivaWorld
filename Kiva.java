@@ -6,7 +6,7 @@ import edu.duke.Point;
  * @author Stephan Peters (peterstz)
  * @version 20220607.1300
  * @see KivaCommand
- * @see FloorMap
+ * @see kivaworld.FloorMap
  */
 public class Kiva {
     boolean debugging = false;
@@ -23,7 +23,7 @@ public class Kiva {
      * Creates Kiva using a provided map
      *
      * @param map KivaWorld FloorMap
-     * @see FloorMap
+     * @see kivaworld.FloorMap
      */
     public Kiva(FloorMap map) {
         this.map = map;
@@ -37,7 +37,7 @@ public class Kiva {
      * @param map KivaWorld FloorMap
      * @param currentLocation edu.duke Point
      * @see edu.duke.Point
-     * @see FloorMap
+     * @see kivaworld.FloorMap
      */
     public Kiva(FloorMap map, Point currentLocation) {
         this.map = map;
@@ -89,7 +89,7 @@ public class Kiva {
      * </pre>
      *
      * @return KivaWorld FacingDirection: UP, RIGHT, DOWN,
-     * @see FacingDirection
+     * @see kivaworld.FacingDirection
      */
     FacingDirection getDirectionFacing() {
         return directionFacing;
@@ -127,7 +127,7 @@ public class Kiva {
      *
      * @param facingDirection The facingDirection to set the Kiva to.
      *
-     * @see FacingDirection
+     * @see kivaworld.FacingDirection
      */
     void setDirectionFacing(String facingDirection) {
         switch (facingDirection.toUpperCase()) {
@@ -180,8 +180,8 @@ public class Kiva {
      * @param command KivaCommand command
      * @see KivaCommand
      *
-     * @throws NoPodException if Kiva attempts to TAKE a pod where there is none.
-     * @throws IllegalDropZoneException if Kiva attempts to drop a pod outside the drop zone.
+     * @throws kivaworld.NoPodException if Kiva attempts to TAKE a pod where there is none.
+     * @throws kivaworld.IllegalDropZoneException if Kiva attempts to drop a pod outside the drop zone.
      */
     public void move(KivaCommand command) {
         switch (command) {
@@ -306,8 +306,8 @@ public class Kiva {
     /**
      * Checks for invalid moves, collisions, etc. and throws appropriate exceptions.
      *
-     * @see FloorMap
-     * @see FloorMapObject
+     * @see kivaworld.FloorMap
+     * @see kivaworld.FloorMapObject
      * @see java.lang.Exception
      */
     private void checkForExceptions() {

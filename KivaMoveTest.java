@@ -158,7 +158,7 @@ public class KivaMoveTest {
      * @param times number of times to turn the Kiva left, integer.
      *
      * @see KivaCommand
-     * @see FacingDirection
+     * @see kivaworld.FacingDirection
      *
      * Example Usage:
      *     KivaTest testKiva = new KivaTest();

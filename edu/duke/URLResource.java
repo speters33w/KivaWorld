@@ -60,7 +60,7 @@ public class URLResource {
      * Constructing the object opens a connection and reads the contents of the web page.
      * 
      * @param name is the name of the URL, it must start with "http" or "https"
-     * @throws exception if the URL does not start with "http" or "https"
+     * @throws ResourceException if the URL does not start with "http" or "https"
      */
     public URLResource (String name) {
         if (name.startsWith("http://") || name.startsWith("https://")) {
@@ -113,7 +113,6 @@ public class URLResource {
      * 
      * @return a <code>CSVParser</code> that can provide access to the records in the web page one
      *         at a time
-     * @throws exception if this web page does not represent a CSV formatted data
      */
     public CSVParser getCSVParser () {
         return getCSVParser(true);
@@ -129,7 +128,6 @@ public class URLResource {
      * @param withHeader uses first row of data as a header row only if true
      * @return a <code>CSVParser</code> that can provide access to the records in the web page one
      *         at a time
-     * @throws exception if this web page does not represent a CSV formatted data
      */
     public CSVParser getCSVParser (boolean withHeader) {
         return getCSVParser(withHeader, ",");
@@ -147,8 +145,8 @@ public class URLResource {
      * @param delimiter a single character that separates one field of data from another
      * @return a <code>CSVParser</code> that can provide access to the records in the web page one
      *         at a time
-     * @throws exception if this web page does not represent a CSV formatted data
-     * @throws exception if <code>delimiter.length() != 1</code>
+     * @throws ResourceException if this web page does not represent a CSV formatted data
+     * @throws ResourceException if <code>delimiter.length() != 1</code>
      */
     public CSVParser getCSVParser (boolean withHeader, String delimiter) {
         if (delimiter == null || delimiter.length() != 1) {

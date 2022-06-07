@@ -49,7 +49,7 @@ public enum FloorMapObject {
      * Look up a FloorMapObject by char representation.
      *
      * @param symbol valid char representation of the object
-     * @return
+     * @return Linked list of FloorMapObjects
      */
     public static Optional<FloorMapObject> fromChar(char symbol) {
         return Optional.ofNullable(charToEnum.get(symbol));

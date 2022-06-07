@@ -30,7 +30,7 @@ class FileSelector {
     /**
      * Pops up a dialog box to select only one file.
      * 
-     * @return
+     * @return java.io.File object
      */
     public static File selectFile () {
         // guaranteed to have one element, though it may be null
@@ -39,6 +39,9 @@ class FileSelector {
 
     /**
      * Pops up a dialog box to select only one file with given extensions.
+     *
+     * @param extensionAccepted String array of acceptable extensions.
+     * @return java.io.File object
      */
     public static File selectFile (String[] extensionAccepted) {
         // guaranteed to have one element, though it may be null
@@ -47,6 +50,8 @@ class FileSelector {
 
     /**
      * Pops up a dialog box to select multiple files.
+     *
+     * @return java.io.File[] array.
      */
     public static File[] selectFiles () {
         return selectFiles(null, true, true);
@@ -54,7 +59,9 @@ class FileSelector {
 
     /**
      * Pops up a dialog box to select multiple files with given extensions.
-     * @return
+     *
+     * @param extensionAccepted String[] array of extensions accepted
+     * @return java.io.File object
      */
     public static File[] selectFiles (String[] extensionAccepted) {
         return selectFiles(extensionAccepted, true, true);
@@ -62,6 +69,8 @@ class FileSelector {
 
     /**
      * Pops up a dialog box to save file with any extension.
+     *
+     * @return java.io.File
      */
     public static File saveFile () {
         // guaranteed to have one element, though it may be null
@@ -70,6 +79,9 @@ class FileSelector {
 
     /**
      * Pops up a dialog box to save file with given extensions.
+     *
+     * @param extensionAccepted String[] array of extensions accepted
+     * @return java.io.File
      */
     public static File saveFile (String[] extensionAccepted) {
         // guaranteed to have one element, though it may be null

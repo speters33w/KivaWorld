@@ -12,6 +12,8 @@ public class InvalidKivaCommandException extends RuntimeException {
 
     /**
      * Thrown when receiving an unrecognized command.
+     *
+     * @param message String message to be displayed on console.
      */
     public InvalidKivaCommandException(String message) {
         super(message);

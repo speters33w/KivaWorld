@@ -50,6 +50,8 @@ final class ExtendedBufferedReader extends BufferedReader {
 
     /**
      * Created extended buffered reader using default buffer-size
+     *
+     * @param reader Reader to pass to super
      */
     ExtendedBufferedReader(final Reader reader) {
         super(reader);

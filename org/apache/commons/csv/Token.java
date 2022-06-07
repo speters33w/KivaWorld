@@ -21,8 +21,9 @@ import static org.apache.commons.csv.Token.Type.INVALID;
 
 /**
  * Internal token representation.
- * <p/>
+ * <p>
  * It is used as contract between the lexer and the parser.
+ * </p>
  *
  * @version $Id: Token.java 1509069 2013-08-01 02:04:27Z ggregory $
  */

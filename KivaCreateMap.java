@@ -1,12 +1,13 @@
 import java.util.Random;
 import java.util.StringJoiner;
+import kivaworld.*;
 
 /**
  * Creates a Kiva FloorMap
  * This can be a random map, or a default map as a string or FloorMap
  *
  * @author Stephan Peters
- * @version 20200601.2200
+ * @version 20200607.1700
  */
 public class KivaCreateMap
 {
@@ -14,8 +15,6 @@ public class KivaCreateMap
     private boolean isKivaPlaced = false;
     private boolean isPodPlaced = false;
     private boolean isDopzonePlaced = false;
-    private int mapWidth = 20;
-    private int mapHeight = 10;
 
     /**
      * public static default floor map, returns as a String
@@ -45,15 +44,17 @@ public class KivaCreateMap
     }
 
     /**
-     * create randomized map
+     * Create a map String that can be used with FloorMap
+     *
+     * @param mapWidth Width (x, col) of the map.
+     * @param mapHeight Height (y, row) of the map.
+     * @return The generated map in String format.
      */
-    public StringJoiner createMap(int mapWidth, int mapHeight) { //todo finish random map generator
+    public String createMap(int mapWidth, int mapHeight) { //todo finish random map generator
         //obstruction = "*" 17% should be *
         //kiva = "K"
         //pod = "P"
         //dropzone = "D"
-        this.mapWidth = mapWidth;
-        this.mapHeight = mapHeight;
         StringJoiner createdMap = new StringJoiner("");
         //create upper wall
         for(int i=0;(i<=mapWidth-1);i++){
@@ -65,20 +66,20 @@ public class KivaCreateMap
                 //create string "|" + random + "|\n"
             }
         }
-        return createdMap;
+        return String.valueOf(createdMap);
         //write the string to file using FileResource;
     }
 
     public static void main(String[] args) {
+        int mapWidth = 20;
+        int mapHeight = 10;
         KivaCreateMap testCreateMap = new KivaCreateMap();
-        Random testRandom = new Random();
-        int min = 5;
-        int max = 10;
-        System.out.println("0        1         2");
-        System.out.println("12345678901234567890");
-        System.out.println(testCreateMap.createMap
-                (testRandom.nextInt(10) + 10,
-                        testRandom.nextInt(max - min + 1) + min).toString());
+        Random random = new Random();
+            mapWidth = random.nextInt(15) + 10;
+            mapHeight = random.nextInt(5) + 10;
+            System.out.println("Width = " + mapWidth + " Height = " + mapHeight);
+        for (int i = 0; i < mapHeight; i++) {
 
+        }
     }
 }

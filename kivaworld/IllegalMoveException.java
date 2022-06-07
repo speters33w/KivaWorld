@@ -12,6 +12,8 @@ public class IllegalMoveException extends RuntimeException {
 
     /**
      * Thrown when attempting to move to an invalid location (e.g. off the floor).
+     *
+     * @param message String message to be displayed on console.
      */
     public IllegalMoveException(String message) {
         super(message);

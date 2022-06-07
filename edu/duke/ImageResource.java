@@ -56,7 +56,7 @@ public class ImageResource {
      * Create an <code>ImageResource</code> object that represents the file chosen by the user using
      * a file selection dialog box.
      * 
-     * @throws exception if no file is selected by the user
+     * @throws java.lang.NullPointerException if no file is selected by the user
      */
     public ImageResource () {
         File file = FileSelector.selectFile(ImageIO.getReaderFileSuffixes());
@@ -74,7 +74,7 @@ public class ImageResource {
      * 
      * @param width the width of the image in pixels
      * @param height the height of the image in pixels
-     * @throws exception if the width or height are not positive values
+     * @throws ResourceException if the width or height are not positive values
      */
     public ImageResource (int width, int height) {
         if (width <= 0 || height <= 0) {
@@ -89,7 +89,6 @@ public class ImageResource {
      * Create an <code>ImageResource</code> object from the file name passed as a parameter.
      * 
      * @param fileName the name of the file
-     * @throws exception if the file cannot be accessed or is not in an image format
      */
     public ImageResource (String fileName) {
         init(fileName, getImageFromFile(fileName));
@@ -99,7 +98,6 @@ public class ImageResource {
      * Create an <code>ImageResource</code> object from a file given as a parameter.
      * 
      * @param file the file representing an image
-     * @throws exception if the file cannot be accessed or is not in an image format
      */
     public ImageResource (File file) {
         init(file);
@@ -221,7 +219,7 @@ public class ImageResource {
      * allow the user to choose a name if no file name set (for example if this image was created as
      * a blank sized image).
      * 
-     * @throws exception if the current filename cannot be accessed for saving
+     * @throws ResourceException if the current filename cannot be accessed for saving
      */
     public void save () {
         if (myFileName.equals("")) {
@@ -241,7 +239,7 @@ public class ImageResource {
      * Saves the image as a JPEG by opening a file selection dialog box to allow the user to choose
      * the new name for the file.
      * 
-     * @throws exception if no file is selected by the user
+     * @throws ResourceException if no file is selected by the user
      */
     public void saveAs () {
         File f = FileSelector.saveFile(ImageIO.getWriterFileSuffixes());

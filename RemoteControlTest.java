@@ -74,7 +74,7 @@ public class RemoteControlTest {
      *
      * Map: sample_floor_map2.txt
      * Input: RFFFFFLFFFTRFFRFFFD
-     * Expected Output: Exception in thread “main” NoPodException: The kiva attempted to TAKE a POD while there is no POD at location (8,1)
+     * Expected Output: Exception in thread "main" NoPodException: The kiva attempted to TAKE a POD while there is no POD at location (8,1)
      */
     public static void testNoPodException(){
         RemoteControl remoteControl = new RemoteControl();
@@ -88,7 +88,7 @@ public class RemoteControlTest {
      *
      * Map: sample_floor_map2.txt
      * Input: RFFFFFFLFFFTRFFRFFD
-     * Expected Output: Exception in thread “main” IllegalDropZoneException: The kiva attempted to DROP not on a DROP_ZONE at location (11,3)
+     * Expected Output: Exception in thread "main" IllegalDropZoneException: The kiva attempted to DROP not on a DROP_ZONE at location (11,3)
      */
     public static void testIllegalDropZoneException(){
         RemoteControl remoteControl = new RemoteControl();
@@ -102,7 +102,7 @@ public class RemoteControlTest {
      *
      * Map: sample_floor_map1.txt
      * Input: F
-     * Expected Output: Exception in thread “main” IllegalMoveException: The kiva ran into an obstacle at location (1,0).
+     * Expected Output: Exception in thread "main" IllegalMoveException: The kiva ran into an obstacle at location (1,0).
      */
     public static void testObstacleException(){
         RemoteControl remoteControl = new RemoteControl();
@@ -120,7 +120,7 @@ public class RemoteControlTest {
      * Expected Output: <pre>{ TURN_RIGHT, FORWARD, FORWARD, FORWARD, FORWARD, FORWARD, TAKE, TURN_RIGHT, FORWARD }</pre>
      *
      * Input: <pre>RFFFFFTRB</pre>
-     * Expected Output: <pre>Expected Output: Exception in thread “main” kivaworld.InvalidKivaCommandException: Invalid Kiva Command: B</pre>
+     * Expected Output: <pre>Expected Output: Exception in thread "main" kivaworld.InvalidKivaCommandException: Invalid Kiva Command: B</pre>
      */
     public static void testCommands(){
         String testMapString ="" +

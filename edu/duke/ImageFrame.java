@@ -23,6 +23,9 @@ class ImageFrame extends JFrame {
 
     /**
      * Creates an ImageFrame.
+     *
+     * @param fileName The fileName to title the JFrame
+     * @param image The image to be shown in the JFrame
      */
     public ImageFrame (String fileName, Image image) {
         setTitle(fileName);
@@ -32,6 +35,8 @@ class ImageFrame extends JFrame {
 
     /**
      * Displays an image in this frame.
+     *
+     * @param image The image to be displayed.
      */
     void show (Image image) {
         if (myPanel == null) {
@@ -54,6 +59,10 @@ class ImageFrame extends JFrame {
 
         /**
          * Creates an ImagePanel.
+         *
+         * @param image the image to be displayed
+         * @param width integer width of the image
+         * @param height integer height of the image
          */
         public ImagePanel (Image image, int width, int height) {
             setBackground(Color.white);
@@ -63,6 +72,10 @@ class ImageFrame extends JFrame {
 
         /**
          * Resets the image and redraws it in the panel.
+         *
+         * @param image the image to be displayed
+         * @param width integer width of the image
+         * @param height integer height of the image
          */
         public void setImage (Image image, int width, int height) {
             this.myImage = image;

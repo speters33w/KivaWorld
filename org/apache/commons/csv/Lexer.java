@@ -166,9 +166,10 @@ final class Lexer implements Closeable {
 
     /**
      * Parses a simple token.
-     * <p/>
+     * <p>
      * Simple token are tokens which are not surrounded by encapsulators. A simple token might contain escaped
      * delimiters (as \, or \;). The token is finished when one of the following conditions become true:
+     * </p>
      * <ul>
      * <li>end of line has been reached (EORECORD)</li>
      * <li>end of stream has been reached (EOF)</li>
@@ -219,16 +220,17 @@ final class Lexer implements Closeable {
 
     /**
      * Parses an encapsulated token.
-     * <p/>
+     * <p>
      * Encapsulated tokens are surrounded by the given encapsulating-string. The encapsulator itself might be included
      * in the token using a doubling syntax (as "", '') or using escaping (as in \", \'). Whitespaces before and after
      * an encapsulated token are ignored. The token is finished when one of the following conditions become true:
+     * </p>
      * <ul>
      * <li>an unescaped encapsulator has been reached, and is followed by optional whitespace then:</li>
-     * <ul>
      * <li>delimiter (TOKEN)</li>
      * <li>end of line (EORECORD)</li>
      * </ul>
+     * <ul>
      * <li>end of stream has been reached (EOF)</li> </ul>
      *
      * @param token
@@ -367,7 +369,10 @@ final class Lexer implements Closeable {
     /**
      * Greedily accepts \n, \r and \r\n This checker consumes silently the second control-character...
      *
+     * @param ch the character to check
      * @return true if the given or next character is a line-terminator
+     *
+     * @throws java.io.IOException
      */
     boolean readEndOfLine(int ch) throws IOException {
         // check if we have \r\n...
@@ -383,6 +388,7 @@ final class Lexer implements Closeable {
     }
 
     /**
+     * @param ch the character to check
      * @return true if the given char is a whitespace character
      */
     boolean isWhitespace(final int ch) {
@@ -400,6 +406,7 @@ final class Lexer implements Closeable {
     }
 
     /**
+     * @param ch charcter to be tested for EOF
      * @return true if the given character indicates end of file
      */
     boolean isEndOfFile(final int ch) {

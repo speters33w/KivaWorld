@@ -16,9 +16,9 @@ import java.util.List;
  * Example usage:
  * <pre>
  * Please select a map file.
- * > sample_floor_map2.txt
+ * -- sample_floor_map2.txt
  * Please enter the directions for the Kiva Robot to take.
- * > RFFFFFFLFFFTRFFRFFFD
+ * -- RFFFFFFLFFFTRFFRFFFD
  * ---------------
  * |        P   *|
  * |   **       *|
@@ -152,7 +152,7 @@ public class RemoteControl {
      * @param floorMap a FloorMap object
      * @param directions a string of single character Kiva commands for the Kiva to perform.
      *
-     * @see FloorMap
+     * @see kivaworld.FloorMap
      */
     public void run(FloorMap floorMap, String directions){
         System.out.println(floorMap);

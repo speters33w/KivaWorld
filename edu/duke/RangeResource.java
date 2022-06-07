@@ -50,7 +50,6 @@ public class RangeResource {
      * end, [0 - end), that increments by 1.
      * 
      * @param end when to stop the range, not included as one of the values
-     * @throws exception if the end is negative
      */
     public RangeResource (int end) {
         this(0, end, 1);
@@ -62,7 +61,6 @@ public class RangeResource {
      * 
      * @param start the first value in the range, included as one of the values
      * @param end when to stop the range, not included as one of the values
-     * @throws exception if the end is less than the start
      */
     public RangeResource (int start, int end) {
         this(start, end, 1);
@@ -75,9 +73,9 @@ public class RangeResource {
      * @param start the first value in the range, included as one of the values
      * @param end when to stop the range, not included as one of the values
      * @param increment how much to add to get the next value in the range's sequence
-     * @throws exception if increment is negative when the end is greater than the start
-     * @throws exception if increment is positive when the end is less than the start
-     * @throws exception if increment is 0
+     * @throws ResourceException if increment is negative when the end is greater than the start
+     * @throws ResourceException if increment is positive when the end is less than the start
+     * @throws ResourceException if increment is 0
      */
     public RangeResource (int start, int end, int increment) {
         if (increment == 0) {
