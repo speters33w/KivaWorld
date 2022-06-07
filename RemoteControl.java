@@ -22,7 +22,6 @@ public class RemoteControl {
      * Build a new RemoteControl.
      */
     public RemoteControl() {
-        keyboardResource = new KeyboardResource();
     }
 
     /**
@@ -32,6 +31,7 @@ public class RemoteControl {
      * @return Returns a linked list of kiva commands that can be executed by the Kiva one at a time.
      */
     public static List<KivaCommand> convertToKivaCommands(String directions) {
+        kivaCommands.clear(); // clears previous kivaCommands from list
         char[] kivaCommandCharacters = directions.toCharArray();
         for (int i = 0; i < kivaCommandCharacters.length; i++) {
             switch (kivaCommandCharacters[i]) {
@@ -84,7 +84,6 @@ public class RemoteControl {
         System.out.println("Please enter the directions for the Kiva Robot to take.");
         String directions = keyboardResource.getLine();
         run(mapFileName,directions);
-
     }
 
     /**
@@ -143,6 +142,11 @@ public class RemoteControl {
         System.out.println("Commands you sent to the Kiva: " + kivaCommands);
         for (int i = 0; i < directions.length(); i++) {
             kiva.move(kivaCommands.get(i));
+        }
+        if (kiva.successfullyDropped && kivaCommands.get(directions.length()-1) == KivaCommand.DROP){
+            System.out.println("Successfully picked up the pod and dropped it off. Thank you!");
+        } else {
+            System.out.println("I'm sorry. The Kiva Robot did not pick up the pod and then drop it off correctly.");
         }
     }
 }
