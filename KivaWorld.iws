@@ -4,33 +4,23 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added Javadoc comments to kivaworld">
-      <change afterPath="$PROJECT_DIR$/kivaworld/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solver/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaMoveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added Compiled Javadocs">
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoteControlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControlTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/FileResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/FileResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/FileSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/FileSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/ImageFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/ImageFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/ImageResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/ImageResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/RangeResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/RangeResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/StorageResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/StorageResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/URLResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/URLResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/FloorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/FloorMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/FloorMapObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/FloorMapObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/IllegalMoveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/IllegalMoveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/InvalidKivaCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/InvalidKivaCommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/InvalidMapLayoutException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/InvalidMapLayoutException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/CSVFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/CSVFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/CSVRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/CSVRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/ExtendedBufferedReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/ExtendedBufferedReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/Kiva.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/Kiva.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KivaCommandTester.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/KivaCommandTester.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KivaConstructorTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/KivaConstructorTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KivaCreateMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/KivaCreateMap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KivaMotorLifetimeTester.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/KivaMotorLifetimeTester.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/RemoteControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/RemoteControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/RemoteControlTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/RemoteControlTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/allclasses-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/overview-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/overview-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/serialized-form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -480,7 +470,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654631658526</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Repaird Javadoc comments for compilation">
+      <created>1654641657288</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1654641657288</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Added Compiled Javadocs">
+      <created>1654642180782</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1654642180782</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -495,8 +499,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added testMode to KivaTest" />
-    <MESSAGE value="Separated KivaConstructorTest from KivaTest" />
     <MESSAGE value="Fixed info printed to console in !testMode" />
     <MESSAGE value="Added testTakeOnPod and testDropOnDropZone to KivaTest" />
     <MESSAGE value="Renamed RunKiva, moved interactive test from KivaTest" />
@@ -520,7 +522,9 @@
     <MESSAGE value="Added edu.duke.*" />
     <MESSAGE value="pre-final commit" />
     <MESSAGE value="Added Javadoc comments to kivaworld" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Javadoc comments to kivaworld" />
+    <MESSAGE value="Repaird Javadoc comments for compilation" />
+    <MESSAGE value="Added Compiled Javadocs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Compiled Javadocs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
