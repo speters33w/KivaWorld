@@ -1,4 +1,8 @@
 import edu.duke.FileResource;
+import kivaworld.InvalidKivaCommandException;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,50 +25,125 @@ public class RemoteControl {
         keyboardResource = new KeyboardResource();
     }
 
+    /**
+     * Converts a string of one character Kiva commands to a list of executable Kiva commands.
+     *
+     * @param directions a string of single character Kiva commands for the Kiva to perform. Example: <pre>RFFFFFTRF</pre>
+     * @return Returns a linked list of kiva commands that can be executed by the Kiva one at a time.
+     */
     public static List<KivaCommand> convertToKivaCommands(String directions) {
         char[] kivaCommandCharacters = directions.toCharArray();
-        for (int i = 0;i < kivaCommandCharacters.length; i++) {
-            switch(kivaCommandCharacters[i]){
-                case 'F' :
+        for (int i = 0; i < kivaCommandCharacters.length; i++) {
+            switch (kivaCommandCharacters[i]) {
+                case 'F':
                     kivaCommands.add(KivaCommand.FORWARD);
                     break;
-                case 'R' :
+                case 'R':
                     kivaCommands.add(KivaCommand.TURN_RIGHT);
                     break;
-                case 'L' :
+                case 'L':
                     kivaCommands.add(KivaCommand.TURN_LEFT);
                     break;
-                case 'T' :
+                case 'T':
                     kivaCommands.add(KivaCommand.TAKE);
                     break;
-                case 'D' :
+                case 'D':
                     kivaCommands.add(KivaCommand.DROP);
                     break;
+                default:
+                    throw new InvalidKivaCommandException("Invalid Kiva Command: \"" + String.valueOf(kivaCommandCharacters[i]) + "\"");
             }
         }
         return kivaCommands;
     }
 
     /**
-     * The controller that directs Kiva's activity. Prompts the user for the floor map
-     * to load, displays the map, and asks the user for the commands for Kiva to execute.
+     * Runs a kiva using a user selected map file and a string of single character Kiva commands.
      *
-     * [Here's the method you'll execute from within BlueJ. It may or may not run successfully
-     * as-is, but you'll definitely need to add more to complete the project.]
+     * Commands:
+     * <pre>
+     * F = FORWARD
+     * R = TURN_RIGHT
+     * L = TURN_LEFT
+     * T = TAKE (a pod)
+     * D = DROP (a pod)
+     * </pre>
+     *
+     * Sample command string:
+     * <pre>RFFFFFTRF</pre>
      */
     public void run() {
         System.out.println("Please select a map file.");
-        FileResource mapFile = new FileResource();
-        String inputMap = mapFile.asString();
-        FloorMap floorMap = new FloorMap(inputMap);
-        System.out.println(floorMap);
-        kiva = new Kiva(floorMap);
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt", "map", "maz", "maze", "fm", "FloorMap");
+        fileChooser.setFileFilter(filter);
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+        fileChooser.showDialog(null,"Select");
+        fileChooser.setVisible(true);
+        String mapFileName = fileChooser.getName(fileChooser.getSelectedFile());
         System.out.println("Please enter the directions for the Kiva Robot to take.");
         String directions = keyboardResource.getLine();
-        System.out.println("Directions that you typed in: " + directions);
+        run(mapFileName,directions);
+
+    }
+
+    /**
+     * Runs a kiva using a map file and a string of single character Kiva commands.
+     * The map file must be in the Default Package source directory and is inputted as a file name String.
+     * The method will open and read the file, then convert it to a FloorMap object.
+     *
+     * Commands:
+     * <pre>
+     * F = FORWARD
+     * R = TURN_RIGHT
+     * L = TURN_LEFT
+     * T = TAKE (a pod)
+     * D = DROP (a pod)
+     * </pre>
+     *
+     * Sample command string:
+     * <pre>RFFFFFTRF</pre>
+     *
+     * @param mapFileName String, the relative filename of the map file.
+     * @param directions a string of single character Kiva commands for the Kiva to perform.
+     */
+    public void run(String mapFileName, String directions) {
+        FileResource mapFile = new FileResource(mapFileName);
+        String inputMap = mapFile.asString();
+        FloorMap floorMap = new FloorMap(inputMap);
+        run(floorMap, directions);
+    }
+
+    /**
+     * Runs a kiva using a FloorMap object and a string of single character Kiva commands.
+     * The FloorMap file can be created from a string in an external method calling remoteControl.run().
+     * This method will not open a map file.
+     *
+     * Commands:
+     * <pre>
+     * F = FORWARD
+     * R = TURN_RIGHT
+     * L = TURN_LEFT
+     * T = TAKE (a pod)
+     * D = DROP (a pod)
+     * </pre>
+     *
+     * Sample command string:
+     * <pre>RFFFFFTRF</pre>
+     *
+     * @param floorMap a FloorMap object
+     * @param directions a string of single character Kiva commands for the Kiva to perform.
+     *
+     * @see FloorMap
+     */
+    public void run(FloorMap floorMap, String directions){
+        System.out.println(floorMap);
+        kiva = new Kiva(floorMap);
         kivaCommands = convertToKivaCommands(directions.toUpperCase());
+        System.out.println("Commands you sent to the Kiva: " + kivaCommands);
         for (int i = 0; i < directions.length(); i++) {
             kiva.move(kivaCommands.get(i));
         }
     }
 }
+

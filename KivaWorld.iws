@@ -6,10 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Implemented RemoteControl.">
-      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RemoteControlTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/default_map.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,14 +71,7 @@
       <recent name="solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RemoteControl">
-    <configuration name="KivaCommandTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="KivaCommandTester" />
-      <module name="KivaWorld" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.RemoteControlTest">
     <configuration name="KivaMotorLifetimeTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaMotorLifetimeTester" />
       <module name="KivaWorld" />
@@ -107,8 +99,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RunKivaMoveTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RunKivaMoveTest" />
+    <configuration name="RemoteControlTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RemoteControlTest" />
       <module name="KivaWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,19 +115,17 @@
     </configuration>
     <list>
       <item itemvalue="Application.RemoteControl" />
-      <item itemvalue="Application.KivaCommandTester" />
-      <item itemvalue="Application.RunKivaMoveTest" />
       <item itemvalue="Application.KivaMotorLifetimeTester" />
       <item itemvalue="Application.MazeDriver" />
       <item itemvalue="Application.TempSandbox" />
+      <item itemvalue="Application.RemoteControlTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RemoteControlTest" />
         <item itemvalue="Application.TempSandbox" />
         <item itemvalue="Application.MazeDriver" />
         <item itemvalue="Application.KivaMotorLifetimeTester" />
-        <item itemvalue="Application.RunKivaMoveTest" />
-        <item itemvalue="Application.KivaCommandTester" />
       </list>
     </recent_temporary>
   </component>
@@ -428,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654541261496</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Implemented RemoteControl.">
+      <created>1654555015840</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1654555015924</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
