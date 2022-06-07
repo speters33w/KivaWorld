@@ -6,7 +6,7 @@ import java.util.Random;
  * Various Kiva move tests
  *
  * @author Stephan Peters (peterstz)
- * @version 20220601.2200
+ * @version 20220607.1300
  *
  * Example usage
  * <pre>
@@ -26,7 +26,6 @@ import java.util.Random;
  *</pre>
  */
 public class KivaMoveTest {
-    private final KeyboardResource keyboardResource = new KeyboardResource();
     private final Kiva kiva = new Kiva(); //not final because of constructor tests
     private String testString = "testKiva";
     private FacingDirection expectDirection = FacingDirection.UP;
@@ -34,6 +33,8 @@ public class KivaMoveTest {
     private boolean expectCarry = false;
     private boolean expectDropped = false;
     private boolean testMode = true;
+    //private Console console = System.console(); //this didn't work with console.readLine() to pause before exceptions
+    private final KeyboardResource scanner = new KeyboardResource();
 
     /**
      * Changes whether test outputs verifyKivaState after every KivaCommand to console
@@ -42,11 +43,6 @@ public class KivaMoveTest {
      */
     public void setTestMode(boolean testMode){
         this.testMode = testMode;
-//        if(testMode){
-//            System.out.println("Verify Kiva State Active");
-//        } else {
-//            System.out.println("Verify Kiva State Off");
-//        }
     }
 
     /**
@@ -61,7 +57,7 @@ public class KivaMoveTest {
      */
     private boolean sameLocation(Point a, Point b) {
         return a.getX() == b.getX() && a.getY() == b.getY();
-    } //sameLocation
+    }
 
     /**
      * Moves the Kiva object FORWARD the amount of times given in the times parameter.
@@ -491,8 +487,7 @@ public class KivaMoveTest {
         kiva.move(KivaCommand.FORWARD);
         kiva.move(KivaCommand.FORWARD);
         System.out.println("testMoveOutOfBounds: (Expect an illegalMoveException). Type [enter] to continue...");
-        KeyboardResource scanner = new KeyboardResource();
-        String string = scanner.getLine();
+        scanner.getLine();
         kiva.move(KivaCommand.FORWARD);
 
         // The following only runs if no exception was thrown.
@@ -509,8 +504,7 @@ public class KivaMoveTest {
         kiva.move(KivaCommand.FORWARD);
         kiva.move(KivaCommand.TURN_RIGHT);
         System.out.println("testMoveIntoObstacle: (Expect an illegalMoveException). Type [enter] to continue...");
-        KeyboardResource scanner = new KeyboardResource();
-        String string = scanner.getLine();
+        scanner.getLine();
         kiva.move(KivaCommand.FORWARD);
 
         // The following only runs if no exception was thrown.
@@ -536,8 +530,7 @@ public class KivaMoveTest {
         kiva.move(KivaCommand.FORWARD);
         kiva.move(KivaCommand.FORWARD);
         System.out.println("testPodCollision: (Expect an illegalMoveException). Type [enter] to continue...");
-        KeyboardResource scanner = new KeyboardResource();
-        String string = scanner.getLine();
+        scanner.getLine();
         kiva.move(KivaCommand.FORWARD);
 
         // The following only runs if no exception was thrown.
@@ -562,8 +555,7 @@ public class KivaMoveTest {
         kiva.move(KivaCommand.FORWARD);
         kiva.move(KivaCommand.FORWARD);
         System.out.println("testNoPodAtLocation: (Expect a NoPodException). Type [enter] to continue...");
-        KeyboardResource scanner = new KeyboardResource();
-        String string = scanner.getLine();
+        scanner.getLine();
         kiva.move(KivaCommand.TAKE);
 
         // The following only runs if no exception was thrown.
@@ -591,8 +583,7 @@ public class KivaMoveTest {
         kiva.move(KivaCommand.TAKE);
         kiva.move(KivaCommand.FORWARD);
         System.out.println("testIllegalDropZone: (Expect an illegalMoveException). Type [enter] to continue...");
-        KeyboardResource scanner = new KeyboardResource();
-        String string = scanner.getLine();
+        scanner.getLine();
         kiva.move(KivaCommand.DROP);
 
         // The following only runs if no exception was thrown.
@@ -625,11 +616,27 @@ public class KivaMoveTest {
         kiva.move(KivaCommand.FORWARD);
         System.out.println("Current Kiva motor lifetime: " + kiva.getMotorLifetime());
         kiva.move(KivaCommand.FORWARD);
-        double motorLifetimeHoursRemaining = (double)((4320000000000.0 - kiva.getMotorLifetime())/60/60/60/1000);
+        double motorLifetimeHoursRemaining = (4320000000000.0 - kiva.getMotorLifetime())/60/60/60/1000;
         DecimalFormat decimalFormat = new DecimalFormat("#.#"); //todo format in hours is not displaying correctly (minor).
         System.out.println("Ending Kiva motor lifetime (ms): " + kiva.getMotorLifetime());
         System.out.println("Kiva motor lifetime remaining: " +  decimalFormat.format(motorLifetimeHoursRemaining) + " hours.");
     }
 
-}//KivaTest
+    /**
+     * Runs the tests in this class.
+     */
+    public static void main(String[] args) {
+        KivaMoveTest kivaMoveTest = new KivaMoveTest();
+        kivaMoveTest.testKivaTakeDrop(kivaMoveTest);
+        kivaMoveTest.testKivaMotorLifetime();
+
+        // EXCEPTION tests
+//        kivaMoveTest = new KivaMoveTest(); // Re-initialize Kiva to default location
+//        kivaMoveTest.testMoveOutOfBounds(); // should terminate in IllegalMoveException
+//        kivaMoveTest.testMoveIntoObstacle(); // should terminate in IllegalMoveException
+//        kivaMoveTest.testPodCollision(); // should terminate in IllegalMoveException
+//        kivaMoveTest.testNoPodAtLocation();
+//        kivaMoveTest.testIllegalDropZone();
+    }
+}
 

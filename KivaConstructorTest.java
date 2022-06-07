@@ -4,7 +4,7 @@ import edu.duke.Point;
  * Test Kiva constructors
  *
  * @author Stephan Peters (peterstz)
- * @version 20220601.1700
+ * @version 20220607.1300
  */
 public class KivaConstructorTest{
 
@@ -64,4 +64,13 @@ public class KivaConstructorTest{
     private boolean sameLocation(Point a, Point b) {
         return a.getX() == b.getX() && a.getY() == b.getY();
     } //sameLocation
+
+    /**
+     * Runs the Kiva Constructor tests.
+     */
+    public static void main(String[] args) {
+        KivaConstructorTest kivaConstructorTest = new KivaConstructorTest();
+        kivaConstructorTest.testSingleArgumentConstructor();
+        kivaConstructorTest.testTwoArgumentConstructor();
+    }
 }

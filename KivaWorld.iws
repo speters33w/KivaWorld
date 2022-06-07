@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="8" />
+    <option name="SCOPE_TYPE" value="3" />
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added JavaDoc comments to RemoteControl">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added edu.duke.*">
+      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaCommandTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCommandTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaConstructorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaConstructorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaMotorLifetimeTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaMotorLifetimeTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaMoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaMoveTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MoveForwardTrial.java" beforeDir="false" afterPath="$PROJECT_DIR$/MoveForwardTrial.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RemoteControlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControlTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objective/NEW_Project_self-service-course-4-project-kiva-robot-remote-control_1-25.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RunKivaMoveTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RunRemoteControl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maze1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maze2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/package.bluej" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +49,7 @@
     <setting file="file://$PROJECT_DIR$/KivaCreateMap.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Kiva.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/edu/duke/package-info.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/KivaCommandTester.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/RunKivaMoveTest.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/KivaMoveTest.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/edu/duke/Point.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MoveForwardTrial.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/KivaConstructorTest.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,6 +71,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -73,6 +80,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.RemoteControlTest">
+    <configuration name="KivaConstructorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KivaConstructorTest" />
+      <module name="KivaWorld" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="KivaMotorLifetimeTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaMotorLifetimeTester" />
       <module name="KivaWorld" />
@@ -80,21 +94,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MazeDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="solver.MazeDriver" />
+    <configuration name="KivaMoveTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KivaMoveTest" />
       <module name="KivaWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="solver.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RemoteControl" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="RunRemoteControl" />
+    <configuration name="MoveForwardTrial" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MoveForwardTrial" />
       <module name="KivaWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -107,26 +115,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TempSandbox" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TempSandbox" />
-      <module name="KivaWorld" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.RemoteControl" />
+      <item itemvalue="Application.KivaConstructorTest" />
       <item itemvalue="Application.KivaMotorLifetimeTester" />
-      <item itemvalue="Application.MazeDriver" />
-      <item itemvalue="Application.TempSandbox" />
+      <item itemvalue="Application.KivaMoveTest" />
+      <item itemvalue="Application.MoveForwardTrial" />
       <item itemvalue="Application.RemoteControlTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.RemoteControlTest" />
-        <item itemvalue="Application.TempSandbox" />
-        <item itemvalue="Application.MazeDriver" />
+        <item itemvalue="Application.MoveForwardTrial" />
+        <item itemvalue="Application.KivaMoveTest" />
         <item itemvalue="Application.KivaMotorLifetimeTester" />
+        <item itemvalue="Application.KivaConstructorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -433,7 +435,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654565693415</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Added org.apache.commons.csv">
+      <created>1654617689806</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1654617689806</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Added edu.duke.*">
+      <created>1654619158925</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1654619158925</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -448,8 +464,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed testing Sysout line" />
-    <MESSAGE value="Created project test case methods and javadoc documentation" />
     <MESSAGE value="corrected error in testTurnRight" />
     <MESSAGE value="Finished test cases in KivaTest" />
     <MESSAGE value="Added testMode to KivaTest" />
@@ -473,7 +487,9 @@
     <MESSAGE value="Improved solver map output." />
     <MESSAGE value="Implemented RemoteControl." />
     <MESSAGE value="Added JavaDoc comments to RemoteControl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added JavaDoc comments to RemoteControl" />
+    <MESSAGE value="Added org.apache.commons.csv" />
+    <MESSAGE value="Added edu.duke.*" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added edu.duke.*" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

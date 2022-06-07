@@ -7,16 +7,34 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * This is the class that controls Kiva's actions. Implement the <code>run()</code>
- * method to deliver the pod and avoid the obstacles.
+ * This is the class that controls Kiva's actions.
+ * The user may select a map file and issue a string of commands to the Kiva to move the Kiva to the pod.
+ * Then the Kiva can take on the pod, move to the drop zone, and drop the pod.
  *
- * This is starter code that may or may not work. You will need to update the code to
- * complete the project.
+ * The map file should be in the default package source directory.
+ *
+ * Example usage:
+ * <pre>
+ * Please select a map file.
+ * > sample_floor_map2.txt
+ * Please enter the directions for the Kiva Robot to take.
+ * > RFFFFFFLFFFTRFFRFFFD
+ * ---------------
+ * |        P   *|
+ * |   **       *|
+ * |   **       *|
+ * | *K       D *|
+ * ---------------
+ * Commands you sent to the Kiva: [TURN_RIGHT, FORWARD, FORWARD, FORWARD, FORWARD, FORWARD, FORWARD, TURN_LEFT,
+ * FORWARD, FORWARD, FORWARD, TAKE, TURN_RIGHT, FORWARD, FORWARD, TURN_RIGHT, FORWARD, FORWARD, FORWARD, DROP]
+ * Successfully picked up the pod and dropped it off. Thank you!
+ * </pre>
+ *
+ * @author Stephan Peters (peterstz)
+ * @version 20220607.1330
  */
 public class RemoteControl {
-    private KeyboardResource keyboardResource;
-    private Kiva kiva;
-    private static List<KivaCommand> kivaCommands = new LinkedList<KivaCommand>();
+    private static List<KivaCommand> kivaCommands = new LinkedList<>();
 
     /**
      * Build a new RemoteControl.
@@ -33,8 +51,8 @@ public class RemoteControl {
     public static List<KivaCommand> convertToKivaCommands(String directions) {
         kivaCommands.clear(); // clears previous kivaCommands from list
         char[] kivaCommandCharacters = directions.toCharArray();
-        for (int i = 0; i < kivaCommandCharacters.length; i++) {
-            switch (kivaCommandCharacters[i]) {
+        for (char kivaCommandCharacter : kivaCommandCharacters) {
+            switch (kivaCommandCharacter) {
                 case 'F':
                     kivaCommands.add(KivaCommand.FORWARD);
                     break;
@@ -51,7 +69,7 @@ public class RemoteControl {
                     kivaCommands.add(KivaCommand.DROP);
                     break;
                 default:
-                    throw new InvalidKivaCommandException("Invalid Kiva Command: \"" + String.valueOf(kivaCommandCharacters[i]) + "\"");
+                    throw new InvalidKivaCommandException("Invalid Kiva Command: \"" + kivaCommandCharacter + "\"");
             }
         }
         return kivaCommands;
@@ -82,6 +100,7 @@ public class RemoteControl {
         fileChooser.setVisible(true);
         String mapFileName = fileChooser.getName(fileChooser.getSelectedFile());
         System.out.println("Please enter the directions for the Kiva Robot to take.");
+        KeyboardResource keyboardResource = new KeyboardResource();
         String directions = keyboardResource.getLine();
         run(mapFileName,directions);
     }
@@ -137,7 +156,7 @@ public class RemoteControl {
      */
     public void run(FloorMap floorMap, String directions){
         System.out.println(floorMap);
-        kiva = new Kiva(floorMap);
+        Kiva kiva = new Kiva(floorMap);
         kivaCommands = convertToKivaCommands(directions.toUpperCase());
         System.out.println("Commands you sent to the Kiva: " + kivaCommands);
         for (int i = 0; i < directions.length(); i++) {
@@ -148,6 +167,14 @@ public class RemoteControl {
         } else {
             System.out.println("I'm sorry. The Kiva Robot did not pick up the pod and then drop it off correctly.");
         }
+    }
+
+    /**
+     * Runs the RemoteControl.run() method.
+     */
+    public static void main(String[] args) {
+        RemoteControl remotecontrol = new RemoteControl();
+        remotecontrol.run();
     }
 }
 

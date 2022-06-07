@@ -4,6 +4,13 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 //requires KivaWorld.FacingDirection in default package;
 
+/**
+ * Class allows a user to travel around the coordinate point system plane and view the current location.
+ * It's pretty lame as a game, but it's cool anyway.
+ *
+ * @author Stephan Peters (peterstz)
+ * @version 20220607.1300
+ */
 public class MoveForwardTrial {
     // Create location and facing direction objects
     private Point currentLocation;
@@ -129,6 +136,5 @@ public class MoveForwardTrial {
                 verifyKivaState(testString, kiva, new Point(x, y), expectDirection, expectCarry, expectDropped);
             }
         }
-    }
-     */
+    }*/
 }

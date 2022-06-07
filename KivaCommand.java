@@ -1,5 +1,5 @@
 /**
- * Enumeration class KivaCommand - write a description of the enum class here
+ * Defines valid Kiva commands and links them to a one character directionKey
  */
 public enum KivaCommand
 {
@@ -9,15 +9,19 @@ public enum KivaCommand
     TAKE('T'),
     DROP('D');
 
-    private char directionKey;
+    private final char directionKey;
 
-    private KivaCommand(char directionKey){
+    KivaCommand(char directionKey){
         this.directionKey = directionKey;
 //        String directionKeyString = String.valueOf(directionKey).toUpperCase();
-
     }
+
+    /**
+     * Returns the valid direction key for the current Kiva command.
+     *
+     * @return Direction key as a command.
+     */
     public char getDirectionKey(){
-            this.directionKey = directionKey;
             return directionKey;
     }
 }

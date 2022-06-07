@@ -1,17 +1,15 @@
 import edu.duke.Point;
-import java.util.Objects;
-
 
 /**
  * The Kiva class allows a Kiva robot object to navigate a map to pick up and drop pods.
  *
  * @author Stephan Peters (peterstz)
- * @version 20220601.2200
+ * @version 20220607.1300
  * @see KivaCommand
  * @see FloorMap
  */
 public class Kiva {
-    boolean debugging = true;
+    boolean debugging = false;
 
     // Create and initialize class variables
     private Point currentLocation;// = new Point(-1, -1); //initializes currentLocation to (-1,-1)
@@ -20,7 +18,7 @@ public class Kiva {
     boolean carryingPod = false; //initializes carryingPod
     boolean successfullyDropped = false; //initializes successfullyDropped
     private long motorLifetime = 0L; //motor lifetime in milliseconds. Max lifetime is 4320000000000 ms (20,000 Hours)
-    private double motorLifetimeHours;
+    // private double motorLifetimeHours; //kiva.getMotorLifetime())/60/60/60/1000;
     /**
      * Creates Kiva using a provided map
      *
@@ -49,7 +47,6 @@ public class Kiva {
             System.out.println("The Kiva starts at: " + currentLocation + ".");
             System.out.println("The Kiva is facing: " + directionFacing + ".");
         }
-
     }
 
     /**
@@ -58,7 +55,6 @@ public class Kiva {
      * @see KivaCreateMap
      */
     public Kiva() {
-        //this.currentLocation = new Point(2, 4);
         this.currentLocation = map.getInitialKivaLocation();
         new Kiva(map, currentLocation); // map is already defined as default map in field
     }
@@ -99,19 +95,41 @@ public class Kiva {
         return directionFacing;
     }
 
+    /**
+     * Returns the current motor lifetime (Long, in milliseconds)
+     * Max lifetime is 4320000000000 ms (20,000 Hours)
+     *
+     * @return Long motor lifetime in milliseconds
+     */
     public long getMotorLifetime(){
         return motorLifetime;
     }
 
+    /**
+     * Returns true if Kiva has successfully picked up a pod and has not dropped it yet.
+     *
+     * @return true if Kiva has successfully picked up a pod.
+     */
     public boolean isCarryingPod() {
         return carryingPod;
     }
 
+    /**
+     * Returns true if Kiva has successfully dropped off a pod.
+     *
+     * @return true if Kiva has successfully dropped off a pod.
+     */
     public boolean isSuccessfullyDropped() {
         return successfullyDropped;
     }
 
-    public void setDirectionFacing(String facingDirection) {
+    /** Sets the direction facing without executing a RIGHT_TURN or LEFT_TURN.
+     *
+     * @param facingDirection The facingDirection to set the Kiva to.
+     *
+     * @see FacingDirection
+     */
+    void setDirectionFacing(String facingDirection) {
         switch (facingDirection.toUpperCase()) {
             case "UP":
             case "": //default is UP
@@ -130,10 +148,20 @@ public class Kiva {
 
     }
 
+    /**
+     * Sets the motor lifetime of the current Kiva.
+     * Used for testing.
+     *
+     * @param motorLifetime current motor lifetime (Long, in milliseconds)
+     * Max lifetime is 4320000000000 ms (20,000 Hours)
+     */
     public void setMotorLifetime(long motorLifetime){
         this.motorLifetime = motorLifetime;
     }
 
+    /**
+     * Adds one second to current motor lifetime.
+     */
     private void incrementMotorLifetime(){
         motorLifetime = motorLifetime+1000L;
     }
@@ -151,6 +179,9 @@ public class Kiva {
      *
      * @param command KivaCommand command
      * @see KivaCommand
+     *
+     * @throws NoPodException if Kiva attempts to TAKE a pod where there is none.
+     * @throws IllegalDropZoneException if Kiva attempts to drop a pod outside the drop zone.
      */
     public void move(KivaCommand command) {
         switch (command) {
@@ -296,13 +327,4 @@ public class Kiva {
             }
         }
     }
-
-    public void tempExceptionMessageTester() {
-        FloorMapObject terrain = map.getObjectAtLocation(currentLocation);
-        if (terrain != FloorMapObject.POD) {
-            throw new NoPodException(String.format(
-                    "Can't TAKE: Location %s is %s, not POD!", currentLocation, terrain));
-        }
-    }
-
 }
