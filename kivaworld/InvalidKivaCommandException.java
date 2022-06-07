@@ -5,9 +5,14 @@ package kivaworld;
 // (powered by FernFlower decompiler)
 //
 
+/**
+ * Thrown when an invalid command key (that doesn't correspond to a valid KivaCommand) is received.
+ */
 public class InvalidKivaCommandException extends RuntimeException {
-    private static final long serialVersionUID = -3683467712791191030L;
 
+    /**
+     * Thrown when receiving an unrecognized command.
+     */
     public InvalidKivaCommandException(String message) {
         super(message);
     }

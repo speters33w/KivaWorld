@@ -5,9 +5,14 @@ package kivaworld;
 // (powered by FernFlower decompiler)
 //
 
+/**
+ * Thrown when an attempt is made to have Kiva move in an illegal direction (e.g. into an obstacle).
+ */
 public class IllegalMoveException extends RuntimeException {
-    private static final long serialVersionUID = -1937995197369040270L;
 
+    /**
+     * Thrown when attempting to move to an invalid location (e.g. off the floor).
+     */
     public IllegalMoveException(String message) {
         super(message);
     }
