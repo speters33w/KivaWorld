@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 import edu.duke.Point;
 
@@ -6,14 +8,15 @@ import edu.duke.Point;
  * This can be a random map, or a default map as a string or FloorMap
  *
  * @author Stephan Peters
- * @version 20200607.1700
+ * @version 20200608.2112
  */
 public class KivaCreateMap
 {
     // instance variables - replace the example below with your own
-    private boolean isKivaPlaced = false;
-    private boolean isPodPlaced = false;
-    private boolean isDopzonePlaced = false;
+    private final FacingDirection[] facingDirections = FacingDirection.values();
+    private FacingDirection facingDirection = FacingDirection.UP;
+    Random random = new Random();
+    private List<Point> obstacles = new LinkedList<>();
 
     /**
      * public static default floor map, returns as a String
@@ -50,11 +53,26 @@ public class KivaCreateMap
      * @return The generated map in String format.
      */
     public String randomMap(int mapWidth, int mapHeight) { //todo finish random map generator
-        Random random = new Random();
-        Point kiva = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
+
+        //Create PKD (Phillip K Dick) Points
         Point pod = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
+        Point kiva = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
         Point drop = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
         StringBuilder mapFrame = new StringBuilder();
+
+        // Create obstacles
+        int mapArea = mapHeight * mapWidth;
+        for (int obstaclesLeft = (int) (mapArea * 17) / 100; obstaclesLeft > 0;) {
+            facingDirection = facingDirections[random.nextInt(facingDirections.length)];
+            if(facingDirection == FacingDirection.UP || facingDirection == FacingDirection.DOWN) {
+                int obstacleLength = random.nextInt();
+            }
+            Point obstacle = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
+            obstacles.add(obstacle);
+            obstaclesLeft--;
+        }
+
+        //Create frame and add obstacles and PKD
         System.out.println("Width = " + mapWidth + " Height = " + mapHeight);
         for (int row = 0; row < mapHeight; row++) {
             for (int col = 0; col < mapWidth; col++) {
@@ -73,14 +91,16 @@ public class KivaCreateMap
                 } else {
                     mapFrame.append(" ");
                 }
-                if (row == kiva.getX()+1 && col == kiva.getY()){
-                    mapFrame.replace(mapFrame.length()-1, mapFrame.length(),"K");
+
+
+                if (row == drop.getX()+1 && col == drop.getY()) {
+                    mapFrame.replace(mapFrame.length() - 1, mapFrame.length(), "D");
                 }
                 if (row == pod.getX()+1 && col == pod.getY()) {
                     mapFrame.replace(mapFrame.length() - 1, mapFrame.length(), "P");
                 }
-                if (row == drop.getX()+1 && col == drop.getY()) {
-                    mapFrame.replace(mapFrame.length() - 1, mapFrame.length(), "D");
+                if (row == kiva.getX()+1 && col == kiva.getY()){
+                    mapFrame.replace(mapFrame.length()-1, mapFrame.length(),"K");
                 }
             }
         }
@@ -92,7 +112,6 @@ public class KivaCreateMap
      * @return The generated map in String format.
      */
     public String randomMap(){
-        Random random = new Random();
         int mapWidth = random.nextInt(15) + 10;
         int mapHeight = random.nextInt(5) + 10;
         return randomMap(mapWidth, mapHeight);

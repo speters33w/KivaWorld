@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Work on random map generator">
-      <change afterPath="$PROJECT_DIR$/crazy_random_map.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maze2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maze2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/BFSMazeSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/BFSMazeSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/MazeDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/MazeDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crazy_random_map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/crazy_random_map.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +73,7 @@
       <recent name="solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MazeDriver">
+  <component name="RunManager" selected="Application.KivaCreateMap">
     <configuration name="KivaCreateMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCreateMap" />
       <module name="KivaWorld" />
@@ -128,8 +124,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MazeDriver" />
         <item itemvalue="Application.KivaCreateMap" />
+        <item itemvalue="Application.MazeDriver" />
         <item itemvalue="Application.RemoteControlTest" />
         <item itemvalue="Application.MoveForwardTrial" />
         <item itemvalue="Application.KivaMoveTest" />
@@ -144,13 +140,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added more to Kiva.move()">
-      <created>1652238786220</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1652238786220</updated>
     </task>
     <task id="LOCAL-00004" summary="Added more to Kiva.move()">
       <created>1652240540932</created>
@@ -488,7 +477,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654654016930</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Work on random map generator">
+      <created>1654655867783</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1654655867783</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
