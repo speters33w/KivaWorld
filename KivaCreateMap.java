@@ -121,7 +121,9 @@ public class KivaCreateMap
                 // Insert obstacles
                 for (int i = 0; i < obstacles.size()-1; i++) {
                     if (row == obstacles.get(i).getX()+1 && col == obstacles.get(i).getY()){
-                        mapFrame.replace(mapFrame.length()-1, mapFrame.length(), "*");
+                        if(row != mapHeight-1) {
+                            mapFrame.replace(mapFrame.length() - 1, mapFrame.length(), "*");
+                        }
                         obstacles.remove(i);
                     }
                 }

@@ -4,12 +4,8 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Work on solver maps">
-      <change afterPath="$PROJECT_DIR$/solver/maze1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solver/maze2.txt" afterDir="false" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Random map in KivaCreateMap works">
       <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,13 +139,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Work on unit tests in KivaTest">
-      <created>1652274680793</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1652274680793</updated>
     </task>
     <task id="LOCAL-00006" summary="Changed name of CreateMap for naming convention consistency">
       <created>1652274771244</created>
@@ -487,7 +476,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654697487091</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Random map in KivaCreateMap works">
+      <created>1654708868953</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1654708868953</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -502,7 +498,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added project objective PDFs" />
     <MESSAGE value="Renamed KivaTest to KivaMoveTest" />
     <MESSAGE value="Refactored RunKivaMoveTest" />
     <MESSAGE value="Added Javadoc comments" />
@@ -527,7 +522,8 @@
     <MESSAGE value="Named KivaWorld in Javadocs" />
     <MESSAGE value="Work on random map generator" />
     <MESSAGE value="Work on solver maps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work on solver maps" />
+    <MESSAGE value="Random map in KivaCreateMap works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Random map in KivaCreateMap works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
