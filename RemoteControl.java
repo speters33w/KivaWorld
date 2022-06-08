@@ -34,7 +34,7 @@ import java.util.List;
  * @version 20220607.1330
  */
 public class RemoteControl {
-    private static List<KivaCommand> kivaCommands = new LinkedList<>();
+    private static List<KivaCommand> kivaCommands = new LinkedList<>(); //changing variable to type LinkedList causes issues, //todo investigate List / LinkedList
 
     /**
      * Build a new RemoteControl.

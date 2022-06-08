@@ -4,10 +4,12 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Work on random map generator">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Work on solver maps">
+      <change afterPath="$PROJECT_DIR$/solver/maze1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solver/maze2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crazy_random_map.txt" beforeDir="false" afterPath="$PROJECT_DIR$/crazy_random_map.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +59,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/solver" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -66,6 +68,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\StephanPeters\OneDrive\Java\IdeaProjects\KivaWorld-01\KivaWorld\solver" />
       <recent name="C:\Users\StephanPeters\OneDrive\Java\IdeaProjects\KivaWorld-01\KivaWorld" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -140,13 +143,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added more to Kiva.move()">
-      <created>1652240540932</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1652240540933</updated>
     </task>
     <task id="LOCAL-00005" summary="Work on unit tests in KivaTest">
       <created>1652274680793</created>
@@ -484,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654655867783</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Work on solver maps">
+      <created>1654697487091</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1654697487091</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -499,7 +502,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Renamed RunKiva, moved interactive test from KivaTest" />
     <MESSAGE value="Added project objective PDFs" />
     <MESSAGE value="Renamed KivaTest to KivaMoveTest" />
     <MESSAGE value="Refactored RunKivaMoveTest" />
@@ -524,7 +526,8 @@
     <MESSAGE value="Added Compiled Javadocs" />
     <MESSAGE value="Named KivaWorld in Javadocs" />
     <MESSAGE value="Work on random map generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work on random map generator" />
+    <MESSAGE value="Work on solver maps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on solver maps" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
