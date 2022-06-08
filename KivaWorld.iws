@@ -4,11 +4,14 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Named KivaWorld in Javadocs">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Work on random map generator">
+      <change afterPath="$PROJECT_DIR$/crazy_random_map.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maze1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maze1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maze2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maze2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/BFSMazeSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/BFSMazeSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/MazeDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/MazeDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/package-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,16 +77,9 @@
       <recent name="solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KivaCreateMap">
+  <component name="RunManager" selected="Application.MazeDriver">
     <configuration name="KivaCreateMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCreateMap" />
-      <module name="KivaWorld" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KivaMotorLifetimeTester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="KivaMotorLifetimeTester" />
       <module name="KivaWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,6 +88,19 @@
     <configuration name="KivaMoveTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaMoveTest" />
       <module name="KivaWorld" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MazeDriver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="solver.MazeDriver" />
+      <module name="KivaWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="solver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,19 +120,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.KivaMotorLifetimeTester" />
       <item itemvalue="Application.KivaMoveTest" />
       <item itemvalue="Application.MoveForwardTrial" />
       <item itemvalue="Application.RemoteControlTest" />
       <item itemvalue="Application.KivaCreateMap" />
+      <item itemvalue="Application.MazeDriver" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MazeDriver" />
         <item itemvalue="Application.KivaCreateMap" />
         <item itemvalue="Application.RemoteControlTest" />
         <item itemvalue="Application.MoveForwardTrial" />
         <item itemvalue="Application.KivaMoveTest" />
-        <item itemvalue="Application.KivaMotorLifetimeTester" />
       </list>
     </recent_temporary>
   </component>
@@ -135,13 +144,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added edu.duke.*.java source">
-      <created>1652235795769</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1652235795769</updated>
     </task>
     <task id="LOCAL-00003" summary="Added more to Kiva.move()">
       <created>1652238786220</created>
@@ -479,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654643026159</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Work on random map generator">
+      <created>1654654016930</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1654654016930</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,7 +503,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added testTakeOnPod and testDropOnDropZone to KivaTest" />
     <MESSAGE value="Renamed RunKiva, moved interactive test from KivaTest" />
     <MESSAGE value="Added project objective PDFs" />
     <MESSAGE value="Renamed KivaTest to KivaMoveTest" />
@@ -519,7 +527,8 @@
     <MESSAGE value="Repaird Javadoc comments for compilation" />
     <MESSAGE value="Added Compiled Javadocs" />
     <MESSAGE value="Named KivaWorld in Javadocs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Named KivaWorld in Javadocs" />
+    <MESSAGE value="Work on random map generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on random map generator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -21,7 +21,7 @@ public class BFSMazeSolver {
 //            returnList = (solver(maze,maze.getPodLocation()));
             returnList.addAll(solver(maze,maze.getPodLocation()));
 //            System.out.println(solver(maze,maze.getPodLocation()));
-//            System.out.println(returnList); //todo fix the map so if the Kiva backtracks after getting the pod, entire path is  displayed.
+            System.out.println(returnList); //todo fix the map so if the Kiva backtracks after getting the pod, entire path is  displayed.
             return returnList;
         } else {
             isPodFound = true;

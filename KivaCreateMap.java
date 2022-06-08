@@ -68,8 +68,8 @@ public class KivaCreateMap
                     mapFrame.append("|");
                 } else if (col == mapWidth-1) {
                     mapFrame.append("|\n");
-                    //} else if (random.nextInt(100)+1 <= 15){
-                    //mapFrame.append("*");
+                    } else if (random.nextInt(100)+1 <= 15){ //todo obstacles should be a little less random
+                    mapFrame.append("*");
                 } else {
                     mapFrame.append(" ");
                 }
