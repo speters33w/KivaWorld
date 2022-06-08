@@ -4,23 +4,11 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added Compiled Javadocs">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Named KivaWorld in Javadocs">
+      <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/Kiva.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/Kiva.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/KivaCommandTester.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/KivaCommandTester.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/KivaConstructorTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/KivaConstructorTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/KivaCreateMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/KivaCreateMap.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/KivaMotorLifetimeTester.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/KivaMotorLifetimeTester.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/RemoteControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/RemoteControl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/RemoteControlTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/RemoteControlTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/allclasses-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/overview-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/overview-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/package-frame.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maze1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maze2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maze2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +46,7 @@
     <scope name="KivaWorld" pattern="src:*..*&amp;&amp;!src:kivaworld.*&amp;&amp;!src:objective.*||src:*" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="28lvSXWoVOBZxIdkd6byRChHb5R" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -147,13 +135,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Initial Commit, in Progress">
-      <created>1652234864288</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1652234864288</updated>
     </task>
     <task id="LOCAL-00002" summary="Added edu.duke.*.java source">
       <created>1652235795769</created>
@@ -484,7 +465,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654642180782</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Named KivaWorld in Javadocs">
+      <created>1654643001488</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1654643001488</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Named KivaWorld in Javadocs">
+      <created>1654643026143</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1654643026159</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -499,7 +494,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed info printed to console in !testMode" />
     <MESSAGE value="Added testTakeOnPod and testDropOnDropZone to KivaTest" />
     <MESSAGE value="Renamed RunKiva, moved interactive test from KivaTest" />
     <MESSAGE value="Added project objective PDFs" />
@@ -524,7 +518,8 @@
     <MESSAGE value="Added Javadoc comments to kivaworld" />
     <MESSAGE value="Repaird Javadoc comments for compilation" />
     <MESSAGE value="Added Compiled Javadocs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Compiled Javadocs" />
+    <MESSAGE value="Named KivaWorld in Javadocs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Named KivaWorld in Javadocs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

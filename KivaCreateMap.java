@@ -1,6 +1,5 @@
 import java.util.Random;
-import java.util.StringJoiner;
-import kivaworld.*;
+import edu.duke.Point;
 
 /**
  * Creates a Kiva FloorMap
@@ -50,36 +49,57 @@ public class KivaCreateMap
      * @param mapHeight Height (y, row) of the map.
      * @return The generated map in String format.
      */
-    public String createMap(int mapWidth, int mapHeight) { //todo finish random map generator
-        //obstruction = "*" 17% should be *
-        //kiva = "K"
-        //pod = "P"
-        //dropzone = "D"
-        StringJoiner createdMap = new StringJoiner("");
-        //create upper wall
-        for(int i=0;(i<=mapWidth-1);i++){
-            createdMap.add("-");
-        }
-        createdMap.add("\n|");
-        for(int i=1;(i<=mapHeight);i++){
-            for (int j=1;(j<=mapWidth-2);j++){
-                //create string "|" + random + "|\n"
+    public String randomMap(int mapWidth, int mapHeight) { //todo finish random map generator
+        Random random = new Random();
+        Point kiva = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
+        Point pod = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
+        Point drop = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
+        StringBuilder mapFrame = new StringBuilder();
+        System.out.println("Width = " + mapWidth + " Height = " + mapHeight);
+        for (int row = 0; row < mapHeight; row++) {
+            for (int col = 0; col < mapWidth; col++) {
+                if(row == 0 || row == mapHeight-1) {
+                    if(col == mapWidth-1) {
+                        mapFrame.append("-\n");
+                    } else {
+                        mapFrame.append("-");
+                    }
+                } else if (col == 0) {
+                    mapFrame.append("|");
+                } else if (col == mapWidth-1) {
+                    mapFrame.append("|\n");
+                    //} else if (random.nextInt(100)+1 <= 15){
+                    //mapFrame.append("*");
+                } else {
+                    mapFrame.append(" ");
+                }
+                if (row == kiva.getX()+1 && col == kiva.getY()){
+                    mapFrame.replace(mapFrame.length()-1, mapFrame.length(),"K");
+                }
+                if (row == pod.getX()+1 && col == pod.getY()) {
+                    mapFrame.replace(mapFrame.length() - 1, mapFrame.length(), "P");
+                }
+                if (row == drop.getX()+1 && col == drop.getY()) {
+                    mapFrame.replace(mapFrame.length() - 1, mapFrame.length(), "D");
+                }
             }
         }
-        return String.valueOf(createdMap);
-        //write the string to file using FileResource;
+        return String.valueOf(mapFrame);
+    }
+    /**
+     * Create a map String that can be used with FloorMap
+     *
+     * @return The generated map in String format.
+     */
+    public String randomMap(){
+        Random random = new Random();
+        int mapWidth = random.nextInt(15) + 10;
+        int mapHeight = random.nextInt(5) + 10;
+        return randomMap(mapWidth, mapHeight);
     }
 
     public static void main(String[] args) {
-        int mapWidth = 20;
-        int mapHeight = 10;
-        KivaCreateMap testCreateMap = new KivaCreateMap();
-        Random random = new Random();
-            mapWidth = random.nextInt(15) + 10;
-            mapHeight = random.nextInt(5) + 10;
-            System.out.println("Width = " + mapWidth + " Height = " + mapHeight);
-        for (int i = 0; i < mapHeight; i++) {
-
-        }
+        KivaCreateMap kivaCreateMap = new KivaCreateMap();
+        System.out.println(kivaCreateMap.randomMap());
     }
 }
