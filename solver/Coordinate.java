@@ -1,9 +1,9 @@
 package solver;
 
 /**
- * A point representing a location in (x,y) coordinate space, specified in integer precision.
+ * A Coordinate representing a location in (x,y) coordinate space, specified in integer precision.
  *
- *  returns integer for getX() and getY().
+ * @version  20220608.2300
  */
 public class Coordinate { //extends edu.duke.Point {
     int x;
@@ -11,9 +11,9 @@ public class Coordinate { //extends edu.duke.Point {
     Coordinate parent;
 
     /**
-     * Constructs and initializes a point at the specified (x,y) location in the coordinate space.
-     * @param x – the X coordinate of the newly constructed Coordinate
-     * @param y – the Y coordinate of the newly constructed Coordinate
+     * Constructs and initializes a Coordinate at the specified (x,y) location in the coordinate space.
+     * @param x – the X Coordinate of the newly constructed Coordinate
+     * @param y – the Y Coordinate of the newly constructed Coordinate
      */
     public Coordinate(int x, int y) {
         //super(x,y);
@@ -22,9 +22,9 @@ public class Coordinate { //extends edu.duke.Point {
         this.parent = null;
     }
     /**
-     * Constructs and initializes a point at the specified (x,y) location in the coordinate space.
-     * @param x – the X coordinate of the newly constructed Coordinate
-     * @param y – the Y coordinate of the newly constructed Coordinate
+     * Constructs and initializes a Coordinate at the specified (x,y) location in the coordinate space.
+     * @param x – the X Coordinate of the newly constructed Coordinate
+     * @param y – the Y Coordinate of the newly constructed Coordinate
      * @param parent - the parent Coordinate
      */
     public Coordinate(int x, int y, Coordinate parent) {
@@ -35,16 +35,16 @@ public class Coordinate { //extends edu.duke.Point {
     }
 
     /**
-     * Returns the X coordinate of this Coordinate.
-     * @return the X coordinate of this Coordinate.
+     * Returns the X Coordinate of this Coordinate.
+     * @return the X Coordinate of this Coordinate.
      */
     public int getX() {
         return x;
     }
 
     /**
-     * Returns the Y coordinate of this Coordinate.
-     * @return the Y coordinate of this Coordinate.
+     * Returns the Y Coordinate of this Coordinate.
+     * @return the Y Coordinate of this Coordinate.
      */
     public int getY() {
         return y;
@@ -60,22 +60,40 @@ public class Coordinate { //extends edu.duke.Point {
     }
 
     /**
-     * Sets the location of the point to the specified location.
-     * @param p a point, the new location for this point.
+     * Sets the location of the Coordinate to the specified location.
+     * @param p a Coordinate, the new location for this Coordinate.
      */
     public void setLocation(Coordinate p) {
         setLocation(p.x, p.y);
     }
 
     /**
-     * Changes the point to have the specified location.
+     * Changes the Coordinate to have the specified location.
+     * @param x an integer, the new x location for the Coordinate.
+     * @param y an integer, the new x location for the Coordinate.
      */
     public void setLocation(int x, int y) {
         move(x, y);
     }
 
     /**
-     * Moves this point to the specified location in the
+     * Changes the x Coordinate to the specified location along the x plane.
+     * @param x an integer, the new x location for the Coordinate.
+     */
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    /**
+     * Changes the y Coordinate to have the specified location along the y plane.
+     * @param y an integer, the new y location for the Coordinate.
+     */
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    /**
+     * Moves this Coordinate to the specified location in the
      * {@code (x,y)} coordinate plane.
      */
     public void move(int x, int y) {
@@ -84,14 +102,14 @@ public class Coordinate { //extends edu.duke.Point {
     }
 
     /**
-     * Translates this point, at location {@code (x,y)},
+     * Translates this Coordinate, at location {@code (x,y)},
      * by {@code dx} along the {@code x} axis and {@code dy}
-     * along the {@code y} axis so that it now represents the point
+     * along the {@code y} axis so that it now represents the Coordinate
      * {@code (x+dx,y+dy)}.
      *
-     * @param       dx   the distance to move this point
+     * @param       dx   the distance to move this Coordinate
      *                            along the X axis
-     * @param       dy    the distance to move this point
+     * @param       dy    the distance to move this Coordinate
      *                            along the Y axis
      */
     public void translate(int dx, int dy) {
@@ -100,13 +118,41 @@ public class Coordinate { //extends edu.duke.Point {
     }
 
     /**
-     * Determines whether or not two points are equal. Two instances of
-     * <code>Coordinate2D</code> are equal if the values of their
+     *  Translates this Coordinate, at location {@code (x,y)},
+     *  by {@code delta(x,y)} along both axes so that it now represents the Coordinate
+     *      * {@code (x+delta.getX(),y+delta.getY()}.
+     *      *
+     * @param delta Coordinate to translate this Coordinate with.
+     */
+    public void translate(Coordinate delta) {
+        this.x += delta.getX();
+        this.y += delta.getY();
+    }
+
+    /**
+     * Returns a Coordinate, moved from location {@code (x,y)},
+     * by {@code xOffset} along the {@code x} axis and {@code yOffset}
+     * along the {@code y} axis so that it now represents the Coordinate
+     * {@code (x+xOffset,y+yOffset)}.
+     *
+     * @param       xOffset   the distance to move this Coordinate
+     *                            along the X axis
+     * @param       yOffset    the distance to move this Coordinate
+     *                            along the Y axis
+     * @return      A new Coordinate moved to new location
+     */
+    public Coordinate moveBy(int xOffset, int yOffset) {
+        return new Coordinate(x + xOffset, y + yOffset);
+    }
+
+    /**
+     * Determines if two Coordinates are equal. Two instances of
+     * <code>Coordinate</code> are equal if the values of their
      * <code>x</code> and <code>y</code> member fields, representing
-     * their position in the coordinate space, are the same.
-     * @param obj an object to be compared with this <code>Coordinate2D</code>
+     * their position in the Coordinate space, are the same.
+     * @param obj an object to be compared with this <code>Coordinate</code>
      * @return <code>true</code> if the object to be compared is
-     *         an instance of <code>Coordinate2D</code> and has
+     *         an instance of <code>Coordinate</code> and has
      *         the same values; <code>false</code> otherwise.
      */
     public boolean equals(Object obj) {
@@ -118,10 +164,10 @@ public class Coordinate { //extends edu.duke.Point {
     }
 
     /**
-     * Calculate and return the Euclidean distance from this point to another point.
+     * Calculate and return the Euclidean distance from this Coordinate to another Coordinate.
      *
-     * @param otherCoordinate the other point to which distance is calculated
-     * @return the distance from this point to otherCoordinate
+     * @param otherCoordinate the other Coordinate to which distance is calculated
+     * @return the distance from this Coordinate to otherCoordinate
      */
     public double distance (Coordinate otherCoordinate) {
         int dx = x - otherCoordinate.getX();
@@ -130,11 +176,8 @@ public class Coordinate { //extends edu.duke.Point {
     }
 
     /**
-     * Returns a string representation of this point and its location in the (x,y) coordinate space.
-     * This method is intended to be used only for debugging purposes.
-     * The content and format of the returned string may vary between implementations.
-     * The returned string may be empty but may not be null.
-     * @return  a string representation of this point.
+     * Returns a string representation of this Coordinate and its location in the (x,y) coordinate space.
+     * @return  a string representation of this Coordinate.
      */
     public String toString(){
         return "("+x+","+y+")";
