@@ -5,13 +5,11 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import static java.util.Collections.addAll;
-
 public class BFSMazeSolver {
     private static final int[][] DIRECTIONS = {
             { -1, 0 }, { 0, 1 }, { 1, 0 }, { 0, -1 } }; //in format [row][col] or (y,x)
     private boolean isPodFound = false;
-    private FacingDirection facingDirection = FacingDirection.UP; //todo base search for shortest path to include facing movements as a movement
+    private CardinalDirection facingDirection = CardinalDirection.NORTH; //todo base search for shortest path to include facing movements as a movement
 
     public List<Coordinate> solve(Maze maze){
         if (maze.getPodLocation() != null) { //if this is not a simple start to finish maze

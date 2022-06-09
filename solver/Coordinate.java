@@ -3,7 +3,7 @@ package solver;
 /**
  * A Coordinate representing a location in (x,y) coordinate space, specified in integer precision.
  *
- * @version  20220608.2300
+ * @version  20220608.2330
  */
 public class Coordinate { //extends edu.duke.Point {
     int x;
