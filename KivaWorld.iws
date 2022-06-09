@@ -4,9 +4,14 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Random map in KivaCreateMap works">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="KivaCreateMap Random Map Generator complete">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objective/Improved_Project_self-service-course-4-project-kiva-robot-remote-control.docx" beforeDir="false" afterPath="$PROJECT_DIR$/objective/Improved_Project_self-service-course-4-project-kiva-robot-remote-control.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/package.bluej" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/Coordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/package.bluej" beforeDir="false" afterPath="$PROJECT_DIR$/solver/package.bluej" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +78,7 @@
       <recent name="solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KivaCreateMap">
+  <component name="RunManager" selected="Application.MazeDriver">
     <configuration name="KivaCreateMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCreateMap" />
       <module name="KivaWorld" />
@@ -124,8 +129,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.KivaCreateMap" />
         <item itemvalue="Application.MazeDriver" />
+        <item itemvalue="Application.KivaCreateMap" />
         <item itemvalue="Application.RemoteControlTest" />
         <item itemvalue="Application.MoveForwardTrial" />
         <item itemvalue="Application.KivaMoveTest" />
@@ -140,13 +145,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Updated todos">
-      <created>1652275000578</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1652275000578</updated>
     </task>
     <task id="LOCAL-00008" summary="Created javadoc comments">
       <created>1652278312482</created>
@@ -484,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654710371358</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="KivaCreateMap Random Map Generator complete">
+      <created>1654718888924</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1654718888924</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -499,7 +504,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Renamed KivaTest to KivaMoveTest" />
     <MESSAGE value="Refactored RunKivaMoveTest" />
     <MESSAGE value="Added Javadoc comments" />
     <MESSAGE value="Deleted unnecessary edu.duke files" />
@@ -524,7 +528,8 @@
     <MESSAGE value="Work on random map generator" />
     <MESSAGE value="Work on solver maps" />
     <MESSAGE value="Random map in KivaCreateMap works" />
-    <option name="LAST_COMMIT_MESSAGE" value="Random map in KivaCreateMap works" />
+    <MESSAGE value="KivaCreateMap Random Map Generator complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="KivaCreateMap Random Map Generator complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

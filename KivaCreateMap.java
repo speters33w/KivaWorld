@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.Scanner;
@@ -15,7 +14,7 @@ import edu.duke.Point;
  * This can be a random map, or a default map as a string or FloorMap
  *
  * @author Stephan Peters
- * @version 20200608.2112
+ * @version 20200608.1600
  */
 public class KivaCreateMap
 {
@@ -63,14 +62,14 @@ public class KivaCreateMap
     }
 
     /**
-     * Create a map String that can be used with FloorMap
+     * Create a random map (String) that can be used with FloorMap
      *
      * @param mapWidth Width (x, col) of the map.
      * @param mapHeight Height (y, row) of the map.
      * @return The generated map in String format.
      */
     public String randomMapString(int mapWidth, int mapHeight) {
-        StringBuilder mapFrame = new StringBuilder();
+        StringBuilder mapFloor = new StringBuilder();
         int mapArea = mapHeight * mapWidth;
 
         //Create PKD (Philip K. Dick) Points
@@ -122,24 +121,24 @@ public class KivaCreateMap
             for (int col = 0; col < mapWidth; col++) {
                 if(row == 0 || row == mapHeight-1) {
                     if(col == mapWidth-1) {
-                        mapFrame.append("-\n");
+                        mapFloor.append("-\n");
                     } else {
-                        mapFrame.append("-");
+                        mapFloor.append("-");
                     }
                 } else if (col == 0) {
-                    mapFrame.append("|");
+                    mapFloor.append("|");
                 } else if (col == mapWidth-1) {
-                    mapFrame.append("|\n");
+                    mapFloor.append("|\n");
                 } else {
-                    mapFrame.append(" ");
+                    mapFloor.append(" ");
                 }
 
                 // Insert obstacles
                 for (int i = 0; i < obstacles.size()-1; i++) {
                     if (row == obstacles.get(i).getX()+1 && col == obstacles.get(i).getY()){
                         if(row != mapHeight-1) {
-                            if (mapFrame.charAt(mapFrame.length() - 1) != '\n') {
-                                mapFrame.replace(mapFrame.length() - 1, mapFrame.length(), "*");
+                            if (mapFloor.charAt(mapFloor.length() - 1) != '\n') {
+                                mapFloor.replace(mapFloor.length() - 1, mapFloor.length(), "*");
                             }
                         }
                         obstacles.remove(i);
@@ -148,20 +147,20 @@ public class KivaCreateMap
 
                 // Insert the PKD into the map NOTE: can create an invalid map if any of these share the same point.
                 if (row == pod.getX()+1 && col == pod.getY()) {
-                    mapFrame.replace(mapFrame.length()-1, mapFrame.length(), "P");
+                    mapFloor.replace(mapFloor.length()-1, mapFloor.length(), "P");
                 }
                 if (row == kiva.getX()+1 && col == kiva.getY()){
-                    mapFrame.replace(mapFrame.length()-1, mapFrame.length(), "K");
+                    mapFloor.replace(mapFloor.length()-1, mapFloor.length(), "K");
                 }
                 if (row == drop.getX()+1 && col == drop.getY()) {
-                    mapFrame.replace(mapFrame.length()-1, mapFrame.length(), "D");
+                    mapFloor.replace(mapFloor.length()-1, mapFloor.length(), "D");
                 }
             }
         }
-        return String.valueOf(mapFrame);
+        return String.valueOf(mapFloor);
     }
     /**
-     * Create a map String that can be used with FloorMap
+     * Create a random map (String) that can be used with FloorMap
      *
      * @return The generated map in String format.
      */
