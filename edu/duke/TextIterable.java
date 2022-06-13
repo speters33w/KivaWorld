@@ -2,7 +2,6 @@ package edu.duke;
 
 import java.util.Iterator;
 
-
 /**
  * This utility class allows multiple classes to iterate over a text source in
  * multiple ways.

@@ -3,7 +3,6 @@ package edu.duke;
 import java.util.ArrayList;
 import edu.duke.FileResource;
 
-
 /**
  * The <code>Shape</code> class represents a collection of <code>Point</code>s that can easily 
  * model a polygonal shape. Points can be added in order via code or given using a file, one 

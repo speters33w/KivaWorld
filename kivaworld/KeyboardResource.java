@@ -1,10 +1,5 @@
 package kivaworld;
 
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
@@ -30,5 +25,12 @@ public class KeyboardResource {
      */
     public String getLine() {
         return this.scanner.nextLine();
+    }
+
+    /**
+     * Closes the Scanner object
+     */
+    public void close(){
+        this.scanner.close();
     }
 }

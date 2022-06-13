@@ -1,6 +1,5 @@
 package edu.duke;
 
-
 /**
  * A general exception for Resource objects.
  * 

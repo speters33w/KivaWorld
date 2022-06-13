@@ -6,7 +6,6 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileFilter;
 
-
 /**
  * This utility class creates a thread safe file dialog box for loading and
  * saving files.

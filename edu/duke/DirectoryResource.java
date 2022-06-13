@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
 /**
  * The <code>DirectoryResource</code> class allows the user to choose one or more files from a
  * directory (or folder) with a file selection dialog box by using the method

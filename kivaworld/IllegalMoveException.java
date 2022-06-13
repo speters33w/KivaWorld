@@ -1,10 +1,5 @@
 package kivaworld;
 
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 /**
  * Thrown when an attempt is made to have Kiva move in an illegal direction (e.g. into an obstacle).
  */

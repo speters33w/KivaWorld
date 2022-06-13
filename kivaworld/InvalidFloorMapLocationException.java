@@ -1,10 +1,5 @@
 package kivaworld;
 
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 /**
  * Thrown when a request is made to get an object located off the current FloorMap.
  */

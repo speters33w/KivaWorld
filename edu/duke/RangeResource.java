@@ -3,7 +3,6 @@ package edu.duke;
 import java.util.List;
 import java.util.ArrayList;
 
-
 /**
  * The <code>RangeResource</code> class represents a range of integer (or whole) numbers and allows
  * access to these numbers using the method <code>sequence</code>. The integers can then be iterated

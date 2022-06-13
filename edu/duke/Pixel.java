@@ -1,6 +1,5 @@
 package edu.duke;
 
-
 /**
  * The <code>Pixel</code> class represents a color as its component values of
  * red, green, blue, as well as alpha (for transparency).

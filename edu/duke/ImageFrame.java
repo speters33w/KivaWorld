@@ -8,7 +8,6 @@ import java.awt.Image;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-
 /**
  * This utility class implements a panel for displaying an image.
  * 

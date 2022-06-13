@@ -1,10 +1,5 @@
 package kivaworld;
 
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 /**
  * Thrown if an attempt is made to pick up a pod that doesn't exist.
  */

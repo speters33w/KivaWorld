@@ -9,7 +9,6 @@ import java.net.URL;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 
-
 /**
  * The <code>URLResource</code> class opens a connection to a URL and allows access to the contents
  * of the web page a line at a time, using the method <code>lines</code>, or a word at a time, using

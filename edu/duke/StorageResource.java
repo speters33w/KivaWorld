@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-
 /**
  * The <code>StorageResource</code> class stores any number of <code>String</code> objects and
  * allows access to these stored values one at a time, using the method <code>data</code>. These

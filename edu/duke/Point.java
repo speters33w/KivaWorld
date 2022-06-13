@@ -1,6 +1,5 @@
 package edu.duke;
 
-
 /**
  * The <code>Point</code> class represents a two-dimensional location, constructed from (x,y) 
  * coordinates with some methods for access and the capability to calculate the distance from 

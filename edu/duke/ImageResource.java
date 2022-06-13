@@ -8,7 +8,6 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.util.Arrays;
 
-
 /**
  * The <code>ImageResource</code> class represents an image as a grid of <code>Pixel</code> objects
  * and allows access to all of them, using the method <code>pixels</code>. These pixels can then be

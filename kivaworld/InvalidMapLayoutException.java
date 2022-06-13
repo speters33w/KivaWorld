@@ -1,10 +1,5 @@
 package kivaworld;
 
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 /**
  * Thrown when an invalid map is given (e.g. missing Kiva, Pod or DropZone; contains invalid characters).
  */

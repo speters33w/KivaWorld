@@ -15,7 +15,6 @@ import java.io.StringReader;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 
-
 /**
  * The <code>FileResource</code> class represents a file and allows access to its contents a line at
  * a time, using the method <code>lines</code>, or a word at a time, using the method
