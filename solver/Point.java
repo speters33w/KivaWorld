@@ -6,9 +6,10 @@ import java.io.Serializable;
 //This Point method works, but requires thorough testing.
 
 /**
+ * <p>
  * A Cartesian Coordinate point in integer resolution represented by a pair of numeric coordinates {@code (x,y)}.
  * The Point object can contain a separate reference point, parent.
- *
+ *</p><p>
  * A Cartesian coordinate system in two dimensions is defined by an ordered pair of perpendicular lines (axes),
  * a single unit of length for both axes, and an orientation for each axis.
  * The point where the axes meet is taken as the origin for both, thus turning each axis into a number line.
@@ -16,22 +17,22 @@ import java.io.Serializable;
  * and the position where it meets the axis is interpreted as a number.
  * The two numbers, in that chosen order, are the Cartesian coordinates of {@code P}.
  * The reverse construction allows one to determine the point {@code P} given its coordinates.
- *
+ *</p><p>
  * The first and second coordinates are called the abscissa and the ordinate of {@code P}, respectively;
  * and the point where the axes meet is called the origin of the coordinate system.
  * The coordinates are usually written as two numbers in parentheses, in that order, separated by a comma,
  * as in {@code (3, −10)}.
  * Thus, the origin has coordinates {@code (0, 0)}, and the points on the positive half-axes,
  * one unit away from the origin, have coordinates {@code (1, 0)} and {@code (0, 1)}.
- *
+ *</p><p>
  * A Euclidean plane with a chosen Cartesian coordinate system is called a Cartesian plane.
- *
+ *</p><p>
  * If the coordinates of a point are {@code (x, y)},
  * then its distances from the x-axis and from the y-axis are {@code |y|} and {@code |x|}, respectively;
  * where {@code |n|} denotes the absolute value of a number.
- *
+ *</p>
  * @author StephanPeters (speters33w)
- * @version  20220612.2100
+ * @version 20220613.1000
  */
 public class Point implements Cloneable, Serializable {  //remove extends edu.duke.Point and remove super(x,y) from constructors to remove dependency.
     /**

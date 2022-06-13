@@ -1,5 +1,8 @@
 /**
  * Defines valid Kiva commands and links them to a one character directionKey
+ *
+ * @author Stephan Peters (peterstz)
+ * @version 20220613.0900
  */
 public enum KivaCommand
 {

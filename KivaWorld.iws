@@ -4,7 +4,123 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Reworked solver" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="KivaWorld Final">
+      <change afterPath="$PROJECT_DIR$/javadoc/solver/Direction.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/solver/KivaCreateMap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc/solver/Point.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/Kiva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoteControlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControlTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/FacingDirection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/FloorMap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/FloorMapObject.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KeyboardResource.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/Kiva.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/Kiva.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KivaCommand.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/KivaCommand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KivaCommandTester.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KivaConstructorTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KivaCreateMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/KivaCreateMap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KivaMotorLifetimeTester.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/KivaMoveTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/MoveForwardTrial.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/RemoteControl.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/RemoteControl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/RemoteControlTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/RemoteControlTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/allclasses-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/allclasses-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/allclasses-noframe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/constant-values.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/DirectoryResource.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/DirectoryResource.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/FileResource.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/FileResource.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/FileSelector.ChooserFilter.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/FileSelector.ChooserFilter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/FileSelector.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/FileSelector.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/ImageFrame.ImagePanel.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/ImageFrame.ImagePanel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/ImageFrame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/ImageFrame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/ImageResource.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/ImageResource.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/Pixel.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/Pixel.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/Point.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/Point.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/RangeResource.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/RangeResource.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/ResourceException.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/ResourceException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/Shape.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/Shape.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/StorageResource.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/StorageResource.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/TextIterable.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/TextIterable.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/URLResource.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/URLResource.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/edu/duke/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/edu/duke/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-14.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-15.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-16.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-17.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-18.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-18.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-19.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-19.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-20.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-20.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-21.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-21.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-22.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-22.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-23.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-23.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-24.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-24.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/FacingDirection.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/FacingDirection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/FloorMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/FloorMap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/FloorMapObject.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/FloorMapObject.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/IllegalDropZoneException.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/IllegalDropZoneException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/IllegalMoveException.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/IllegalMoveException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/InvalidFloorMapLocationException.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/InvalidFloorMapLocationException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/InvalidKivaCommandException.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/InvalidKivaCommandException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/InvalidMapLayoutException.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/InvalidMapLayoutException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/KeyboardResource.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/KeyboardResource.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/NoPodException.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/NoPodException.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/kivaworld/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/kivaworld/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/Assertions.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/Assertions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/CSVFormat.Predefined.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/CSVFormat.Predefined.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/CSVFormat.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/CSVFormat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/CSVParser.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/CSVParser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/CSVPrinter.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/CSVPrinter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/CSVRecord.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/CSVRecord.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/Constants.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/Constants.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/ExtendedBufferedReader.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/ExtendedBufferedReader.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/Lexer.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/Lexer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/QuoteMode.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/QuoteMode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/Token.Type.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/Token.Type.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/Token.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/Token.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/overview-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/overview-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/overview-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/serialized-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/serialized-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/BFSMazeSolver.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/BFSMazeSolver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/Coordinate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/FacingDirection.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/Maze.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/Maze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/MazeDriver.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/MazeDriver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/KivaCreateMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/Point.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +164,7 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -70,16 +187,9 @@
       <recent name="solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.MazeDriver">
+  <component name="RunManager" selected="Application.TestHash">
     <configuration name="KivaCreateMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCreateMap" />
-      <module name="KivaWorld" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="KivaMoveTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="KivaMoveTest" />
       <module name="KivaWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -112,20 +222,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestHash" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="solver.TestHash" />
+      <module name="KivaWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="solver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.KivaMoveTest" />
       <item itemvalue="Application.MoveForwardTrial" />
       <item itemvalue="Application.RemoteControlTest" />
       <item itemvalue="Application.KivaCreateMap" />
       <item itemvalue="Application.MazeDriver" />
+      <item itemvalue="Application.TestHash" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestHash" />
         <item itemvalue="Application.MazeDriver" />
         <item itemvalue="Application.KivaCreateMap" />
         <item itemvalue="Application.RemoteControlTest" />
         <item itemvalue="Application.MoveForwardTrial" />
-        <item itemvalue="Application.KivaMoveTest" />
       </list>
     </recent_temporary>
   </component>
@@ -137,13 +260,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Fixed nullpointer in KivaTest">
-      <created>1652285759730</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1652285759730</updated>
     </task>
     <task id="LOCAL-00012" summary="Created interactive moveForward test">
       <created>1652290566704</created>
@@ -481,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654747350760</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Pre KivaWorld Final">
+      <created>1655123155438</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1655123155438</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -496,8 +619,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deleted unnecessary edu.duke files" />
-    <MESSAGE value="Fixed typo, small tweaks" />
     <MESSAGE value="Fixed extraneous import" />
     <MESSAGE value="Created Kiva exceptions, repaired Kiva constructors" />
     <MESSAGE value="Added some Javadoc comments" />
@@ -521,7 +642,9 @@
     <MESSAGE value="KivaCreateMap Random Map Generator complete" />
     <MESSAGE value="Reworked solver.Coordinate" />
     <MESSAGE value="Reworked solver" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reworked solver" />
+    <MESSAGE value="Pre KivaWorld Final" />
+    <MESSAGE value="KivaWorld Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="KivaWorld Final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

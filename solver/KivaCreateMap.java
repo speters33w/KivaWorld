@@ -14,34 +14,13 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * This can be a random map, or a default map as a string or FloorMap
  *
  * @author StephanPeters (speters33w)
- * @version  20220611.2100
+ * @version 20220613.1000
  */
 public class KivaCreateMap
 {
-    // instance variables - replace the example below with your own
     private final Direction[] directions = Direction.values();
     Random random = new Random();
     private final LinkedList<Point> obstacles = new LinkedList<>();
-
-//    /**
-//     * Returns a default map as a KivaWorld FloorMap
-//     *
-//     * @return default map as a FloorMap
-//     */
-//    public FloorMap defaultMap(){
-//        FloorMap defaultMap = new FloorMap(defaultMapString());
-//        return defaultMap;
-//    }
-//
-//    /**
-//     * Returns a random map as a KivaWorld FloorMap
-//     *
-//     * @return random map as a FloorMap
-//     */
-//    public FloorMap randomMap(){
-//        FloorMap randomFloorMap = new FloorMap(randomMapString());
-//        return randomFloorMap;
-//    }
 
     /**
      * public static default floor map, returns as a String
@@ -103,6 +82,8 @@ public class KivaCreateMap
             if (obstacleLength > 1) {
                 for (int i = 1; i < obstacleLength; i++) {
                     // Create the next Point in the wall in the current facing direction
+                    // edu.duke.Point getDelta = direction.getDelta();
+                    // obstacle = obstacle.moveBy(getDelta.getX(),getDelta.getY());
                     obstacle = obstacle.moveBy(direction.getDelta());
                     // Add the new Point to the wall if it is within the map walls
                     if ((obstacle.getX() >= 0) && (obstacle.getX() < mapWidth)
@@ -173,6 +154,28 @@ public class KivaCreateMap
         int mapHeight = random.nextInt(5) + 10;
         return randomMapString(mapWidth, mapHeight);
     }
+
+//    // The following lines are commented out for package independence from the ATA KivaWorld project.
+
+//    /**
+//     * Returns a default map as a KivaWorld FloorMap
+//     *
+//     * @return default map as a FloorMap
+//     */
+//    public FloorMap defaultMap(){
+//        FloorMap defaultMap = new FloorMap(defaultMapString());
+//        return defaultMap;
+//    }
+//
+//    /**
+//     * Returns a random map as a KivaWorld FloorMap
+//     *
+//     * @return random map as a FloorMap
+//     */
+//    public FloorMap randomMap(){
+//        FloorMap randomFloorMap = new FloorMap(randomMapString());
+//        return randomFloorMap;
+//    }
 
     /**
      * Opens a JFileChooser save dialog and allows the user to save a String to a file.

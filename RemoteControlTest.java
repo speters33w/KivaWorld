@@ -6,7 +6,7 @@
  * Each test can be run from main by uncommenting the method call line.
  *
  * @author Stephan Peters (peterstz)
- * @version 20220607.1400
+ * @version 20220613.0900
  */
 public class RemoteControlTest {
     public static void main(String[] args) {

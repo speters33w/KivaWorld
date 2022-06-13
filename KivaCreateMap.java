@@ -12,35 +12,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * Creates a Kiva FloorMap
  * This can be a random map, or a default map as a string or FloorMap
  *
- * @author StephanPeters (speters33w)
- * @version  20220611.2100
+ * @author Stephan Peters (peterstz)
+ * @version 20220613.0900
  */
 public class KivaCreateMap
 {
-    // instance variables - replace the example below with your own
     private final FacingDirection[] directions = FacingDirection.values();
     Random random = new Random();
     private final LinkedList<Point> obstacles = new LinkedList<>();
-
-    /**
-     * Returns a default map as a KivaWorld FloorMap
-     *
-     * @return default map as a FloorMap
-     */
-    public FloorMap defaultMap(){
-        FloorMap defaultMap = new FloorMap(defaultMapString());
-        return defaultMap;
-    }
-
-    /**
-     * Returns a random map as a KivaWorld FloorMap
-     *
-     * @return random map as a FloorMap
-     */
-    public FloorMap randomMap(){
-        FloorMap randomFloorMap = new FloorMap(randomMapString());
-        return randomFloorMap;
-    }
 
     /**
      * public static default floor map, returns as a String
@@ -172,6 +151,24 @@ public class KivaCreateMap
         int mapWidth = random.nextInt(15) + 10;
         int mapHeight = random.nextInt(5) + 10;
         return randomMapString(mapWidth, mapHeight);
+    }
+
+    /**
+     * Returns a default map as a KivaWorld FloorMap
+     *
+     * @return default map as a FloorMap
+     */
+    public FloorMap defaultMap(){
+        return new FloorMap(defaultMapString());
+    }
+
+    /**
+     * Returns a random map as a KivaWorld FloorMap
+     *
+     * @return random map as a FloorMap
+     */
+    public FloorMap randomMap(){
+        return new FloorMap(randomMapString());
     }
 
     /**

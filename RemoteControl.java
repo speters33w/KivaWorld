@@ -31,10 +31,10 @@ import java.util.List;
  * </pre>
  *
  * @author Stephan Peters (peterstz)
- * @version 20220607.1330
+ * @version 20220613.0900
  */
 public class RemoteControl {
-    private static List<KivaCommand> kivaCommands = new LinkedList<>(); //changing variable to type LinkedList causes issues, //todo investigate List / LinkedList
+    private static List<KivaCommand> kivaCommands = new LinkedList<>();
 
     /**
      * Build a new RemoteControl.
