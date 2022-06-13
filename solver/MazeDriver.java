@@ -35,7 +35,7 @@ public class MazeDriver {
 
     private static void bfs(Maze maze) {
         BFSMazeSolver bfs = new BFSMazeSolver();
-        List<Coordinate> path = bfs.solve(maze);
+        List<Point> path = bfs.solve(maze);
         maze.printPath(path);
         maze.reset();
     }

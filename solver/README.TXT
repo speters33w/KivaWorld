@@ -21,7 +21,7 @@ We'll model the maze as a graph. Entry and exit are the two special nodes, betwe
 A typical graph has two properties, nodes, and edges. An edge determines the connectivity of graph and links one node to another.
 Hence we'll assume four implicit edges from each node, linking the given node to its left, right, top and bottom node.
 Let's define the method signature:
-public List<Coordinate> solve(Maze maze) {
+public List<Point> solve(Maze maze) {
 }
 The input to the method is a maze, which contains the 2D array, with naming convention defined above.
 The response of the method is a list of nodes, which forms a path from the entry node to the exit node.
@@ -46,13 +46,13 @@ First, we need to define the four directions. We can define this in terms of coo
 private static int[][] DIRECTIONS 
   = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } };
 We also need a utility method which will add two coordinates:
-private Coordinate getNextCoordinate(
+private Point getNextPoint(
   int row, int col, int i, int j) {
-    return new Coordinate(row + i, col + j);
+    return new Point(row + i, col + j);
 }
 We can now define the method signature solve. The logic here is simple – if there is a path from entry to exit, then return the path, else, return an empty list:
-public List<Coordinate> solve(Maze maze) {
-    List<Coordinate> path = new ArrayList<>();
+public List<Point> solve(Maze maze) {
+    List<Point> path = new ArrayList<>();
     if (
       explore(
         maze, 
@@ -69,7 +69,7 @@ Let's define the explore method referenced above. If there's a path then return 
 First, we discard invalid nodes i.e. the nodes which are outside the maze or are part of the wall. After that, we mark the current node as visited so that we don't visit the same node again and again.
 Finally, we recursively move in all directions if the exit is not found:
 private boolean explore(
-  Maze maze, int row, int col, List<Coordinate> path) {
+  Maze maze, int row, int col, List<Point> path) {
     if (
       !maze.isValidLocation(row, col) 
       || maze.isWall(row, col) 
@@ -78,7 +78,7 @@ private boolean explore(
         return false;
     }
 
-    path.add(new Coordinate(row, col));
+    path.add(new Point(row, col));
     maze.setVisited(row, col, true);
 
     if (maze.isExit(row, col)) {
@@ -86,7 +86,7 @@ private boolean explore(
     }
 
     for (int[] direction : DIRECTIONS) {
-        Coordinate coordinate = getNextCoordinate(
+        Point coordinate = getNextPoint(
           row, col, direction[0], direction[1]);
         if (
           explore(
@@ -122,10 +122,10 @@ Following animation shows all the steps when exploring a maze using this algorit
 4.2. Implementation
 Lets now implement this algorithm in Java. We will reuse the DIRECTIONS variable defined in previous section.
 Lets first define a utility method to backtrack from a given node to its root. This will be used to trace the path once exit is found:
-private List<Coordinate> backtrackPath(
-  Coordinate cur) {
-    List<Coordinate> path = new ArrayList<>();
-    Coordinate iter = cur;
+private List<Point> backtrackPath(
+  Point cur) {
+    List<Point> path = new ArrayList<>();
+    Point iter = cur;
 
     while (iter != null) {
         path.add(iter);
@@ -136,14 +136,14 @@ private List<Coordinate> backtrackPath(
 }
 Let's now define the core method solve. We'll reuse the three blocks used in DFS implementation i.e. validate node, mark visited node and traverse neighboring nodes.
 We'll just make one slight modification. Instead of recursive traversal, we'll use a FIFO data structure to track neighbors and iterate over them:
-public List<Coordinate> solve(Maze maze) {
-    LinkedList<Coordinate> nextToVisit 
+public List<Point> solve(Maze maze) {
+    LinkedList<Point> nextToVisit
       = new LinkedList<>();
-    Coordinate start = maze.getEntry();
+    Point start = maze.getEntry();
     nextToVisit.add(start);
 
     while (!nextToVisit.isEmpty()) {
-        Coordinate cur = nextToVisit.remove();
+        Point cur = nextToVisit.remove();
 
         if (!maze.isValidLocation(cur.getX(), cur.getY()) 
           || maze.isExplored(cur.getX(), cur.getY())
@@ -161,8 +161,8 @@ public List<Coordinate> solve(Maze maze) {
         }
 
         for (int[] direction : DIRECTIONS) {
-            Coordinate coordinate 
-              = new Coordinate(
+            Point coordinate
+              = new Point(
                 cur.getX() + direction[0], 
                 cur.getY() + direction[1], 
                 cur

@@ -16,9 +16,9 @@ public class Maze {
 
     private int[][] maze;
     private boolean[][] visited;
-    private Coordinate initialKivaLocation;
-    private Coordinate podLocation = null;
-    private Coordinate dropZoneLocation;
+    private Point initialKivaLocation;
+    private Point podLocation = null;
+    private Point dropZoneLocation;
 
     public Maze(File maze) throws FileNotFoundException {
         StringBuilder fileText = new StringBuilder();
@@ -56,16 +56,16 @@ public class Maze {
                     case 'S' :
                     case 'K' :
                         maze[row][col] = START;
-                        initialKivaLocation = new Coordinate(row, col);
+                        initialKivaLocation = new Point(row, col);
                         break;
                     case 'P' :
                         maze[row][col] = POD;
-                        podLocation = new Coordinate(row, col);
+                        podLocation = new Point(row, col);
                         break;
                     case 'E' :
                     case 'D' :
                         maze[row][col] = DROP_ZONE;
-                        dropZoneLocation = new Coordinate(row, col);
+                        dropZoneLocation = new Point(row, col);
                         break;
                     default:
                         maze[row][col] = EMPTY;
@@ -82,15 +82,15 @@ public class Maze {
         return maze[0].length;
     }
 
-    public Coordinate getInitialKivaLocation() {
+    public Point getInitialKivaLocation() {
         return initialKivaLocation;
     }
 
-    public Coordinate getPodLocation() {
+    public Point getPodLocation() {
         return podLocation;
     }
 
-    public Coordinate getDropZoneLocation() {
+    public Point getDropZoneLocation() {
         return dropZoneLocation;
     }
 
@@ -126,11 +126,11 @@ public class Maze {
         return row >= 0 && row < getHeight() && col >= 0 && col < getWidth();
     }
 
-    public void printPath(List<Coordinate> path) {
+    public void printPath(List<Point> path) {
         int[][] tempMaze = Arrays.stream(maze)
             .map(int[]::clone)
             .toArray(int[][]::new);
-        for (Coordinate coordinate : path) {
+        for (Point coordinate : path) {
             if (isInitialKivaLocation(coordinate.getX(), coordinate.getY()) || isDropZone(coordinate.getX(), coordinate.getY())) {
                 continue;
             }

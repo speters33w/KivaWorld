@@ -1,3 +1,4 @@
+import solver.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -6,23 +7,20 @@ import java.util.Random;
 import java.util.Scanner;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import edu.duke.Point;
-
 
 /**
  * Creates a Kiva FloorMap
  * This can be a random map, or a default map as a string or FloorMap
  *
- * @author Stephan Peters
- * @version 20200608.1600
+ * @author StephanPeters (speters33w)
+ * @version  20220611.2100
  */
 public class KivaCreateMap
 {
     // instance variables - replace the example below with your own
-    private final FacingDirection[] facingDirections = FacingDirection.values();
-    private FacingDirection facingDirection = FacingDirection.UP;
+    private final FacingDirection[] directions = FacingDirection.values();
     Random random = new Random();
-    private LinkedList<Point> obstacles = new LinkedList<>();
+    private final LinkedList<Point> obstacles = new LinkedList<>();
 
     /**
      * Returns a default map as a KivaWorld FloorMap
@@ -69,40 +67,44 @@ public class KivaCreateMap
      * @return The generated map in String format.
      */
     public String randomMapString(int mapWidth, int mapHeight) {
-        StringBuilder mapFloor = new StringBuilder();
-        int mapArea = mapHeight * mapWidth;
+        Point pod = new Point();
+        Point kiva = new Point();
+        Point drop = new Point();
 
-        //Create PKD (Philip K. Dick) Points
-        Point pod = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
-        Point kiva = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
-        Point drop = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
+        //Create PKD (Philip K. Dick) Points and ensure none are the same.
+        do {
+            pod.move(random.nextInt(mapWidth - 2) + 1,random.nextInt(mapHeight - 3) + 1);
+            kiva.move(random.nextInt(mapWidth - 2) + 1, random.nextInt(mapHeight - 3) + 1);
+            drop.move(random.nextInt(mapWidth - 2) + 1, random.nextInt(mapHeight - 3) + 1);
+        } while (pod.equals(kiva) || drop.equals(pod) || kiva.equals(drop));
 
-        // Create obstacles over 17% of map area
-        for (int obstaclesLeft = (int) (mapArea * 17) / 100; obstaclesLeft > 0;) {
+        // Create obstacles over a random % from 15 to 20% of usable map area
+        for (int obstaclesLeft = ((mapWidth-2) * (mapHeight-2) * (random.nextInt(10)+15)) / 100; obstaclesLeft > 0;) {
 
             // Randomly decide in which direction to build an obstacle wall.
-            facingDirection = facingDirections[random.nextInt(facingDirections.length)];
+            FacingDirection direction = directions[random.nextInt(directions.length)];
             int obstacleLength = 1;
+
             // Randomly decide how long the wall will be.
-            if(facingDirection == FacingDirection.UP || facingDirection == FacingDirection.DOWN) {
-                obstacleLength = random.nextInt(mapHeight-5)+1;
+            if(direction == FacingDirection.UP || direction == FacingDirection.DOWN) {
+                obstacleLength = random.nextInt(mapHeight-2)+1;
             }
-            if(facingDirection == FacingDirection.LEFT || facingDirection == FacingDirection.RIGHT) {
-                obstacleLength = random.nextInt(mapWidth-4)+1;
+            if(direction == FacingDirection.LEFT || direction == FacingDirection.RIGHT) {
+                obstacleLength = random.nextInt(mapWidth-2)+1;
             }
 
-            // Create anchor point for wall and add it to obstacles
-            Point obstacle = new Point(random.nextInt(mapHeight-3)+1, random.nextInt(mapWidth-2)+1);
+            // Create anchor Point for wall and add it to obstacles
+            Point obstacle = new Point(random.nextInt(mapHeight-2)+1, random.nextInt(mapWidth-2)+1);
             obstacles.add(obstacle);
             obstaclesLeft--;
 
-            // Create the obstacle wall
+            // Create an obstacle wall from the anchor point
             if (obstacleLength > 1) {
                 for (int i = 1; i < obstacleLength; i++) {
-                    // Create the next point in the wall in the current facing direction
-                    obstacle = new Point (obstacles.getLast().getX() + facingDirection.getDelta().getX(),
-                                    obstacles.getLast().getY() + facingDirection.getDelta().getY());
-                    // Add the new point to the wall if it is within the map walls
+                    // Create the next Point in the wall in the current facing direction
+                    edu.duke.Point getDelta = direction.getDelta();
+                    obstacle = obstacle.moveBy(getDelta.getX(),getDelta.getY());
+                    // Add the new Point to the wall if it is within the map walls
                     if ((obstacle.getX() >= 0) && (obstacle.getX() < mapWidth)
                             && (obstacle.getY() > 0)&& (obstacle.getY() < mapHeight)){
                         obstacles.add(obstacle);
@@ -113,10 +115,11 @@ public class KivaCreateMap
             //System.out.println(obstacles);
         }
 
-        // Create frame, add obstacles and PKD
-        System.out.println("Width = " + mapWidth + " Height = " + mapHeight);
 
         // Create the basic map frame
+        System.out.println("Width = " + mapWidth + " Height = " + mapHeight);
+
+        StringBuilder mapFloor = new StringBuilder();
         for (int row = 0; row < mapHeight; row++) {
             for (int col = 0; col < mapWidth; col++) {
                 if(row == 0 || row == mapHeight-1) {
@@ -145,18 +148,19 @@ public class KivaCreateMap
                     }
                 }
 
-                // Insert the PKD into the map NOTE: can create an invalid map if any of these share the same point.
-                if (row == pod.getX()+1 && col == pod.getY()) {
+                // Insert the PKD into the map
+                if (row == pod.getY()+1 && col == pod.getX()) {
                     mapFloor.replace(mapFloor.length()-1, mapFloor.length(), "P");
                 }
-                if (row == kiva.getX()+1 && col == kiva.getY()){
+                if (row == kiva.getY()+1 && col == kiva.getX()){
                     mapFloor.replace(mapFloor.length()-1, mapFloor.length(), "K");
                 }
-                if (row == drop.getX()+1 && col == drop.getY()) {
+                if (row == drop.getY()+1 && col == drop.getX()) {
                     mapFloor.replace(mapFloor.length()-1, mapFloor.length(), "D");
                 }
             }
         }
+
         return String.valueOf(mapFloor);
     }
     /**
@@ -177,7 +181,7 @@ public class KivaCreateMap
      * @throws IOException if file can not be saved or written to.
      */
     void saveFile(String map) throws IOException {
-        File path = null;
+        File path;
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt", "map", "maz", "maze", "fm", "FloorMap");
         fileChooser.setFileFilter(filter);

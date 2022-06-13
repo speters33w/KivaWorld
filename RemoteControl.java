@@ -163,9 +163,9 @@ public class RemoteControl {
             kiva.move(kivaCommands.get(i));
         }
         if (kiva.successfullyDropped && kivaCommands.get(directions.length()-1) == KivaCommand.DROP){
-            System.out.println("Successfully picked up the pod and dropped it off. Thank you!");
+            System.out.println("Successfully picked up the pod and dropped it off. Thank you!\n");
         } else {
-            System.out.println("I'm sorry. The Kiva Robot did not pick up the pod and then drop it off correctly.");
+            System.out.println("I'm sorry. The Kiva Robot did not pick up the pod and then drop it off correctly.\n");
         }
     }
 
