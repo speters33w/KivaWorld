@@ -4,18 +4,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="KivaWorld Final">
-      <change afterPath="$PROJECT_DIR$/solver/solver_sample_map_nopod.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solver/solver_simple_map.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solver/solver_stress_test_map1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/BFSMazeSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/BFSMazeSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/Maze.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/MazeDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/MazeDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/maze2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/solver/maze2.txt" afterDir="false" />
-    </list>
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="solver package Final" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -159,13 +148,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Added TAKE and DROP tests">
-      <created>1652292138779</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1652292138779</updated>
     </task>
     <task id="LOCAL-00015" summary="Created new non-interactive testForward test">
       <created>1652296166993</created>
@@ -503,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655137086048</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="solver package Final">
+      <created>1655173027910</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1655173027910</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -518,7 +507,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed extraneous import" />
     <MESSAGE value="Created Kiva exceptions, repaired Kiva constructors" />
     <MESSAGE value="Added some Javadoc comments" />
     <MESSAGE value="Added motorLifetime functionality" />
@@ -543,7 +531,8 @@
     <MESSAGE value="Reworked solver" />
     <MESSAGE value="Pre KivaWorld Final" />
     <MESSAGE value="KivaWorld Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="KivaWorld Final" />
+    <MESSAGE value="solver package Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="solver package Final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

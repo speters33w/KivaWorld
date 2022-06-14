@@ -53,7 +53,7 @@ public class BFSMazeSolver {
             Collections.reverse(pathToPod);
             // and add the Points to the return list.
             returnPath.addAll(pathToPod);
-            System.out.println(pathToPod);
+            //System.out.println(pathToPod);
             // In case there is no path to the pod;
             if (pathToPod.isEmpty()){
                 System.out.println("Kiva mission aborted, Kiva can not go to pod location.");
@@ -63,7 +63,7 @@ public class BFSMazeSolver {
             List<Point> pathToDropZone = solver(maze,maze.getDropZoneLocation()); // Points are reflected (y,x) or [row],[col].
             // and add the Points to the return list.
             returnPath.addAll(pathToDropZone);
-            System.out.println(pathToDropZone);
+            //System.out.println(pathToDropZone);
             // In case there is no path to the drop zone;
             if (pathToDropZone.isEmpty()){
                 System.out.println("Kiva mission aborted, Kiva can not go to drop zone location.");
