@@ -144,6 +144,8 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
     /**
      * Moves this Point to the specified location in the
      * {@code (x,y)} coordinate plane.
+     * @param x an integer, the new {@code x} abscissa for the Point.
+     * @param y an integer, the new {@code y} ordinate for the Point.
      */
     public void move(int x, int y) {
         this.x = x;

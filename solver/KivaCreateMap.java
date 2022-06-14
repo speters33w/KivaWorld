@@ -58,6 +58,13 @@ public class KivaCreateMap
             drop.move(random.nextInt(mapWidth - 2) + 1, random.nextInt(mapHeight - 3) + 1);
         } while (pod.equals(kiva) || drop.equals(pod) || kiva.equals(drop));
 
+        /* todo put obstacle generator and following into a do while loop that checks with solver.BFSMazeSolver
+         * and determine if map is solvable, regenerate obstacles if not.
+         * do {
+         * // <generate obstacles and map>
+         * } while (!unsolvable);
+         */
+
         // Create obstacles over a random % from 15 to 20% of usable map area
         for (int obstaclesLeft = ((mapWidth-2) * (mapHeight-2) * (random.nextInt(10)+15)) / 100; obstaclesLeft > 0;) {
 

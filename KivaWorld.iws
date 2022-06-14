@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="solver package Final">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Update Javadoc for solver">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaCreateMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/KivaCreateMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/README.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/solver/README.TXT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/BFSMazeSolver.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/BFSMazeSolver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/Direction.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/Direction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/KivaCreateMap.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/KivaCreateMap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/Maze.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/Maze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/MazeDriver.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/MazeDriver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/Point.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/Point.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/package-frame.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/package-frame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javadoc/solver/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/solver/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/solver_stress_test_map1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/solver/solver_stress_test_map1.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,13 +165,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Removed testing Sysout line">
-      <created>1652296220530</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1652296220530</updated>
     </task>
     <task id="LOCAL-00017" summary="Created project test case methods and javadoc documentation">
       <created>1652322507875</created>
@@ -496,7 +502,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655208356072</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Update package-info and ReadMe for solver">
+      <created>1655210260567</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1655210260567</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -511,8 +524,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created Kiva exceptions, repaired Kiva constructors" />
-    <MESSAGE value="Added some Javadoc comments" />
     <MESSAGE value="Added motorLifetime functionality" />
     <MESSAGE value="Added modified version of com.baeldung.algorithms.maze.solver" />
     <MESSAGE value="Several fixes to solver." />
@@ -536,7 +547,9 @@
     <MESSAGE value="Pre KivaWorld Final" />
     <MESSAGE value="KivaWorld Final" />
     <MESSAGE value="solver package Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="solver package Final" />
+    <MESSAGE value="Update package-info and ReadMe for solver" />
+    <MESSAGE value="Update Javadoc for solver" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Javadoc for solver" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
