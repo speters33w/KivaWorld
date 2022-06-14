@@ -61,7 +61,7 @@ public class KivaCreateMap
          * and determine if map is solvable, regenerate obstacles if not.
          * do {
          * // <generate obstacles and map>
-         * } while (!unsolvable);
+         * } while (unsolvable);
          */
 
         // Create obstacles over a random % from 15 to 20% of usable map area
