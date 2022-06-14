@@ -30,7 +30,7 @@ public class Maze {
         initializeMaze(fileText.toString());
     }
 
-    private void initializeMaze(String text) {
+    private void initializeMaze(String text) throws IllegalArgumentException {
         if (text == null || (text = text.trim()).length() == 0) {
             throw new IllegalArgumentException("empty lines data");
         }
@@ -118,6 +118,10 @@ public class Maze {
         return maze[row][col] == OBSTACLE;
     }
 
+    void setPodLocation(Point podLocation){ //used for start to end maze with no pod
+        this.podLocation = podLocation;
+    }
+
     public void setVisited(int row, int col, boolean value) {
         visited[row][col] = value;
     }
@@ -130,11 +134,11 @@ public class Maze {
         int[][] tempMaze = Arrays.stream(maze)
             .map(int[]::clone)
             .toArray(int[][]::new);
-        for (Point coordinate : path) {
-            if (isInitialKivaLocation(coordinate.getX(), coordinate.getY()) || isDropZone(coordinate.getX(), coordinate.getY())) {
+        for (Point coordinates : path) {
+            if (isInitialKivaLocation(coordinates.getX(), coordinates.getY()) || isDropZone(coordinates.getX(), coordinates.getY())) {
                 continue;
             }
-            tempMaze[coordinate.getX()][coordinate.getY()] = PATH;
+            tempMaze[coordinates.getX()][coordinates.getY()] = PATH;
         }
         System.out.println(toString(tempMaze));
     }

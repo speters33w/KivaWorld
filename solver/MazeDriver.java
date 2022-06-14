@@ -37,6 +37,8 @@ public class MazeDriver {
         BFSMazeSolver bfs = new BFSMazeSolver();
         List<Point> path = bfs.solve(maze);
         maze.printPath(path);
+        String commands = bfs.constructKivaCommands(path);
+        System.out.println("Kiva Commands:\n" + commands);
         maze.reset();
     }
 }

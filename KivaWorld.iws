@@ -5,44 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="KivaWorld Final">
+      <change afterPath="$PROJECT_DIR$/solver/solver_sample_map_nopod.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solver/solver_simple_map.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solver/solver_stress_test_map1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/DirectoryResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/DirectoryResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/FileResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/FileResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/FileSelector.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/FileSelector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/ImageFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/ImageFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/ImageResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/ImageResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/Pixel.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/Pixel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/RangeResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/RangeResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/ResourceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/ResourceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/StorageResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/StorageResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/TextIterable.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/TextIterable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/URLResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/URLResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edu/duke/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/edu/duke/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/javadoc/org/apache/commons/csv/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/FacingDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/FacingDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/FloorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/FloorMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/FloorMapObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/FloorMapObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/IllegalDropZoneException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/IllegalDropZoneException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/IllegalMoveException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/IllegalMoveException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/InvalidFloorMapLocationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/InvalidFloorMapLocationException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/InvalidKivaCommandException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/InvalidKivaCommandException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/InvalidMapLayoutException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/InvalidMapLayoutException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/KeyboardResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/KeyboardResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/NoPodException.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/NoPodException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kivaworld/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/kivaworld/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/Assertions.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/Assertions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/CSVFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/CSVFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/CSVParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/CSVParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/CSVPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/CSVPrinter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/CSVRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/CSVRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/ExtendedBufferedReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/ExtendedBufferedReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/QuoteMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/QuoteMode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apache/commons/csv/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/org/apache/commons/csv/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/BFSMazeSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/BFSMazeSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/Maze.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/Maze.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/MazeDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/MazeDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/maze2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/solver/maze2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +65,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/solver" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -102,15 +74,19 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\StephanPeters\OneDrive\Java\IdeaProjects\KivaWorld-01\KivaWorld\solver" />
       <recent name="C:\Users\StephanPeters\OneDrive\Java\IdeaProjects\KivaWorld-01\KivaWorld" />
+      <recent name="C:\Users\StephanPeters\OneDrive\Java\IdeaProjects\KivaWorld-01\KivaWorld\solver" />
+      <recent name="C:\Users\StephanPeters\OneDrive\Java\IdeaProjects\KivaWorld-01\KivaWorld\maps" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\StephanPeters\OneDrive\Java\IdeaProjects\KivaWorld-01\KivaWorld\solver" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
       <recent name="solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestHash">
+  <component name="RunManager" selected="Application.MazeDriver">
     <configuration name="KivaCreateMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCreateMap" />
       <module name="KivaWorld" />
@@ -131,8 +107,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MoveForwardTrial" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MoveForwardTrial" />
+    <configuration name="RemoteControl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RemoteControl" />
       <module name="KivaWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,8 +121,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestHash" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="solver.TestHash" />
+    <configuration name="TestSolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="solver.TestSolver" />
       <module name="KivaWorld" />
       <extension name="coverage">
         <pattern>
@@ -159,19 +135,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MoveForwardTrial" />
       <item itemvalue="Application.RemoteControlTest" />
       <item itemvalue="Application.KivaCreateMap" />
       <item itemvalue="Application.MazeDriver" />
-      <item itemvalue="Application.TestHash" />
+      <item itemvalue="Application.TestSolver" />
+      <item itemvalue="Application.RemoteControl" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestHash" />
         <item itemvalue="Application.MazeDriver" />
+        <item itemvalue="Application.RemoteControl" />
+        <item itemvalue="Application.TestSolver" />
         <item itemvalue="Application.KivaCreateMap" />
         <item itemvalue="Application.RemoteControlTest" />
-        <item itemvalue="Application.MoveForwardTrial" />
       </list>
     </recent_temporary>
   </component>
@@ -183,13 +159,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Added TAKE and DROP to Kiva.move">
-      <created>1652291344970</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1652291344970</updated>
     </task>
     <task id="LOCAL-00014" summary="Added TAKE and DROP tests">
       <created>1652292138779</created>
@@ -527,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655135845291</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="KivaWorld Final">
+      <created>1655137086048</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1655137086048</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

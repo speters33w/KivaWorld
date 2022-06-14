@@ -298,6 +298,17 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
     }
 
     /**
+     * Returns the {@code (x,y)} difference between a Point and a second Point.
+     *
+     * @param p - The Point to compare.
+     * @param q - The Point to compare the first Point to.
+     * @return - A Point of the {@code (x,y)} difference.
+     */
+    public Point getDelta(Point p, Point q){
+        return new Point(q.x - p.x, q.y - p.y);
+    }
+
+    /**
      * Calculate and return the Euclidean distance from this Point to another Point.
      *
      * @param q - the other Point to which distance is calculated.
