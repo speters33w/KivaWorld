@@ -1,10 +1,8 @@
-import edu.duke.FileResource;
-import kivaworld.InvalidKivaCommandException;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
+import solver.MapResource;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+import java.io.FileNotFoundException;
 
 /**
  * This is the class that controls Kiva's actions.
@@ -76,39 +74,18 @@ public class RemoteControl {
     }
 
     /**
-     * Runs a kiva using a user selected map file and a string of single character Kiva commands.
-     *
-     * Commands:
-     * <pre>
-     * F = FORWARD
-     * R = TURN_RIGHT
-     * L = TURN_LEFT
-     * T = TAKE (a pod)
-     * D = DROP (a pod)
-     * </pre>
-     *
-     * Sample command string:
-     * <pre>RFFFFFTRF</pre>
+     * Runs a Kiva
+     * In overloaded methods, prompts the user to select a map file and a string of single character Kiva commands.
      */
-    public void run() {
-        System.out.println("Please select a map file.");
-        JFileChooser fileChooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt", "map", "maz", "maze", "fm", "FloorMap");
-        fileChooser.setFileFilter(filter);
-        fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
-        fileChooser.showDialog(null,"Select");
-        fileChooser.setVisible(true);
-        String mapFileName = fileChooser.getName(fileChooser.getSelectedFile());
-        System.out.println("Please enter the directions for the Kiva Robot to take.");
-        KeyboardResource keyboardResource = new KeyboardResource();
-        String directions = keyboardResource.getLine();
-        run(mapFileName,directions);
+    public void run() throws FileNotFoundException {
+        File mapFile = MapResource.selectMap();
+        run(mapFile);
     }
 
     /**
-     * Runs a kiva using a map file and a string of single character Kiva commands.
-     * The map file must be in the Default Package source directory and is inputted as a file name String.
-     * The method will open and read the file, then convert it to a FloorMap object.
+     * Runs a kiva using a FloorMap object and a string of single character Kiva commands.
+     * The FloorMap file can be created from a string in an external method calling remoteControl.run().
+     * This method will not open a map file.
      *
      * Commands:
      * <pre>
@@ -122,13 +99,46 @@ public class RemoteControl {
      * Sample command string:
      * <pre>RFFFFFTRF</pre>
      *
-     * @param mapFileName String, the relative filename of the map file.
+     * @param mapFileName The filename of the map file
      * @param directions a string of single character Kiva commands for the Kiva to perform.
+     *
+     * @see kivaworld.FloorMap
      */
-    public void run(String mapFileName, String directions) {
-        FileResource mapFile = new FileResource(mapFileName);
-        String inputMap = mapFile.asString();
-        FloorMap floorMap = new FloorMap(inputMap);
+    public void run(String mapFileName, String directions) throws FileNotFoundException {
+        File mapFile = MapResource.getFile(mapFileName);
+        String mapString = MapResource.getMapString(mapFile);
+        FloorMap floorMap = new FloorMap(mapString);
+        run(floorMap, directions);
+    }
+
+    /**
+     * Runs a kiva using a map file.
+     * In overloaded methods, for string of single character Kiva commands.
+     * The map file must be in the Default Package source directory and is inputted as a file name String.
+     * The method will open and read the file, then convert it to a FloorMap object.
+     * @param mapFile the map File to be read.
+     */
+    public void run(File mapFile) throws FileNotFoundException {
+        String mapString = MapResource.getMapString(mapFile);
+        FloorMap floorMap = new FloorMap(mapString);
+        run(floorMap);
+    }
+
+    /**
+     * Runs a kiva using a FloorMap object.
+     * In overloaded methods, for string of single character Kiva commands.
+     * The FloorMap file can be created from a string in an external method calling remoteControl.run().
+     * This method will not open a map file.
+     *
+     * @param floorMap a FloorMap object
+     *
+     * @see kivaworld.FloorMap
+     */
+    public void run(FloorMap floorMap){
+        System.out.println(floorMap);
+        System.out.println("Please enter the directions for the Kiva Robot to take.");
+        KeyboardResource keyboardResource = new KeyboardResource();
+        String directions = keyboardResource.getLine();
         run(floorMap, directions);
     }
 
@@ -155,7 +165,6 @@ public class RemoteControl {
      * @see kivaworld.FloorMap
      */
     public void run(FloorMap floorMap, String directions){
-        System.out.println(floorMap);
         Kiva kiva = new Kiva(floorMap);
         kivaCommands = convertToKivaCommands(directions.toUpperCase());
         System.out.println("Commands you sent to the Kiva: " + kivaCommands);
@@ -172,7 +181,7 @@ public class RemoteControl {
     /**
      * Runs the RemoteControl.run() method.
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         RemoteControl remotecontrol = new RemoteControl();
         remotecontrol.run();
     }

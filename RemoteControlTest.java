@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 
 /**
  * Tests the remote control app for successful Kiva missions, unsuccessful Kiva missions, and command errors (exceptions).
@@ -9,7 +10,7 @@
  * @version 20220613.0900
  */
 public class RemoteControlTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 //        testCommands(); // Will throw an InvalidKivaCommand exception and terminate the program
         testValidPaths();
         testFails(); // includes testMoveAfterDrop
@@ -23,7 +24,7 @@ public class RemoteControlTest {
      *
      * Expected Output: Successfully picked up the pod and dropped it off. Thank you!
      */
-    public static void testValidPaths(){
+    public static void testValidPaths() throws FileNotFoundException {
         RemoteControl remoteControl = new RemoteControl();
         System.out.println("\n\n Test Case 1: \n Map: sample_floor_map1.txt \n Input: RFFFFFTFFFFFFFD \n " +
                 "Expected Output: Successfully picked up the pod and dropped it off. Thank you!");
@@ -43,7 +44,7 @@ public class RemoteControlTest {
      * Input: <pre>RFFFFFTFFFFFFFDR</pre>
      * Expected Output: <pre>I'm sorry. The Kiva Robot did not pick up the pod and then drop it off correctly</pre>
      */
-    public static void testMoveAfterDrop(){
+    public static void testMoveAfterDrop() throws FileNotFoundException {
         RemoteControl remoteControl = new RemoteControl();
         System.out.println("\n\n Test Case 4: \n Map: sample_floor_map1.txt \n Input: RFFFFFTFFFFFFFDR \n " +
                 "Expected Output: I'm sorry. The Kiva Robot did not pick up the pod and then drop it off correctly, \n" +
@@ -58,7 +59,7 @@ public class RemoteControlTest {
      * Test 6 checks for successful take without drop
      *
      */
-    public static void testFails(){
+    public static void testFails() throws FileNotFoundException {
         testMoveAfterDrop();
         RemoteControl remoteControl = new RemoteControl();
         System.out.println("\n\n Test Case 5: \n Map: sample_floor_map3.txt \n Input: R \n " +
@@ -76,7 +77,7 @@ public class RemoteControlTest {
      * Input: RFFFFFLFFFTRFFRFFFD
      * Expected Output: Exception in thread "main" NoPodException: The kiva attempted to TAKE a POD while there is no POD at location (8,1)
      */
-    public static void testNoPodException(){
+    public static void testNoPodException() throws FileNotFoundException {
         RemoteControl remoteControl = new RemoteControl();
         System.out.println("\n\n Test Case 7: \n Map: sample_floor_map2.txt \n Input: RFFFFFLFFFTRFFRFFFD \n " +
                 "Expected Output: Exception in thread \"main\" NoPodException: The kiva attempted to TAKE a POD while there is no POD at location (8,1) \n");
@@ -90,7 +91,7 @@ public class RemoteControlTest {
      * Input: RFFFFFFLFFFTRFFRFFD
      * Expected Output: Exception in thread "main" IllegalDropZoneException: The kiva attempted to DROP not on a DROP_ZONE at location (11,3)
      */
-    public static void testIllegalDropZoneException(){
+    public static void testIllegalDropZoneException() throws FileNotFoundException {
         RemoteControl remoteControl = new RemoteControl();
         System.out.println("\n\n Test Case 8: \n Map: sample_floor_map2.txt \n Input: RFFFFFFLFFFTRFFRFFD \n " +
                 "Expected Output: Exception in thread \"main\" IllegalDropZoneException: The kiva attempted to DROP not on a DROP_ZONE at location (11,3) \n");
@@ -104,7 +105,7 @@ public class RemoteControlTest {
      * Input: F
      * Expected Output: Exception in thread "main" IllegalMoveException: The kiva ran into an obstacle at location (1,0).
      */
-    public static void testObstacleException(){
+    public static void testObstacleException() throws FileNotFoundException {
         RemoteControl remoteControl = new RemoteControl();
         System.out.println("\n\n Test Case 9: \n Map: sample_floor_map1.txt \n Input: F \n " +
                 "Expected Output: Exception in thread \"main\" IllegalMoveException: The kiva ran into an obstacle at location (1,0). \n");
@@ -122,7 +123,7 @@ public class RemoteControlTest {
      * Input: <pre>RFFFFFTRB</pre>
      * Expected Output: <pre>Expected Output: Exception in thread "main" kivaworld.InvalidKivaCommandException: Invalid Kiva Command: B</pre>
      */
-    public static void testCommands(){
+    public static void testCommands() throws FileNotFoundException {
         String testMapString ="" +
                         "-----\n" +
                         "|PD |\n" +
