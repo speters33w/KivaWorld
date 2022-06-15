@@ -121,7 +121,7 @@ public class RemoteControlTest {
      * Expected Output: <pre>{ TURN_RIGHT, FORWARD, FORWARD, FORWARD, FORWARD, FORWARD, TAKE, TURN_RIGHT, FORWARD }</pre>
      *
      * Input: <pre>RFFFFFTRB</pre>
-     * Expected Output: <pre>Expected Output: Exception in thread "main" kivaworld.InvalidKivaCommandException: Invalid Kiva Command: B</pre>
+     * Expected Output: <pre>Exception in thread "main" kivaworld.InvalidKivaCommandException: Invalid Kiva Command: B</pre>
      */
     public static void testCommands() throws FileNotFoundException {
         String testMapString ="" +
