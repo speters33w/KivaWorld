@@ -4,13 +4,15 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
  * Utility to open and read Kiva map files.
  *
  * @author StephanPeters (peterstz)
- * @version 20220614.1830
+ * @version 20220614.2130
  */
 public class MapResource {
 
@@ -76,5 +78,32 @@ public class MapResource {
             }
         }
         return mapString.toString();
+    }
+
+    /**
+     * Opens a JFileChooser save dialog and allows the user to save a String to a file.
+     *
+     * @param map String to be saved to the file
+     * @throws IOException if file can not be saved or written to.
+     */
+    public void saveMap(String map) throws IOException {
+        File path;
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt", "map", "maz", "maze", "fm", "FloorMap");
+        fileChooser.setFileFilter(filter);
+        fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+        fileChooser.setSelectedFile(new File("random_floor_map.txt"));
+        int option = fileChooser.showSaveDialog(null);
+        fileChooser.setVisible(true);
+        if(option == JFileChooser.APPROVE_OPTION){
+            path = new File(fileChooser.getSelectedFile().getAbsolutePath());
+            FileWriter fileWriter = new FileWriter(path);
+            fileWriter.write(map);
+            fileWriter.flush();
+            fileWriter.close();
+            System.out.println("File saved.");
+        }else {
+            System.out.println("Save canceled");
+        }
     }
 }

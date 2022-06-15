@@ -5,13 +5,10 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Added todo unsolvable map KivaCreateMap">
-      <change afterPath="$PROJECT_DIR$/solver/MapResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Replace edu.duke.FileResource with solver.MapResource">
       <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoteControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoteControlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControlTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objective/Improved_Project_self-service-course-4-project-kiva-robot-remote-control.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/objective/Improved_Project_self-service-course-4-project-kiva-robot-remote-control.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +59,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../solver" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../Java/KivaWorld/KivaWorld-1.0.jar" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -157,20 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Finished test cases in KivaTest">
-      <created>1652324474071</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1652324474071</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Added testMode to KivaTest">
-      <created>1652366228788</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1652366228788</updated>
     </task>
     <task id="LOCAL-00021" summary="Separated KivaConstructorTest from KivaTest">
       <created>1652369578880</created>
@@ -501,7 +484,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655230905851</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Rework of RemoteControl.run() methods">
+      <created>1655245887790</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1655245887790</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Replace edu.duke.FileResource with solver.MapResource">
+      <created>1655246016193</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1655246016193</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -516,8 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added modified version of com.baeldung.algorithms.maze.solver" />
-    <MESSAGE value="Several fixes to solver." />
     <MESSAGE value="Changed com.baeldung package to simple solver" />
     <MESSAGE value="Improved solver map output." />
     <MESSAGE value="Implemented RemoteControl." />
@@ -541,7 +536,9 @@
     <MESSAGE value="Update package-info and ReadMe for solver" />
     <MESSAGE value="Update Javadoc for solver" />
     <MESSAGE value="Added todo unsolvable map KivaCreateMap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added todo unsolvable map KivaCreateMap" />
+    <MESSAGE value="Rework of RemoteControl.run() methods" />
+    <MESSAGE value="Replace edu.duke.FileResource with solver.MapResource" />
+    <option name="LAST_COMMIT_MESSAGE" value="Replace edu.duke.FileResource with solver.MapResource" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

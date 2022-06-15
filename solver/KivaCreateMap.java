@@ -190,7 +190,7 @@ public class KivaCreateMap
      * @param map String to be saved to the file
      * @throws IOException if file can not be saved or written to.
      */
-    void saveFile(String map) throws IOException {
+    public void saveFile(String map) throws IOException {
         File path;
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt", "map", "maz", "maze", "fm", "FloorMap");

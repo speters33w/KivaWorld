@@ -142,7 +142,7 @@
       <module fileurl="file://$PROJECT_DIR$/../../solver/solver.iml" filepath="$PROJECT_DIR$/../../solver/solver.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8 Duke BlueJ" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8 ATA Kiva" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VcsDirectoryMappings">
