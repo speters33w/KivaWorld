@@ -3,8 +3,6 @@ import java.util.List;
 
 public class ExceptionTest {
 
-    FloorMap testMap;
-
     public static void main(String[] args) throws FileNotFoundException {
         testE1(); // Successful Drop
         testE2(); // Successful Drop
@@ -16,11 +14,16 @@ public class ExceptionTest {
 //        testE8(); // Throws IllegalDropZoneException - Attempt Drop at empty location
 //        testE9(); // Throws IllegalMoveException - Collision with an object
 //        testE10(); // Throws IllegalMoveException - Collision with a Pod while carrying a Pod
-        testE11(); // Successful Drop
-//        testE12(); // TEST FAILS! Should be successful drop but throws IllegalMoveException - Collision with a Pod while carrying a Pod
+//        testE11(); // Throws InvalidMapLayoutException: - Invalid map, two Pods
+        testE12(); // Successful Drop
+//        testE13(); // TEST FAILS! Should be successful drop but throws IllegalMoveException - Collision with a Pod while carrying a Pod
+//        testE14(); // Throws IllegalMoveException - Kiva leaves map in UP direction
+//        testE15(); // Throws IllegalMoveException - Kiva leaves map in RIGHT direction
+//        testE16(); // Throws IllegalMoveException - Kiva leaves map in DOWN direction
+//        testE17(); // Throws IllegalMoveException - Kiva leaves map in LEFT direction
     }
 
-    static String exceptionTestMap() {
+    public static String exceptionTestMap() {
         return "" +
                 "- ---\n" +
                 "|   |\n" +
@@ -29,6 +32,17 @@ public class ExceptionTest {
                 "| * |\n" +
                 "|K D|\n" +
                 "--- -";
+    }
+
+    public static String twoPodTestMap() {
+        return "" +
+                "-----\n" +
+                "|   |\n" +
+                "| * |\n" +
+                "|P P|\n" +
+                "| * |\n" +
+                "|K D|\n" +
+                "-----";
     }
 
     /**
@@ -186,32 +200,116 @@ public class ExceptionTest {
     }
 
     /**
-     * Test E11 tests for successful drop.
+     * Test E11 tests for an invalid map with two Pods.
+     * <p>
+     * Map: twoPodTestMap()
+     * Input: <pre>FFRFFRFFD</pre>
+     * Expected Output: <pre>Exception in thread "main" InvalidMapLayoutException: Found a second POD at (3, 3)</pre>
+     */
+    public static void testE11()  {
+        List<KivaCommand> kivaCommands;
+        System.out.println("\n\n Test Case E11: \n Map: twoPodTestMap() \n Input: FFRFFRFFD and carryingPod \n " +
+                "Expected Output: Exception in thread \"main\" InvalidMapLayoutException: Found a second POD at (3, 3) \n");
+        System.out.println(twoPodTestMap());
+        FloorMap floorMap = new FloorMap(twoPodTestMap());
+        Kiva kiva = new Kiva(floorMap);
+        String directions = "FFRFFRFFD";
+        kiva.carryingPod = true;
+        kivaCommands = RemoteControl.convertToKivaCommands(directions);
+        System.out.println("Commands you sent to the Kiva: " + kivaCommands);
+        for (int i = 0; i < directions.length(); i++) {
+            kiva.move(kivaCommands.get(i));
+        }
+        if (kiva.successfullyDropped && kivaCommands.get(directions.length() - 1) == KivaCommand.DROP) {
+            System.out.println("Successfully picked up the pod and dropped it off. Thank you!\n");
+        } else {
+            System.out.println("I'm sorry. The Kiva Robot did not pick up the pod and then drop it off correctly.\n");
+        }
+    }
+
+    /**
+     * Test E12 tests for successful drop.
      * <p>
      * Map: exception_test_map.txt
      * Input: <pre>FFFFRFFRFFRFFTLFFLFFD</pre>
      * Expected Output: <pre>Successfully picked up the pod and dropped it off. Thank you!</pre>
      */
-    public static void testE11() throws FileNotFoundException {
+    public static void testE12() throws FileNotFoundException {
         RemoteControl remoteControl = new RemoteControl();
-        System.out.println("\n\n Test Case E11: \n Map: exception_test_map.txt \n Input: FFFFRFFRFFRFFTLFFLFFD \n " +
+        System.out.println("\n\n Test Case E12: \n Map: exception_test_map.txt \n Input: FFFFRFFRFFRFFTLFFLFFD \n " +
                 "Expected Output: Successfully picked up the pod and dropped it off. Thank you!");
         remoteControl.run("exception_test_map.txt", "FFFFRFFRFFRFFTLFFLFFD");
     }
 
     /**
-     * Test E12 tests for successful drop.
+     * Test E13 tests for successful drop.
      * TEST FAILS with IllegalMoveException when Kiva enters the location where the Pod was.
      * <p>
      * Map: exception_test_map.txt
      * Input: <pre>FFTFFRFFRFFRFFLFFLFFD</pre>
      * Expected Output: <pre>Successfully picked up the pod and dropped it off. Thank you!</pre>
      */
-    public static void testE12() throws FileNotFoundException {
+    public static void testE13() throws FileNotFoundException {
         RemoteControl remoteControl = new RemoteControl();
-        System.out.println("\n\n Test Case E11: \n Map: exception_test_map.txt \n Input: FFTFFRFFRFFRFFLFFLFFD \n " +
+        System.out.println("\n\n Test Case E12: \n Map: exception_test_map.txt \n Input: FFTFFRFFRFFRFFLFFLFFD \n " +
                 "Expected Output: Successfully picked up the pod and dropped it off. Thank you!" +
                 "\n THIS TEST FAILS WHEN KIVA REACHES FORMER POD LOCATION");
         remoteControl.run("exception_test_map.txt", "FFTFFRFFRFFRFFLFFLFFD");
+    }
+
+    /**
+     * Test E14 tests for Kiva leaves map in the UP direction.
+     * <p>
+     * Map: exception_test_map.txt
+     * Input: <pre>FFTFFFFRFFFFD</pre>
+     * Expected Output: <pre>Exception in thread "main" IllegalMoveException: The Kiva left the defined FloorMap to location (1,-1)</pre>
+     */
+    public static void testE14() throws FileNotFoundException {
+        RemoteControl remoteControl = new RemoteControl();
+        System.out.println("\n\n Test Case E14: \n Map: exception_test_map.txt \n Input: FFTFFFFRFFFFD \n " +
+                "Expected Output: Exception in thread \"main\" IllegalMoveException: The Kiva left the defined FloorMap to location (1,-1)) \n");
+        remoteControl.run("exception_test_map.txt", "FFTFFFFRFFFFD");
+    }
+
+    /**
+     * Test E15 tests for Kiva leaves map in the RIGHT direction.
+     * <p>
+     * Map: exception_test_map.txt
+     * Input: <pre>FFTRFFFFD</pre>
+     * Expected Output: <pre>Exception in thread "main" IllegalMoveException: The Kiva left the defined FloorMap to location (5,3)</pre>
+     */
+    public static void testE15() throws FileNotFoundException {
+        RemoteControl remoteControl = new RemoteControl();
+        System.out.println("\n\n Test Case E15: \n Map: exception_test_map.txt \n Input: FFTRFFFFD \n " +
+                "Expected Output: Exception in thread \"main\" IllegalMoveException: The Kiva left the defined FloorMap to location (5,3)) \n");
+        remoteControl.run("exception_test_map.txt", "FFTRFFFFD");
+    }
+
+    /**
+     * Test E16 tests for Kiva leaves map in the DOWN direction.
+     * <p>
+     * Map: exception_test_map.txt
+     * Input: <pre>FFTRFFRFFFFD</pre>
+     * Expected Output: <pre>Exception in thread "main" IllegalMoveException: The Kiva left the defined FloorMap to location (3,7)</pre>
+     */
+    public static void testE16() throws FileNotFoundException {
+        RemoteControl remoteControl = new RemoteControl();
+        System.out.println("\n\n Test Case E16: \n Map: exception_test_map.txt \n Input: FFTRFFRFFFFD \n " +
+                "Expected Output: Exception in thread \"main\" IllegalMoveException: The Kiva left the defined FloorMap to location (3,7)) \n");
+        remoteControl.run("exception_test_map.txt", "FFTRFFRFFFFD");
+    }
+
+    /**
+     * Test E17 tests for Kiva leaves map in the LEFT direction.
+     * <p>
+     * Map: exception_test_map.txt
+     * Input: <pre>FFTLFFRFFD</pre>
+     * Expected Output: <pre>Exception in thread "main" IllegalMoveException: The Kiva left the defined FloorMap to location (-1,3)</pre>
+     */
+    public static void testE17() throws FileNotFoundException {
+        RemoteControl remoteControl = new RemoteControl();
+        System.out.println("\n\n Test Case E17: \n Map: exception_test_map.txt \n Input: FFTLFFRFFD \n " +
+                "Expected Output: Exception in thread \"main\" IllegalMoveException: The Kiva left the defined FloorMap to location (-1,3)) \n");
+        remoteControl.run("exception_test_map.txt", "FFTLFFRFFD");
     }
 }

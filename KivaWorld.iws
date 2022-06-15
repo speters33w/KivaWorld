@@ -5,8 +5,9 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="MapResource Get File from filename">
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Exception tests">
       <change beforePath="$PROJECT_DIR$/ExceptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ExceptionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +64,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -153,13 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Added testTakeOnPod and testDropOnDropZone to KivaTest">
-      <created>1652375947192</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1652375947192</updated>
     </task>
     <task id="LOCAL-00025" summary="Renamed RunKiva, moved interactive test from KivaTest">
       <created>1652384613519</created>
@@ -497,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655301993172</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Exception tests">
+      <created>1655303655486</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1655303655486</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -512,7 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added JavaDoc comments to RemoteControl" />
     <MESSAGE value="Added org.apache.commons.csv" />
     <MESSAGE value="Added edu.duke.*" />
     <MESSAGE value="pre-final commit" />
@@ -537,7 +537,8 @@
     <MESSAGE value="KivaCreateMap.saveFile public, update objective pdf" />
     <MESSAGE value="Work on Pod Collision bug" />
     <MESSAGE value="MapResource Get File from filename" />
-    <option name="LAST_COMMIT_MESSAGE" value="MapResource Get File from filename" />
+    <MESSAGE value="Exception tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exception tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
