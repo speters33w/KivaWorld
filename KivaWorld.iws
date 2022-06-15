@@ -5,14 +5,9 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="KivaCreateMap.saveFile public, update objective pdf">
-      <change afterPath="$PROJECT_DIR$/exception_test_map.txt" afterDir="false" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="MapResource Get File from filename">
+      <change beforePath="$PROJECT_DIR$/ExceptionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ExceptionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RemoteControlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControlTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/MapResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/MapResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/MazeDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/MazeDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/README.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/solver/README.TXT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solver/solver_stress_test_map1.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,20 +153,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Fixed info printed to console in !testMode">
-      <created>1652371393256</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1652371393256</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Added testTakeOnPod and testDropOnDropZone to KivaTest">
-      <created>1652375268589</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1652375268589</updated>
     </task>
     <task id="LOCAL-00024" summary="Added testTakeOnPod and testDropOnDropZone to KivaTest">
       <created>1652375947192</created>
@@ -502,7 +483,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655256670839</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Work on Pod Collision bug">
+      <created>1655301893846</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1655301893862</updated>
+    </task>
+    <task id="LOCAL-00072" summary="MapResource Get File from filename">
+      <created>1655301993172</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1655301993172</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -517,8 +512,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improved solver map output." />
-    <MESSAGE value="Implemented RemoteControl." />
     <MESSAGE value="Added JavaDoc comments to RemoteControl" />
     <MESSAGE value="Added org.apache.commons.csv" />
     <MESSAGE value="Added edu.duke.*" />
@@ -542,7 +535,9 @@
     <MESSAGE value="Rework of RemoteControl.run() methods" />
     <MESSAGE value="Replace edu.duke.FileResource with solver.MapResource" />
     <MESSAGE value="KivaCreateMap.saveFile public, update objective pdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="KivaCreateMap.saveFile public, update objective pdf" />
+    <MESSAGE value="Work on Pod Collision bug" />
+    <MESSAGE value="MapResource Get File from filename" />
+    <option name="LAST_COMMIT_MESSAGE" value="MapResource Get File from filename" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

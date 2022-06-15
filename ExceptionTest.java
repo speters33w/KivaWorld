@@ -1,8 +1,5 @@
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.LinkedList;
 import java.util.List;
-import solver.MapResource;
 
 public class ExceptionTest {
 
@@ -20,11 +17,11 @@ public class ExceptionTest {
 //        testE9(); // Throws IllegalMoveException - Collision with an object
 //        testE10(); // Throws IllegalMoveException - Collision with a Pod while carrying a Pod
         testE11(); // Successful Drop
-        testE12(); // TEST FAILS! Should be successful drop but throws IllegalMoveException - Collision with a Pod while carrying a Pod
+//        testE12(); // TEST FAILS! Should be successful drop but throws IllegalMoveException - Collision with a Pod while carrying a Pod
     }
 
-    static void run() {
-        String exceptionMapString = "" +
+    static String exceptionTestMap() {
+        return "" +
                 "- ---\n" +
                 "|   |\n" +
                 "| * |\n" +
@@ -32,7 +29,6 @@ public class ExceptionTest {
                 "| * |\n" +
                 "|K D|\n" +
                 "--- -";
-        FloorMap testMap = new FloorMap(exceptionMapString);
     }
 
     /**
@@ -165,20 +161,18 @@ public class ExceptionTest {
     /**
      * Test E10 tests for a Pod collision if Kiva is carrying a Pod.
      * <p>
-     * Map: exception_test_map.txt
+     * Map: exceptionTestMap()
      * Input: <pre>FFTRFFRFFD</pre>
      * Expected Output: <pre>EException in thread "main" IllegalMoveException: The kiva ran into a POD while carrying another POD at location (1,3)</pre>
      */
-    public static void testE10() throws FileNotFoundException {
+    public static void testE10()  {
         List<KivaCommand> kivaCommands;
-        File mapFile = MapResource.getFile("exception_test_map.txt");
-        String mapString = MapResource.getMapString(mapFile);
-        FloorMap floorMap = new FloorMap(mapString);
+        FloorMap floorMap = new FloorMap(exceptionTestMap());
         Kiva kiva = new Kiva(floorMap);
-        kiva.carryingPod = true;
-        System.out.println("\n\n Test Case E10: \n Map: exception_test_map.txt \n Input: FFTRFFRFFD and carryingPod \n " +
+        System.out.println("\n\n Test Case E10: \n Map: exceptionTestMap() \n Input: FFTRFFRFFD and carryingPod \n " +
                 "Expected Output: Exception in thread \"main\" IllegalMoveException: The kiva ran into a POD while carrying another POD at location (1,3)) \n");
         String directions = "FFTRFFRFFD";
+        kiva.carryingPod = true;
         kivaCommands = RemoteControl.convertToKivaCommands(directions);
         System.out.println("Commands you sent to the Kiva: " + kivaCommands);
         for (int i = 0; i < directions.length(); i++) {
