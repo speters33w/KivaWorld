@@ -86,13 +86,13 @@ public class MapResource {
      * @param map String to be saved to the file
      * @throws IOException if file can not be saved or written to.
      */
-    public void saveMap(String map) throws IOException {
+    public static void saveMap(String map) throws IOException {
         File path;
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt", "map", "maz", "maze", "fm", "FloorMap");
         fileChooser.setFileFilter(filter);
         fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
-        fileChooser.setSelectedFile(new File("random_floor_map.txt"));
+        fileChooser.setSelectedFile(new File("kiva_floor_map.txt"));
         int option = fileChooser.showSaveDialog(null);
         fileChooser.setVisible(true);
         if(option == JFileChooser.APPROVE_OPTION){
@@ -105,5 +105,6 @@ public class MapResource {
         }else {
             System.out.println("Save canceled");
         }
+        //todo return String with relative filename.
     }
 }

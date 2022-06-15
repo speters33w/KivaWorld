@@ -28,12 +28,12 @@ public class MazeDriver {
         return fileChooser.getSelectedFile();
     }
 
-    private static void execute(File file) throws Exception {
+    public static void execute(File file) throws Exception {
         Maze maze = new Maze(file);
         bfs(maze); // To find the shortest path, a graph traversal approach known as Breadth-first search.
     }
 
-    private static void bfs(Maze maze) {
+    public static void bfs(Maze maze) {
         BFSMazeSolver bfs = new BFSMazeSolver();
         List<Point> path = bfs.solve(maze);
         maze.printPath(path);

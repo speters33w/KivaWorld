@@ -5,10 +5,14 @@
     <option name="CUSTOM_SCOPE_NAME" value="KivaWorld" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="Replace edu.duke.FileResource with solver.MapResource">
-      <change beforePath="$PROJECT_DIR$/KivaWorld.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.ipr" afterDir="false" />
+    <list default="true" id="1443c13c-09c9-4907-9940-ce2ea22b873a" name="Changes" comment="KivaCreateMap.saveFile public, update objective pdf">
+      <change afterPath="$PROJECT_DIR$/exception_test_map.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/KivaWorld.iws" beforeDir="false" afterPath="$PROJECT_DIR$/KivaWorld.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objective/Improved_Project_self-service-course-4-project-kiva-robot-remote-control.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/objective/Improved_Project_self-service-course-4-project-kiva-robot-remote-control.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RemoteControlTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/RemoteControlTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/MapResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/MapResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/MazeDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/solver/MazeDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/README.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/solver/README.TXT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solver/solver_stress_test_map1.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +64,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../Java/KivaWorld/KivaWorld-1.0.jar" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -81,7 +85,14 @@
       <recent name="solver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RemoteControl">
+  <component name="RunManager" selected="Application.ExceptionTest">
+    <configuration name="ExceptionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ExceptionTest" />
+      <module name="KivaWorld" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="KivaCreateMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="KivaCreateMap" />
       <module name="KivaWorld" />
@@ -109,13 +120,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RemoteControlTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="RemoteControlTest" />
-      <module name="KivaWorld" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestSolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="solver.TestSolver" />
       <module name="KivaWorld" />
@@ -130,19 +134,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.RemoteControlTest" />
       <item itemvalue="Application.KivaCreateMap" />
       <item itemvalue="Application.MazeDriver" />
       <item itemvalue="Application.TestSolver" />
       <item itemvalue="Application.RemoteControl" />
+      <item itemvalue="Application.ExceptionTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ExceptionTest" />
         <item itemvalue="Application.RemoteControl" />
         <item itemvalue="Application.MazeDriver" />
         <item itemvalue="Application.TestSolver" />
         <item itemvalue="Application.KivaCreateMap" />
-        <item itemvalue="Application.RemoteControlTest" />
       </list>
     </recent_temporary>
   </component>
@@ -154,13 +158,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1651803989755</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Separated KivaConstructorTest from KivaTest">
-      <created>1652369578880</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1652369578880</updated>
     </task>
     <task id="LOCAL-00022" summary="Fixed info printed to console in !testMode">
       <created>1652371393256</created>
@@ -498,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655246016193</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="KivaCreateMap.saveFile public, update objective pdf">
+      <created>1655256670839</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1655256670839</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -513,7 +517,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Changed com.baeldung package to simple solver" />
     <MESSAGE value="Improved solver map output." />
     <MESSAGE value="Implemented RemoteControl." />
     <MESSAGE value="Added JavaDoc comments to RemoteControl" />
@@ -538,7 +541,8 @@
     <MESSAGE value="Added todo unsolvable map KivaCreateMap" />
     <MESSAGE value="Rework of RemoteControl.run() methods" />
     <MESSAGE value="Replace edu.duke.FileResource with solver.MapResource" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replace edu.duke.FileResource with solver.MapResource" />
+    <MESSAGE value="KivaCreateMap.saveFile public, update objective pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="KivaCreateMap.saveFile public, update objective pdf" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
