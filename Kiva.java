@@ -9,10 +9,11 @@ import edu.duke.Point;
  * @see kivaworld.FloorMap
  */
 public class Kiva {
-    boolean debugging = false;
+    boolean debugging = true;
 
     // Create and initialize class variables
-    private Point currentLocation;// = new Point(-1, -1); //initializes currentLocation to (-1,-1)
+    private Point currentLocation;// instantiates currentLocation
+    private Point podTakenFrom = new Point(-1,-1); //initializes podTakenFrom to (-1,-1)
     private FacingDirection directionFacing = FacingDirection.UP; //initializes initial facing direction to up
     private FloorMap map = new KivaCreateMap().defaultMap(); //initializes a default map
     boolean carryingPod = false; //initializes carryingPod
@@ -200,9 +201,11 @@ public class Kiva {
             case TAKE:
                 if (map.getObjectAtLocation(currentLocation).equals(FloorMapObject.POD)) {
                     carryingPod = true;
+                    podTakenFrom = currentLocation;
                     if(debugging){
                         System.out.println("TAKE");
                         System.out.println("The Kiva took the pod at " + currentLocation + ".");
+                        System.out.println("Pod was taken from " + podTakenFrom + ".");
                     }
                 } else {
                     throw new NoPodException("The kiva attempted to TAKE a POD while there is no POD at location "
@@ -321,9 +324,15 @@ public class Kiva {
                     + currentLocation + ".");
         }
         if (carryingPod) {
-            if (map.getObjectAtLocation(currentLocation).equals(FloorMapObject.POD)) {
-                throw new IllegalMoveException("The kiva ran into a POD while carrying another POD at location "
-                        + currentLocation + ".");
+                if (map.getObjectAtLocation(currentLocation).equals(FloorMapObject.POD)
+                        && !(currentLocation.getX() == podTakenFrom.getX()   // solver.Point can use .equals for this comparison, edu.duke.Point can not.
+                        && currentLocation.getY() == podTakenFrom.getY())) { // Solves Kiva enters former POD location while carrying bug.
+                    if(debugging){
+                        System.out.println("Current location = " + currentLocation
+                                + " Pod taken from = " + podTakenFrom + ".");
+                    }
+                    throw new IllegalMoveException("The kiva ran into a POD while carrying another POD at location "
+                            + currentLocation + ".");
             }
         }
     }

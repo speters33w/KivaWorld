@@ -16,7 +16,7 @@ public class ExceptionTest {
 //        testE10(); // Throws IllegalMoveException - Collision with a Pod while carrying a Pod
 //        testE11(); // Throws InvalidMapLayoutException: - Invalid map, two Pods
         testE12(); // Successful Drop
-//        testE13(); // TEST FAILS! Should be successful drop but throws IllegalMoveException - Collision with a Pod while carrying a Pod
+        testE13(); // Successful Drop - checks for erroneous pod collision.
 //        testE14(); // Throws IllegalMoveException - Kiva leaves map in UP direction
 //        testE15(); // Throws IllegalMoveException - Kiva leaves map in RIGHT direction
 //        testE16(); // Throws IllegalMoveException - Kiva leaves map in DOWN direction
@@ -242,8 +242,7 @@ public class ExceptionTest {
     }
 
     /**
-     * Test E13 tests for successful drop.
-     * TEST FAILS with IllegalMoveException when Kiva enters the location where the Pod was.
+     * Test E13 tests for erroneous pod collision if Kiva enters former pod location after taking the pod.
      * <p>
      * Map: exception_test_map.txt
      * Input: <pre>FFTFFRFFRFFRFFLFFLFFD</pre>
@@ -253,7 +252,7 @@ public class ExceptionTest {
         RemoteControl remoteControl = new RemoteControl();
         System.out.println("\n\n Test Case E12: \n Map: exception_test_map.txt \n Input: FFTFFRFFRFFRFFLFFLFFD \n " +
                 "Expected Output: Successfully picked up the pod and dropped it off. Thank you!" +
-                "\n THIS TEST FAILS WHEN KIVA REACHES FORMER POD LOCATION");
+                "\n tests for erroneous pod collision if Kiva enters former pod location (1,3) after taking the pod.");
         remoteControl.run("exception_test_map.txt", "FFTFFRFFRFFRFFLFFLFFD");
     }
 
