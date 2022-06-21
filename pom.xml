@@ -15,16 +15,18 @@
 
     <repositories>
         <repository>
-            <id>Duke LearnToProgram Archive</id>
-            <url>https://www.dukelearntoprogram.com/downloads/archives/</url>
-        </repository>
-        <repository>
             <id>KivaWorld</id>
             <url>file://${basedir}/src/main/java/+libs</url>
         </repository>
     </repositories>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.4</version>
+        </dependency>
         <!-- https://www.dukelearntoprogram.com/downloads/archives/ -->
         <dependency>
             <groupId>edu.duke</groupId>
@@ -34,12 +36,6 @@
             <systemPath>${basedir}/src/main/java/+libs/courserajava.jar</systemPath>
             <version>1.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-csv</artifactId>
-            <version>1.4</version>
-        </dependency>
         <dependency>
             <groupId>com.amazontechnicalacademy</groupId>
             <artifactId>KivaWorld</artifactId>
@@ -48,10 +44,34 @@
             <scope>system</scope>
             <systemPath>${basedir}/src/main/java/+libs/KivaWorld-1.0.jar</systemPath>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.googlecode.maven-download-plugin/download-maven-plugin -->
+        <dependency>
+            <groupId>com.googlecode.maven-download-plugin</groupId>
+            <artifactId>download-maven-plugin</artifactId>
+            <version>1.6.8</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.googlecode.maven-download-plugin</groupId>
+                <artifactId>download-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <executions>
+                    <execution>
+                        <id>install-courserajava</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>https://www.dukelearntoprogram.com/downloads/archives/courserajava.jar</url>
+                            <outputDirectory>${basedir}/src/main/java/+libs/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
