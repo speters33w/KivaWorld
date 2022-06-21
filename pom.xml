@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.amazontechnicalacademy</groupId>
+    <artifactId>KivaWorld</artifactId>
+    <version>1.1</version>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>Duke LearnToProgram Archive</id>
+            <url>https://www.dukelearntoprogram.com/downloads/archives/</url>
+        </repository>
+        <repository>
+            <id>KivaWorld</id>
+            <url>file://${basedir}/src/main/java/+libs</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- https://www.dukelearntoprogram.com/downloads/archives/ -->
+        <dependency>
+            <groupId>edu.duke</groupId>
+            <artifactId>courserajava</artifactId>
+            <type>jar</type>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/java/+libs/courserajava.jar</systemPath>
+            <version>1.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-csv -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.amazontechnicalacademy</groupId>
+            <artifactId>KivaWorld</artifactId>
+            <version>1.0</version>
+            <type>jar</type>
+            <scope>system</scope>
+            <systemPath>${basedir}/src/main/java/+libs/KivaWorld-1.0.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/java/solver</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
