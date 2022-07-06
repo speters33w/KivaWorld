@@ -17,7 +17,7 @@ import java.util.Random;
  * @author StephanPeters (speters33w)
  * @version 20220704.1100
  */
-public class CreateMap {
+public class KivaCreateMap {
     private final facingDirection[] directions = facingDirection.values();
     Random random = new Random();
     private final LinkedList<Point> obstacles = new LinkedList<>();
@@ -230,9 +230,9 @@ public class CreateMap {
     }
 
     public static void main(String[] args) {
-        CreateMap kivaCreateMap = new CreateMap();
+        solver.CreateMap kivaCreateMap = new solver.CreateMap();
         String map = kivaCreateMap.randomMapString();
         System.out.println(map);
-        //String floorMapFileName = kivaCreateMap.saveFile(map);
+        String floorMapFileName = kivaCreateMap.saveFile(map);
     }
 }

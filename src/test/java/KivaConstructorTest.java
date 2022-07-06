@@ -9,7 +9,7 @@ import edu.duke.Point;
  */
 public class KivaConstructorTest{
 
-    private final FloorMap defaultMap = new CreateMap().defaultMap();
+    private final FloorMap defaultMap = new KivaCreateMap().defaultMap();
 
     public void testSingleArgumentConstructor() {
         // GIVEN

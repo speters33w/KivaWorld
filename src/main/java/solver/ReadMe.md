@@ -13,7 +13,7 @@ These dependencies are used for testing only, and not required to use the packag
 ## Sample random floor map creation:
 
 ```
-solver.CreateMap.main();
+solver.KivaCreateMap.main();
 
 Width = 18 Height = 13
 ------------------
