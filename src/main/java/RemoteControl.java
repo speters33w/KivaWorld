@@ -125,7 +125,7 @@ public class RemoteControl {
             mapString = fileResource.asString();
         } else {
             File mapFile = MapResource.getFile(mapFileName);
-            mapString = MapResource.getMapString(mapFile);
+            mapString = MapResource.asString(mapFile);
         }
         FloorMap floorMap = new FloorMap(mapString);
         run(floorMap, directions);
@@ -146,7 +146,7 @@ public class RemoteControl {
             FileResource fileResource = new FileResource(); 
             mapString = fileResource.asString();
         } else {
-            mapString = MapResource.getMapString(mapFile);
+            mapString = MapResource.asString(mapFile);
         }
         FloorMap floorMap = new FloorMap(mapString);
         run(floorMap);

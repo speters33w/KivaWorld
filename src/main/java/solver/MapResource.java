@@ -70,7 +70,7 @@ public class MapResource {
      *
      * @throws FileNotFoundException - if File can not be read. //todo catch java.io.FileNotFoundException: <filename> (The system cannot find the file specified)
      */
-    public static String getMapString(File map) throws FileNotFoundException {
+    public static String asString(File map) throws FileNotFoundException {
         StringBuilder mapString = new StringBuilder();
         try (Scanner input = new Scanner(map)) {
             while (input.hasNextLine()) {
