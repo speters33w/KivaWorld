@@ -1,5 +1,5 @@
 /out
-/targer/
+/target/
 /maps/
 *.class
 *.ctxt
@@ -7,5 +7,7 @@
 /com/package.bluej
 /edu/package.bluej
 /research/
-/solver/TestSolver.java
 /sandbox/
+/TestPoint.png
+/TestPoint.svg
+/random_floor_map.txt

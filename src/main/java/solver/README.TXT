@@ -8,7 +8,7 @@ https://1drv.ms/u/s!AvzbSZAZ6ezjgZddJ_xreYI5SPtMVw?e=L0CReW
  * Includes point translation, reflection, etc.
  * The Point object can contain a separate reference point, parent.
  *
- * KivaCreateMap:
+ * CreateMap:
  * Creates a Kiva FloorMap string.
  * This can be a random map, or a default map.
  * Contains a main() method that will generate a random map and allow the user to save the map.
