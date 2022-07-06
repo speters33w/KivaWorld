@@ -4,7 +4,7 @@ import edu.duke.Point;
  * The Kiva class allows a Kiva robot object to navigate a map to pick up and drop pods.
  *
  * @author Stephan Peters (peterstz)
- * @version 20220613.0900
+ * @version 20220613.2330
  * @see KivaCommand
  * @see FloorMap
  */
@@ -15,11 +15,27 @@ public class Kiva {
     private Point currentLocation;// instantiates currentLocation
     private Point podTakenFrom = new Point(-1, -1); //initializes podTakenFrom to (-1,-1)
     private FacingDirection directionFacing = FacingDirection.UP; //initializes initial facing direction to up
-    private FloorMap map = new KivaCreateMap().defaultMap(); //initializes a default map
+    private FloorMap map = defaultMap(); //initializes a default map
     boolean carryingPod = false; //initializes carryingPod
     boolean successfullyDropped = false; //initializes successfullyDropped
     private long motorLifetime = 0L; //motor lifetime in milliseconds. Max lifetime is 4320000000000 ms (20,000 Hours)
     // private double motorLifetimeHours; //kiva.getMotorLifetime())/60/60/60/1000;
+
+    /**
+     * Returns a default map as a KivaWorld FloorMap
+     *
+     * @return default map as a FloorMap
+     */
+    public FloorMap defaultMap(){
+        return new FloorMap(""
+                + "-------------\n"
+                + "        P   *\n"
+                + "   **       *\n"
+                + "   **       *\n"
+                + "  K       D *\n"
+                + " * * * * * **\n"
+                + "-------------\n");
+    }
 
     /**
      * Creates Kiva using a provided map

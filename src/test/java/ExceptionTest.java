@@ -4,8 +4,8 @@ import java.util.List;
 public class ExceptionTest {
 
     public static void main(String[] args) throws FileNotFoundException {
-//        testE1(); // Successful Drop
-//        testE2(); // Successful Drop - Roundabout route
+        testE1(); // Successful Drop
+        testE2(); // Successful Drop - Roundabout route
 //        testE3(); // Throws InvalidKivaCommandException - Invalid Kiva Command
 //        testE4(); // Unsuccessful Drop - Move after Drop
 //        testE5(); // Unsuccessful Drop - Only one command issued

@@ -25,7 +25,9 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
-            <version>1.4</version>
+            <!-- edu.duke.courserajava 1.0 uses version 1.5. -->
+            <!-- newer versions may work for the Coursera projects, untested. -->
+            <version>1.5</version>
         </dependency>
         <!-- https://www.dukelearntoprogram.com/downloads/archives/ -->
         <dependency>
@@ -34,6 +36,7 @@
             <type>jar</type>
             <scope>system</scope>
             <systemPath>${basedir}/src/main/java/+libs/courserajava.jar</systemPath>
+            <!-- Version 1.0 last updated 8/10/2017 -->
             <version>1.0</version>
         </dependency>
         <dependency>

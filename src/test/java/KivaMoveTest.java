@@ -26,7 +26,7 @@ import java.util.Random;
  *</pre>
  */
 public class KivaMoveTest {
-    private final Kiva kiva = new Kiva(); //not final because of constructor tests
+    private Kiva kiva = new Kiva(); //not final because of constructor tests
     private String testString = "testKiva";
     private FacingDirection expectDirection = FacingDirection.UP;
     private Point expectLocation = new Point(2,4); //starting location in the default map

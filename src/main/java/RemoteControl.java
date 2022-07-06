@@ -1,3 +1,4 @@
+import edu.duke.FileResource;
 import solver.MapResource;
 
 import java.io.File;
@@ -30,9 +31,10 @@ import java.util.List;
  * </pre>
  *
  * @author Stephan Peters (peterstz)
- * @version 20220613.0900
+ * @version 20220613.2330
  */
 public class RemoteControl {
+    private final boolean duke = true;
     private static List<KivaCommand> kivaCommands = new LinkedList<>();
 
     /**
@@ -79,8 +81,17 @@ public class RemoteControl {
      * In overloaded methods, prompts the user to select a map file and a string of single character Kiva commands.
      */
     public void run() throws FileNotFoundException {
-        File mapFile = MapResource.selectMap();
-        run(mapFile);
+        // in case solver.MapResource is not accepted 
+        // and project requres edu.duke.FileResource
+        if(duke){
+            FileResource fileResource = new FileResource();
+            String mapString = fileResource.asString();
+            FloorMap floorMap = new FloorMap(mapString);
+            run(floorMap);
+        } else {
+            File mapFile = MapResource.selectMap();
+            run(mapFile);
+        }
     }
 
     /**
@@ -106,10 +117,16 @@ public class RemoteControl {
      * @see FloorMap
      */
     public void run(String mapFileName, String directions) throws FileNotFoundException {
-        //FileResource fileResource = new FileResource(); // in case solver.MapResource is not available
-        //String mapString = fileResource.toString();
-        File mapFile = MapResource.getFile(mapFileName);
-        String mapString = MapResource.getMapString(mapFile);
+        String mapString;
+        // in case solver.MapResource is not accepted
+        // and project requres edu.duke.FileResource
+        if(duke){
+            FileResource fileResource = new FileResource(); 
+            mapString = fileResource.asString();
+        } else {
+            File mapFile = MapResource.getFile(mapFileName);
+            mapString = MapResource.getMapString(mapFile);
+        }
         FloorMap floorMap = new FloorMap(mapString);
         run(floorMap, directions);
     }
@@ -122,7 +139,15 @@ public class RemoteControl {
      * @param mapFile the map File to be read.
      */
     public void run(File mapFile) throws FileNotFoundException {
-        String mapString = MapResource.getMapString(mapFile);
+        String mapString;
+        // in case solver.MapResource is not accepted 
+        // and project requres edu.duke.FileResource
+        if(duke){
+            FileResource fileResource = new FileResource(); 
+            mapString = fileResource.asString();
+        } else {
+            mapString = MapResource.getMapString(mapFile);
+        }
         FloorMap floorMap = new FloorMap(mapString);
         run(floorMap);
     }
