@@ -1,11 +1,19 @@
 package solver;
 
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Maze class for the solver.
+ * Creates a 2D array from a file,
+ * and populates the array with objects represented in the maze text file.
+ *
+ * This is a modified version of <a href = "https://github.com/eugenp/tutorials/blob/master/algorithms-modules/algorithms-miscellaneous-2/src/main/java/com/baeldung/algorithms/maze/solver/Maze.java">
+ *     com.baeldung.algorithms.maze.solver</a>
+ */
 public class Maze {
     private static final int EMPTY = 0;
     private static final int OBSTACLE = 1;
@@ -20,14 +28,21 @@ public class Maze {
     private Point podLocation = null;
     private Point dropZoneLocation;
 
-    public Maze(File maze) throws FileNotFoundException {
+    public Maze(File maze) {
         StringBuilder fileText = new StringBuilder();
         try (Scanner input = new Scanner(maze)) {
             while (input.hasNextLine()) {
                 fileText.append(input.nextLine()).append("\n");
+                initializeMaze(fileText.toString());
             }
+        } catch (IOException e) {
+            System.out.println("File not found or other IO error, using default map.");
+            initializeMaze(CreateMap.defaultMapString());
         }
-        initializeMaze(fileText.toString());
+    }
+
+    public Maze(String map){
+        initializeMaze(map);
     }
 
     private void initializeMaze(String text) throws IllegalArgumentException {
@@ -160,10 +175,10 @@ public class Maze {
                     } else {
                         result.append('*');
                     }
-                } else if (maze[row][col] == START) {
-                    result.append('K');
                 } else if (maze[row][col] == POD) {
                     result.append('P');
+                } else if (maze[row][col] == START) {
+                    result.append('K');
                 }else if (maze[row][col] == DROP_ZONE) {
                     result.append('D');
                 } else {

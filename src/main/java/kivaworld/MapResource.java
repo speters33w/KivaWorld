@@ -1,9 +1,8 @@
-package solver;
+package kivaworld;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -11,8 +10,9 @@ import java.util.Scanner;
 /**
  * Utility to open and read Kiva map files.
  *
- * @author StephanPeters (peterstz)
- * @version 20220614.2130
+ * @author StephanPeters (speters33w)
+ * @version 20220705.1000
+ * @see FloorMap
  */
 public class MapResource {
 
@@ -68,43 +68,59 @@ public class MapResource {
      * @param map the map File to be read.
      * @return the map File as a String.
      *
-     * @throws FileNotFoundException - if File can not be read. //todo catch java.io.FileNotFoundException: <filename> (The system cannot find the file specified)
      */
-    public static String asString(File map) throws FileNotFoundException {
+    public static String asString(File map) {
         StringBuilder mapString = new StringBuilder();
         try (Scanner input = new Scanner(map)) {
             while (input.hasNextLine()) {
                 mapString.append(input.nextLine()).append("\n");
             }
+            return mapString.toString();
+        } catch (IOException e) {
+            System.out.println("File not found or other IO error, using default map.");
+            return ""
+                    + "-------------\n"
+                    + "        P   *\n"
+                    + "   **       *\n"
+                    + "   **       *\n"
+                    + "  K       D *\n"
+                    + " * * * * * **\n"
+                    + "-------------\n";
         }
-        return mapString.toString();
     }
 
     /**
      * Opens a JFileChooser save dialog and allows the user to save a String to a file.
      *
      * @param map String to be saved to the file
-     * @throws IOException if file can not be saved or written to.
      */
-    public static void saveMap(String map) throws IOException {
-        File path;
-        JFileChooser fileChooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt", "map", "maz", "maze", "fm", "FloorMap");
-        fileChooser.setFileFilter(filter);
-        fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
-        fileChooser.setSelectedFile(new File("kiva_floor_map.txt"));
-        int option = fileChooser.showSaveDialog(null);
-        fileChooser.setVisible(true);
-        if(option == JFileChooser.APPROVE_OPTION){
-            path = new File(fileChooser.getSelectedFile().getAbsolutePath());
-            FileWriter fileWriter = new FileWriter(path);
-            fileWriter.write(map);
-            fileWriter.flush();
-            fileWriter.close();
-            System.out.println("File saved.");
-        }else {
-            System.out.println("Save canceled");
+    public static String saveMap(String map) {
+        try {
+            File path;
+            JFileChooser fileChooser = new JFileChooser();
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt", "map", "maz", "maze", "fm", "FloorMap");
+            fileChooser.setFileFilter(filter);
+            fileChooser.setCurrentDirectory(new File(System.getProperty("user.dir")));
+            fileChooser.setSelectedFile(new File("kiva_floor_map.txt"));
+            int option = fileChooser.showSaveDialog(null);
+            fileChooser.setVisible(true);
+            if (option == JFileChooser.APPROVE_OPTION) {
+                path = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                String name = path.toString(); //path.getName();
+                FileWriter fileWriter = new FileWriter(path);
+                fileWriter.write(map);
+                fileWriter.flush();
+                fileWriter.close();
+                System.out.println(name + " saved.");
+                return name;
+            } else {
+                System.out.println("Save canceled.");
+                return "";
+            }
+        } catch (IOException e) {
+            System.out.println("IO Error. Save canceled.");
+            e.printStackTrace();
         }
-        //todo return String with relative filename.
+        return "";
     }
 }

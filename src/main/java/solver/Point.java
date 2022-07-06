@@ -2,14 +2,11 @@ package solver;
 
 import java.io.Serializable;
 
-
-//This Point method works, but requires thorough testing.
-
 /**
  * <p>
  * A Cartesian Coordinate point in integer resolution represented by a pair of numeric coordinates {@code (x,y)}.
- * The Point object can contain a separate reference point, parent.
- *</p><p>
+ * The Point object can contain a separate reference point, reference.
+ * </p><p>
  * A Cartesian coordinate system in two dimensions is defined by an ordered pair of perpendicular lines (axes),
  * a single unit of length for both axes, and an orientation for each axis.
  * The point where the axes meet is taken as the origin for both, thus turning each axis into a number line.
@@ -17,24 +14,25 @@ import java.io.Serializable;
  * and the position where it meets the axis is interpreted as a number.
  * The two numbers, in that chosen order, are the Cartesian coordinates of {@code P}.
  * The reverse construction allows one to determine the point {@code P} given its coordinates.
- *</p><p>
+ * </p><p>
  * The first and second coordinates are called the abscissa and the ordinate of {@code P}, respectively;
  * and the point where the axes meet is called the origin of the coordinate system.
  * The coordinates are usually written as two numbers in parentheses, in that order, separated by a comma,
  * as in {@code (3, −10)}.
  * Thus, the origin has coordinates {@code (0, 0)}, and the points on the positive half-axes,
  * one unit away from the origin, have coordinates {@code (1, 0)} and {@code (0, 1)}.
- *</p><p>
+ * </p><p>
  * A Euclidean plane with a chosen Cartesian coordinate system is called a Cartesian plane.
- *</p><p>
+ * </p><p>
  * If the coordinates of a point are {@code (x, y)},
  * then its distances from the x-axis and from the y-axis are {@code |y|} and {@code |x|}, respectively;
  * where {@code |n|} denotes the absolute value of a number.
- *</p>
+ * </p>
+ *
  * @author StephanPeters (speters33w)
- * @version 20220613.1000
+ * @version 20220704.1100
  */
-public class Point implements Cloneable, Serializable {  //remove extends edu.duke.Point and remove super(x,y) from constructors to remove dependency.
+public class Point implements Cloneable, Serializable {
     /**
      * The integer {@code (x)} abscissa of this Point.
      */
@@ -48,44 +46,42 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
     /**
      * A retrievable reference Point.
      */
-    Point parent;
+    Point reference;
 
     /**
      * Constructs and initializes a Point at the specified {@code (x,y)} location in the plane.
+     *
      * @param x – the {@code x} abscissa of the newly constructed Point.
      * @param y – the {@code y} ordinate of the newly constructed Point.
      */
     public Point(int x, int y) {
-        // super(x,y); //remove this line if removing extends edu.duke.Point.
         this.x = x;
         this.y = y;
-        this.parent = null;
+        this.reference = null;
     }
 
     /**
      * Constructs and initializes a Point at the origin {@code (0,0)} of the plane.
      */
     public Point() {
-        // super(0,0); //remove this line if removing extends edu.duke.Point.
-        this.x = 0;
-        this.y = 0;
+        this(0, 0);
     }
 
     /**
-     * Constructs and initializes a Point at the specified {@code (x,y)} location in the plane and stores a reference coordinate (parent).
-     * @param x – the {@code x} abscissa of the newly constructed Point.
-     * @param y – the {@code y} ordinate of the newly constructed Point.
-     * @param parent - a retrievable reference Point, designed for Breadth First Traversal search.
+     * Constructs and initializes a Point at the specified {@code (x,y)} location in the plane and stores a reference coordinate (reference).
+     *
+     * @param x         – the {@code x} abscissa of the newly constructed Point.
+     * @param y         – the {@code y} ordinate of the newly constructed Point.
+     * @param reference - a retrievable reference Point, designed for Breadth First Traversal search.
      */
-    public Point(int x, int y, Point parent) {
-        // super(x,y); //remove this line if removing extends edu.duke.Point.
-        this.x = x;
-        this.y = y;
-        this.parent = parent;
+    public Point(int x, int y, Point reference) {
+        this(x, y);
+        this.reference = reference;
     }
 
     /**
      * Returns the {@code x} abscissa of the Point as an integer.
+     *
      * @return the {@code x} abscissa of this Point.
      */
     public int getX() {
@@ -94,6 +90,7 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
 
     /**
      * Returns the {@code y} ordinate of this Point.
+     *
      * @return the {@code y} ordinate of this Point.
      */
     public int getY() {
@@ -101,15 +98,17 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
     }
 
     /**
-     * Returns the reference Point parent.
-     * @return reference Point parent.
+     * Returns the reference Point.
+     *
+     * @return reference Point.
      */
-    public Point getParent() {
-        return parent;
+    public Point getReference() {
+        return reference;
     }
 
     /**
      * Sets the location of the Point to the location of another Point.
+     *
      * @param p a Point sharing new location for this Point.
      */
     public void setLocation(Point p) {
@@ -118,15 +117,18 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
 
     /**
      * Changes the Point to have the specified location.
+     *
      * @param x an integer, the new {@code x} abscissa for the Point.
      * @param y an integer, the new {@code y} ordinate for the Point.
      */
     public void setLocation(int x, int y) {
-        move(x, y);
+        this.x = x;
+        this.y = y;
     }
 
     /**
      * Changes the abscissa of the Point to a specified location along the x plane.
+     *
      * @param x an integer, the new {@code x} abscissa for the Point.
      */
     public void setX(int x) {
@@ -135,21 +137,31 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
 
     /**
      * Changes the ordinate of the Point to a specified location along the y plane.
+     *
      * @param y an integer, the new {@code y} ordinate for the Point.
      */
     public void setY(int y) {
         this.y = y;
     }
 
+    public void setReference(int x, int y) {
+        this.reference = new Point(x, y);
+    }
+
+    public void setReference(Point reference) {
+        this.reference = reference;
+    }
+
     /**
+     * Identical to setLocation.
      * Moves this Point to the specified location in the
      * {@code (x,y)} coordinate plane.
+     *
      * @param x an integer, the new {@code x} abscissa for the Point.
      * @param y an integer, the new {@code y} ordinate for the Point.
      */
     public void move(int x, int y) {
-        this.x = x;
-        this.y = y;
+        setLocation(x, y);
     }
 
     /**
@@ -168,6 +180,7 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
     /**
      * Translates this Point, at location {@code (x,y)}, by {@code delta(x,y)}
      * along both axes so that it now represents the Point {@code (x+delta.getX(),y+delta.getY()}.
+     *
      * @param delta Point to translate this Point with.
      */
     public void translate(Point delta) {
@@ -176,80 +189,14 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
     }
 
     /**
-     * Reflects of the Point {@code (x,y)} across the line {@code y = x},
-     * reversing the {@code (x,y)} coordinate values to {@code (y,x)}.
-     */
-    public void reflect(){
-        int abscissa = x;
-        int ordinate = y;
-        this.x = ordinate;
-        this.y = abscissa;
-    }
-
-    /**
-     * Reflects of the Point {@code (x,y)} across the x-axis,
-     * transforming the {@code (x,y)} coordinate values to {@code (x,-y)}.
-     */
-    public void reflectX(){
-        this.y = -y;
-    }
-
-    /**
-     * Reflects of the Point {@code (x,y)} across a horizontal line,
-     * transforming the {@code y} coordinate across the line equidistant.
-     * @param a - integer, the {@code y} location of the horizontal line.
-     */
-    public void reflectX(int a){
-        int distanceY = Math.abs(y - a);
-        if (a >= x) {
-            y = y + (2 * distanceY);
-        } else {
-            y = y - (2 * distanceY);
-        }
-    }
-
-    /**
-     * Reflects of the Point {@code (x,y)} across the y-axis,
-     * transforming the {@code (x,y)} coordinate values to {@code (-x,y)}.
-     */
-    public void reflectY(){
-        this.x = -x;
-    }
-
-    /**
-     * Reflects of the Point {@code (x,y)} across a vertical line,
-     * transforming the {@code x} coordinate across the line equidistant.
-     * @param a - integer, the {@code x} location of the vertical line.
-     */
-    public void reflectY(int a){
-        int distanceY = Math.abs(y - a);
-        if (a >= y) {
-            x = x + (2 * distanceY);
-        } else {
-            x = x - (2 * distanceY);
-        }
-    }
-
-    /**
-     * Reflects of the Point {@code (x,y)} across the line {@code y = -x},
-     * reversing and negating the {@code (x,y)} coordinate values to {@code (-y,-x)}.
-     */
-    public void reflectNegative(){
-        int abscissa = -x;
-        int ordinate = -y;
-        this.x = ordinate;
-        this.y = abscissa;
-    }
-
-    /**
      * Returns a new Point, offset from location {@code (x,y)},
      * by {@code deltaX} along the x-axis and by {@code deltaY} along the y-axis,
      * so it is at location {@code (x+deltaX,y+deltaY)}.
      *
      * @param deltaX - the distance from the Point along the x-axis
-     *                where the new Point's abscissa will be.
+     *               where the new Point's abscissa will be.
      * @param deltaY - the distance from the Point along the y-axis
-     *                where the new Point's ordinate will be.
+     *               where the new Point's ordinate will be.
      * @return A new Point moved to new location
      */
     public Point moveBy(int deltaX, int deltaY) {
@@ -260,43 +207,150 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
      * Returns a new Point, offset from location {@code (x,y)},
      * by the x and y values of the delta Point provided,
      * so it is at location {@code (x + delta.getX(),y + delta.getY)}
-     *
+     * <p>
      * May be used with an enum or method of directions or edges.
      *
      * @param delta - Point with the {@code (x,y)} used for the distances to translate.
      * @return A new Point moved to new location
      */
-    public Point moveBy(Point delta){
+    public Point moveBy(Point delta) {
         return new Point(x + delta.x, y + delta.y);
     }
 
     /**
-     * Create a new Point with the same values as this Point.
-     * @return - a new Point with the same values as this Point
-     * @see java.lang.Cloneable
+     * Reflects of the Point {@code (x,y)} across the line {@code y = x},
+     * reversing the {@code (x,y)} coordinate values to {@code (y,x)}.
      */
+    public void reflect() {
+        int abscissa = x;
+        int ordinate = y;
+        this.x = ordinate;
+        this.y = abscissa;
+    }
+
+    /**
+     * Reflects of the Point {@code (x,y)} across the line {@code y = x + a},
+     * changing the coordinate values to {@code (y-a,x+a)}.
+     */
+    public void reflect(int a) {
+        int abscissa = x;
+        int ordinate = y;
+        this.x = ordinate - a;
+        this.y = abscissa + a;
+    }
+
+    /**
+     * Reflects of the Point {@code (x,y)} across the x-axis,
+     * transforming the {@code (x,y)} coordinate values to {@code (x,-y)}.
+     */
+    public void reflectX() {
+        this.y = -y;
+    }
+
+    /**
+     * Reflects of the Point {@code (x,y)} across a horizontal line,
+     * transforming the {@code y} coordinate across the line equidistant.
+     *
+     * @param b - integer, the {@code y} location of the horizontal line.
+     */
+    public void reflectX(int b) {
+        this.reflectX();
+        this.translate(0, (2 * b));
+    }
+
+    /**
+     * Reflects of the Point {@code (x,y)} across the y-axis,
+     * transforming the {@code (x,y)} coordinate values to {@code (-x,y)}.
+     */
+    public void reflectY() {
+        this.x = -x;
+    }
+
+    /**
+     * Reflects of the Point {@code (x,y)} across a vertical line,
+     * transforming the {@code x} coordinate across the line equidistant.
+     *
+     * @param a - integer, the {@code x} location of the vertical line.
+     */
+    public void reflectY(int a) {
+        this.reflectY();
+        this.translate((2 * a), 0);
+    }
+
+    /**
+     * Reflects of the Point {@code (x,y)} across the line {@code y=x},
+     * reversing the {@code (x,y)} coordinate values to {@code (y,x)},
+     * then translates the coordinates to {@code (y+h,x+k)}
+     */
+    public void glide(int h, int k) {
+        this.reflect();
+        this.translate(h,k);
+    }
+
+    //todo write for rotation around a point not origin.
+    /**
+     * Rotates the Point {@code (x,y)} by angle theta (in degrees) centered on the origin {@code (0,0))},
+     * using the formula:
+     * <pre>
+     * x' = x cos θ + y sin θ
+     * y' = -x sin θ + y cos θ.
+     * </pre>
+     *
+     * @param angdeg double, the angle to rotate the Point.
+     */
+    public void rotate(double angdeg){
+        double theta = Math.toRadians(angdeg);
+        int xr = Math.toIntExact(Math.round(( x * Math.cos(theta)) + (y * Math.sin(theta))));
+        this.y = Math.toIntExact(Math.round((-x * Math.sin(theta)) + (y * Math.cos(theta))));
+        this.x = xr;
+    }
+
+    /**
+     * Create a new Point with the same values as this Point.
+     *
+     * @return - a new Point with the same values as this Point
+     * @see Cloneable
+     */
+    @Override
     public Object clone() {
         try {
             return super.clone();
         } catch (CloneNotSupportedException e) {
-            throw new InternalError();
+            throw new InternalError("Error in Cloneable chain.");
         }
     }
 
     /**
      * Determines if two Points are equal. Two instances of
      * <code>Point</code> are equal if the values of their
-     * {@code x}, {@code y} and {@code parent} member fields are the same.
+     * {@code x}, {@code y} and {@code reference} member fields are the same.
+     *
      * @param obj - a Point to be compared with this {@code Point}.
      * @return {@code true} if the object to be compared is a{@code Point},
      * and has the same values; {@code false} otherwise.
      */
+    @Override
     public boolean equals(Object obj) {
         if (obj instanceof Point) {
-            Point pt = (Point)obj;
-            return (x == pt.x) && (y == pt.y);
+            Point point = (Point) obj;
+            if (reference == null && point.reference == null) {
+                return (x == point.x) && (y == point.y);
+            } else if (reference != null && point.reference != null) {
+                return (x == point.x) && (y == point.y)
+                        && (reference.x == point.reference.x) && (reference.y == point.reference.y);
+            }
         }
         return super.equals(obj);
+    }
+
+    /**
+     * Returns the {@code (x,y)} difference between a Point and a second Point.
+     *
+     * @param q - The Point to compare the first Point to.
+     * @return - A Point of the {@code (x,y)} difference.
+     */
+    public Point getDelta(Point q) {
+        return new Point(q.x - this.x, q.y - this.y);
     }
 
     /**
@@ -306,7 +360,7 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
      * @param q - The Point to compare the first Point to.
      * @return - A Point of the {@code (x,y)} difference.
      */
-    public Point getDelta(Point p, Point q){
+    public Point getDelta(Point p, Point q) {
         return new Point(q.x - p.x, q.y - p.y);
     }
 
@@ -316,7 +370,7 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
      * @param q - the other Point to which distance is calculated.
      * @return - the distance from this Point to the other Point in double precision.
      */
-    public double distance (Point q) {
+    public double distance(Point q) {
         int dx = x - q.x;
         int dy = y - q.y;
         return Math.sqrt((dx * dx) + (dy * dy));
@@ -330,7 +384,7 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
      * @param y2 - the {@code y} value of the second Point
      * @return - the distance between this Point and the second coordinate location in double precision
      */
-    public double distance (int x2, int y2) {
+    public double distance(int x2, int y2) {
         int dx = x - x2;
         int dy = y - y2;
         return Math.sqrt((dx * dx) + (dy * dy));
@@ -358,7 +412,7 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
      * @param q - the other Point to which distance is calculated.
      * @return - the square of the distance between the two Points in double precision
      */
-    public double distanceSq (Point q) {
+    public double distanceSq(Point q) {
         int dx = x - q.x;
         int dy = y - q.y;
         return (dx * dx) + (dy * dy);
@@ -397,9 +451,26 @@ public class Point implements Cloneable, Serializable {  //remove extends edu.du
     /**
      * Returns a string representation of this Point and its location
      * in the {@code (x,y)} coordinate plane.
-     * @return  a string representation of this Point in format {@code (x,y)}.
+     *
+     * @return a string representation of this Point in format {@code (x,y)}.
      */
-    public String toString(){
-        return "("+x+","+y+")";
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
+
+    /**
+     * Returns a string representation of this Point and reference Point locations
+     * in the {@code (x,y)} coordinate plane.
+     *
+     * @return a string representation of this Point in format {@code [(x,y),(a,b)]}
+     * where {@code (a,b)} are the coordinates of the point's reference point.
+     */
+    public String deepToString() {
+        if (this.reference != null) {
+            return "[" + this + ", (" + this.reference.x + "," + this.reference.y + ")]";
+        } else {
+            return "[" + this + ", (null)]";
+        }
     }
 }

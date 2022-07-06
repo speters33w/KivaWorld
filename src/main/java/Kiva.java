@@ -68,9 +68,9 @@ public class Kiva {
     }
 
     /**
-     * Creates Kiva using a default floor map from KivaCreateMap
+     * Creates Kiva using a default floor map from CreateMap
      *
-     * @see KivaCreateMap
+     * @see CreateMap
      */
     public Kiva() {
         this.currentLocation = map.getInitialKivaLocation();

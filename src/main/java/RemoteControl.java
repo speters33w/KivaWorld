@@ -1,5 +1,5 @@
 import edu.duke.FileResource;
-import solver.MapResource;
+import kivaworld.MapResource;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -81,7 +81,7 @@ public class RemoteControl {
      * In overloaded methods, prompts the user to select a map file and a string of single character Kiva commands.
      */
     public void run() throws FileNotFoundException {
-        // in case solver.MapResource is not accepted 
+        // in case kivaworld.MapResource is not accepted
         // and project requires edu.duke.FileResource
         if(duke){
             FileResource fileResource = new FileResource();
@@ -118,7 +118,7 @@ public class RemoteControl {
      */
     public void run(String mapFileName, String directions) throws FileNotFoundException {
         String mapString;
-        // in case solver.MapResource is not accepted
+        // in case kivaworld.MapResource is not accepted
         // and project requires edu.duke.FileResource
         if(duke){
             FileResource fileResource = new FileResource(); 
@@ -140,7 +140,7 @@ public class RemoteControl {
      */
     public void run(File mapFile) throws FileNotFoundException {
         String mapString;
-        // in case solver.MapResource is not accepted 
+        // in case kivaworld.MapResource is not accepted
         // and project requires edu.duke.FileResource
         if(duke){
             FileResource fileResource = new FileResource(); 

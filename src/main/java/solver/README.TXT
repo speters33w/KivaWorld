@@ -8,35 +8,25 @@ https://1drv.ms/u/s!AvzbSZAZ6ezjgZddJ_xreYI5SPtMVw?e=L0CReW
  * Includes point translation, reflection, etc.
  * The Point object can contain a separate reference point, parent.
  *
- * KivaCreateMap:
+ * CreateMap:
  * Creates a Kiva FloorMap string.
  * This can be a random map, or a default map.
  * Contains a main() method that will generate a random map and allow the user to save the map.
-
  *
- * Direction:
- * Enumeration describing a facing direction, limiting the facing directions to up, down, left, and right.
- * The included Point, called delta, can be added to another Point to move one space in the indicated direction.
- *
- * MazeDriver:
- * Runner program for the maze solver.
- * Contains a main() method that prompts the user to open a map file from disk, solves the maze,
- * and gives the Kiva commands required to solve the map.
+ * SolveMap:
+ * Solves a user selected map using Solver.
  *
  * Maze:
  * A maze class used to create a maze that can be solved by the solver.
  * modified version of one in package: com.baeldung.algorithms.maze.solver
  *
- * BFSMazeSolver:
- * A Breadth First Solver, a heavily modified version of one in package: com.baeldung.algorithms.maze.solver
- *
- * The original Baeldung article on maze solving may be found here:
- * https://www.baeldung.com/java-solve-maze
- *
- * The original Baeldung Java package may be found here:
- * https://github.com/eugenp/tutorials/tree/master/algorithms-modules/algorithms-miscellaneous-2/src/main/java/com/baeldung/algorithms/maze/solver
+ * Solver:
+ * A Breadth First Solver.
+ * 
  */
 
+
+https://www.baeldung.com/java-solve-maze
 
 A Maze Solver in Java
 Last modified: June 4, 2022
@@ -214,5 +204,6 @@ In this tutorial, we described two major graph algorithms Depth-first search and
 For further reading, look up other methods to solve a maze, like A* and Dijkstra algorithm.
 As always, the full code can be found over on GitHub. 
 https://github.com/eugenp/tutorials/tree/master/algorithms-modules/algorithms-miscellaneous-2
+https://github.com/eugenp/tutorials/tree/master/algorithms-modules/algorithms-miscellaneous-2/src/main/java/com/baeldung/algorithms/maze/solver
 
 https://www.baeldung.com/java-solve-maze

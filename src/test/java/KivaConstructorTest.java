@@ -1,5 +1,6 @@
 import edu.duke.Point;
 
+
 /**
  * Test Kiva constructors
  *
@@ -8,7 +9,7 @@ import edu.duke.Point;
  */
 public class KivaConstructorTest{
 
-    private final FloorMap defaultMap = new KivaCreateMap().defaultMap();
+    private final FloorMap defaultMap = new CreateMap().defaultMap();
 
     public void testSingleArgumentConstructor() {
         // GIVEN

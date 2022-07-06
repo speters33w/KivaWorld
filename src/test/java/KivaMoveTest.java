@@ -1,4 +1,5 @@
 import edu.duke.Point;
+
 import java.text.DecimalFormat;
 import java.util.Random;
 
@@ -499,7 +500,7 @@ public class KivaMoveTest {
      * Tests for exception if Kiva runs into a FloorMapObject.OBSTACLE
      */
     public void testMoveIntoObstacle(){
-        FloorMap map = new KivaCreateMap().defaultMap();
+        FloorMap map = new CreateMap().defaultMap();
         Kiva kiva = new Kiva(map);
         kiva.move(KivaCommand.FORWARD);
         kiva.move(KivaCommand.TURN_RIGHT);
@@ -517,7 +518,7 @@ public class KivaMoveTest {
      * Tests for exception if Kiva carrying a POD collides with another POD.
      */
     public void testPodCollision(){
-        FloorMap map = new KivaCreateMap().defaultMap();
+        FloorMap map = new CreateMap().defaultMap();
         Kiva kiva = new Kiva(map);
         kiva.carryingPod=true;
         kiva.move(KivaCommand.FORWARD);
@@ -543,7 +544,7 @@ public class KivaMoveTest {
      * Tests for exception if Kiva attempts to TAKE a POD at an empty location.
      */
     public void testNoPodAtLocation(){
-        FloorMap map = new KivaCreateMap().defaultMap();
+        FloorMap map = new CreateMap().defaultMap();
         Kiva kiva = new Kiva(map);
         kiva.move(KivaCommand.FORWARD);
         kiva.move(KivaCommand.FORWARD);
@@ -568,7 +569,7 @@ public class KivaMoveTest {
      * Tests for exception if Kiva attempts to DROP a POD outside the DROP_ZONE.
      */
     public void testIllegalDropZone(){
-        FloorMap map = new KivaCreateMap().defaultMap();
+        FloorMap map = new CreateMap().defaultMap();
         Kiva kiva = new Kiva(map);
         kiva.move(KivaCommand.FORWARD);
         kiva.move(KivaCommand.FORWARD);

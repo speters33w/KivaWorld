@@ -1,13 +1,20 @@
 package solver;
 
-import javax.swing.JFileChooser;
+import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.util.List;
 
-public class MazeDriver {
-    public static void main(String[] args) throws Exception {
-        execute(selectFile());
+public class SolveMap {
+    private static boolean kivaCommands = false;
+
+    /**
+     * If parameter is set to true, prints Kiva commands to console after solving maze.
+     *
+     * @param printKivaCommands boolean true = print Kiva commands to console after solving maze.
+     */
+    public void setKivaCommands(boolean printKivaCommands){
+        kivaCommands = printKivaCommands;
     }
 
     /**
@@ -18,7 +25,7 @@ public class MazeDriver {
      *
      * @throws NullPointerException (in main) if user cancels the file open operation.
      */
-    private static File selectFile(){
+    public static File selectFile(){
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("FloorMap Files", "txt", "map", "maz", "maze", "fm", "FloorMap");
         fileChooser.setFileFilter(filter);
@@ -28,17 +35,25 @@ public class MazeDriver {
         return fileChooser.getSelectedFile();
     }
 
-    public static void execute(File file) throws Exception {
+    /**
+     * Solves a selected map from a File.
+     * @param file The file with the map to be solved.
+     */
+    public static String solve(File file) {
         Maze maze = new Maze(file);
-        bfs(maze); // To find the shortest path, a graph traversal approach known as Breadth-first search.
+        Solver solver = new Solver();
+        List<Point> path = solver.solve(maze);
+        maze.printPath(path);
+        String commands = solver.constructKivaCommands(path);
+        if (kivaCommands) {
+            System.out.println("Kiva Commands:\n" + commands);
+        }
+        maze.reset();
+        return commands;
     }
 
-    public static void bfs(Maze maze) {
-        BFSMazeSolver bfs = new BFSMazeSolver();
-        List<Point> path = bfs.solve(maze);
-        maze.printPath(path);
-        String commands = bfs.constructKivaCommands(path);
-        System.out.println("Kiva Commands:\n" + commands);
-        maze.reset();
+    public static void main(String[] args){
+        solve(selectFile());
     }
 }
+
