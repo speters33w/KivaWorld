@@ -34,7 +34,7 @@ import java.util.List;
  * @version 20220613.2330
  */
 public class RemoteControl {
-    private final boolean duke = true;
+    private final boolean duke = false;
     private static List<KivaCommand> kivaCommands = new LinkedList<>();
 
     /**
@@ -82,7 +82,7 @@ public class RemoteControl {
      */
     public void run() throws FileNotFoundException {
         // in case solver.MapResource is not accepted 
-        // and project requres edu.duke.FileResource
+        // and project requires edu.duke.FileResource
         if(duke){
             FileResource fileResource = new FileResource();
             String mapString = fileResource.asString();
@@ -119,7 +119,7 @@ public class RemoteControl {
     public void run(String mapFileName, String directions) throws FileNotFoundException {
         String mapString;
         // in case solver.MapResource is not accepted
-        // and project requres edu.duke.FileResource
+        // and project requires edu.duke.FileResource
         if(duke){
             FileResource fileResource = new FileResource(); 
             mapString = fileResource.asString();
@@ -141,7 +141,7 @@ public class RemoteControl {
     public void run(File mapFile) throws FileNotFoundException {
         String mapString;
         // in case solver.MapResource is not accepted 
-        // and project requres edu.duke.FileResource
+        // and project requires edu.duke.FileResource
         if(duke){
             FileResource fileResource = new FileResource(); 
             mapString = fileResource.asString();
